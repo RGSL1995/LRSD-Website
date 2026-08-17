@@ -473,6 +473,8 @@ export default function Home() {
                     src="/lalitsir.jpeg"
                     alt="Mr. Lalit Dua, Managing Director"
                     fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover"
                   />
                 </motion.div>
