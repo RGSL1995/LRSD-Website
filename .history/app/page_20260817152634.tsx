@@ -2,12 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { GradientText } from '@/components/magic/gradient-text';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const AnimatedWaveBackground = () => {
   return (
@@ -99,39 +94,40 @@ export default function Home() {
             className="h-16 w-auto"
           />
 
-          <nav className="hidden md:flex gap-2">
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              About <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Products <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Grievance <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Reports <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Careers <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Policies <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <a
-              href="#contact"
-              className="hover:text-[var(--gold)] transition-colors"
-            >
+          <nav className="hidden md:flex gap-8 text-sm text-[var(--text-secondary)]">
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              About <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Products <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Grievance <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Reports <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Careers <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Policies <ChevronDown className="w-4 h-4" />
+            </button>
+            <a href="#contact" className="hover:text-[var(--gold)] transition-colors">
               Contact
             </a>
           </nav>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="rounded-full">
-              <ArrowRight className="w-4 h-4" />
-              Start a conversation
-            </Button>
-          </motion.div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#F27125] hover:bg-[#E8651E] text-black px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition-colors"
+          >
+            <span className="bg-black text-white p-1.5 rounded-md flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+            <span>Start a conversation</span>
+          </motion.button>
         </div>
       </header>
 
@@ -147,10 +143,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.h1
-                className="text-7xl md:text-8xl font-bold mb-8 leading-tight"
-                style={{ letterSpacing: "-0.03em" }}
-              >
+              <motion.h1 className="text-7xl md:text-8xl font-bold mb-8 leading-tight" style={{ letterSpacing: '-0.03em' }}>
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -183,23 +176,22 @@ export default function Home() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed font-medium"
               >
-                A lending-focused platform purpose-built for SMEs, MSMEs and
-                mid-sized corporates — carrying forward three decades of
-                disciplined capital from the Rajasthan Global Securities Group.
+                A lending-focused platform purpose-built for SMEs, MSMEs and mid-sized corporates — carrying forward three decades of disciplined capital from the Rajasthan Global Securities Group.
               </motion.p>
 
-              <motion.div
+              <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-3 bg-[#F27125] hover:bg-[#E8651E] text-black px-8 py-4 rounded-full font-bold text-base transition-colors"
               >
-                <Button size="lg" className="rounded-full">
-                  <ArrowRight className="w-5 h-5" />
-                  Explore solutions
-                </Button>
-              </motion.div>
+                <span className="bg-black text-white p-2 rounded-md flex items-center justify-center">
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+                <span>Explore solutions</span>
+              </motion.button>
             </motion.div>
 
             {/* Right Content - Our Lending Stance */}
@@ -238,7 +230,7 @@ export default function Home() {
             </div>
 
             <h2 className="text-6xl md:text-7xl font-bold mb-12 leading-tight text-black">
-              To be the most <GradientText className="text-6xl md:text-7xl">respected name</GradientText> in Indian lending.
+              To be the most respected name in Indian lending.
             </h2>
 
             {/* Stats Grid */}
@@ -258,10 +250,10 @@ export default function Home() {
               viewport={{ once: true }}
             >
               {[
-                { value: "31.1%", label: "Share of India's GDP" },
-                { value: "48.6%", label: "Share of India's exports" },
-                { value: "38.9 Cr", label: "People employed" },
-                { value: "₹25 L Cr", label: "Formal credit gap" },
+                { value: '31.1%', label: "Share of India's GDP" },
+                { value: '48.6%', label: "Share of India's exports" },
+                { value: '38.9 Cr', label: 'People employed' },
+                { value: '₹25 L Cr', label: 'Formal credit gap' },
               ].map((stat, idx) => (
                 <motion.div
                   key={idx}
@@ -274,9 +266,7 @@ export default function Home() {
                   <div className="text-5xl font-bold text-[#F27125] mb-2 font-mono">
                     {stat.value}
                   </div>
-                  <p className="text-sm text-[var(--text-secondary)]">
-                    {stat.label}
-                  </p>
+                  <p className="text-sm text-[var(--text-secondary)]">{stat.label}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -302,17 +292,14 @@ export default function Home() {
                   hidden: { opacity: 0, y: 20 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                 }}
+                className="bg-white border border-[var(--border-color)] rounded-2xl p-10 hover:border-[#F27125] transition-colors duration-300"
               >
-                <Card className="hover:border-[#F27125] transition-colors">
-                  <CardHeader>
-                    <Badge variant="default">VISION</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <CardTitle className="text-black">
-                      A specialist credit institution for Indian enterprise.
-                    </CardTitle>
-                  </CardContent>
-                </Card>
+                <p className="text-xs font-semibold tracking-widest text-[#F27125] mb-6">
+                  VISION
+                </p>
+                <h3 className="text-2xl font-bold text-black">
+                  A specialist credit institution for Indian enterprise.
+                </h3>
               </motion.div>
 
               <motion.div
@@ -320,17 +307,14 @@ export default function Home() {
                   hidden: { opacity: 0, y: 20 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                 }}
+                className="bg-white border border-[var(--border-color)] rounded-2xl p-10 hover:border-[#F27125] transition-colors duration-300"
               >
-                <Card className="hover:border-[#F27125] transition-colors">
-                  <CardHeader>
-                    <Badge variant="default">MISSION</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <CardTitle className="text-black">
-                      Enduring value through disciplined lending.
-                    </CardTitle>
-                  </CardContent>
-                </Card>
+                <p className="text-xs font-semibold tracking-widest text-[#F27125] mb-6">
+                  MISSION
+                </p>
+                <h3 className="text-2xl font-bold text-black">
+                  Enduring value through disciplined lending.
+                </h3>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -352,13 +336,12 @@ export default function Home() {
                 <h2 className="text-6xl md:text-7xl font-bold leading-tight">
                   Structured Credit,
                   <br />
-                  <GradientText>Built to Scale</GradientText>
+                  <span className="text-[#F27125]">Built to Scale</span>
                 </h2>
               </div>
               <div className="hidden md:block text-right max-w-sm">
                 <p className="text-lg text-black leading-relaxed">
-                  Four highly-focused products. Zero exposure to retail or
-                  unsecured lending.
+                  Four highly-focused products. Zero exposure to retail or unsecured lending.
                 </p>
               </div>
             </div>
@@ -368,31 +351,25 @@ export default function Home() {
               {/* Left Side - Products List */}
               <div className="bg-white">
                 {[
-                  { num: "01", title: "Loan Against Securities", id: "las" },
-                  { num: "02", title: "Receivables Factoring", id: "rf" },
-                  { num: "03", title: "Mortgage-Backed Loans", id: "mbl" },
-                  { num: "04", title: "Structured Credit", id: "sc" },
+                  { num: '01', title: 'Loan Against Securities', id: 'las' },
+                  { num: '02', title: 'Receivables Factoring', id: 'rf' },
+                  { num: '03', title: 'Mortgage-Backed Loans', id: 'mbl' },
+                  { num: '04', title: 'Structured Credit', id: 'sc' },
                 ].map((product, idx) => (
                   <motion.button
                     key={idx}
                     whileHover={{ scale: 1.02 }}
                     className={`w-full text-left p-6 border-b border-[var(--border-color)] transition-all duration-300 flex justify-between items-center ${
-                      idx === 0
-                        ? "bg-black text-white"
-                        : "bg-white text-black hover:bg-gray-50"
+                      idx === 0 ? 'bg-black text-white' : 'bg-white text-black hover:bg-gray-50'
                     }`}
                   >
                     <div>
-                      <p
-                        className={`text-xs font-semibold tracking-widest mb-2 ${idx === 0 ? "text-gray-400" : "text-[var(--text-secondary)]"}`}
-                      >
+                      <p className={`text-xs font-semibold tracking-widest mb-2 ${idx === 0 ? 'text-gray-400' : 'text-[var(--text-secondary)]'}`}>
                         {product.num}
                       </p>
                       <p className="font-bold text-lg">{product.title}</p>
                     </div>
-                    <ArrowRight
-                      className={`w-5 h-5 ${idx === 0 ? "text-[#F27125]" : "text-gray-400"}`}
-                    />
+                    <ArrowRight className={`w-5 h-5 ${idx === 0 ? 'text-[#F27125]' : 'text-gray-400'}`} />
                   </motion.button>
                 ))}
               </div>
@@ -427,22 +404,19 @@ export default function Home() {
 
                   {/* Description */}
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Liquidity backed by listed equity and debt instruments, with
-                    LTVs shaped by thirty years of micro-cap equity knowledge.
+                    Liquidity backed by listed equity and debt instruments, with LTVs shaped by thirty years of micro-cap equity knowledge.
                   </p>
                 </div>
 
                 {/* CTA Button */}
-                <motion.div
+                <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="mt-8 w-fit"
+                  className="mt-8 flex items-center gap-2 text-[#F27125] font-bold hover:gap-3 transition-all"
                 >
-                  <Button variant="link" className="text-[#F27125] font-bold p-0">
-                    Learn more
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </motion.div>
+                  Learn more
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
               </motion.div>
             </div>
           </motion.div>
@@ -483,7 +457,7 @@ export default function Home() {
                   transition={{ duration: 0.8 }}
                   viewport={{ once: true }}
                   className="p-12 md:p-16 flex flex-col justify-between bg-[#1a1a1a]"
-                  style={{ color: "#FFFFFF" }}
+                  style={{ color: '#FFFFFF' }}
                 >
                   {/* Quote */}
                   <div>
@@ -493,10 +467,9 @@ export default function Home() {
                       transition={{ delay: 0.2, duration: 0.6 }}
                       viewport={{ once: true }}
                       className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
-                      style={{ color: "#FFFFFF" }}
+                      style={{ color: '#FFFFFF' }}
                     >
-                      "Return of capital matters more to us than return on
-                      capital."
+                      "Return of capital matters more to us than return on capital."
                     </motion.h3>
 
                     {/* Supporting Text with Orange Accent */}
@@ -507,14 +480,8 @@ export default function Home() {
                       viewport={{ once: true }}
                       className="border-l-4 border-[#F27125] pl-6"
                     >
-                      <p
-                        className="text-base leading-relaxed"
-                        style={{ color: "#F0F0F0" }}
-                      >
-                        We are not reckless lenders — we are conservative in how
-                        we underwrite. But once we've identified a strong
-                        borrower, we are flexible in what we can structure for
-                        them.
+                      <p className="text-base leading-relaxed" style={{ color: '#F0F0F0' }}>
+                        We are not reckless lenders — we are conservative in how we underwrite. But once we've identified a strong borrower, we are flexible in what we can structure for them.
                       </p>
                     </motion.div>
                   </div>
@@ -526,15 +493,8 @@ export default function Home() {
                     transition={{ delay: 0.4, duration: 0.6 }}
                     viewport={{ once: true }}
                   >
-                    <p
-                      className="font-bold text-lg"
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      Mr. Lalit Dua
-                    </p>
-                    <p className="text-sm" style={{ color: "#B0B0B0" }}>
-                      Managing Director, LRSD Capital
-                    </p>
+                    <p className="font-bold text-lg" style={{ color: '#FFFFFF' }}>Mr. Lalit Dua</p>
+                    <p className="text-sm" style={{ color: '#B0B0B0' }}>Managing Director, LRSD Capital</p>
                   </motion.div>
                 </motion.div>
               </div>
@@ -555,15 +515,13 @@ export default function Home() {
             <h2 className="text-6xl md:text-7xl font-bold mb-16 leading-tight">
               Where a bank sees a balance sheet,
               <br />
-              <GradientText>we see the market behind it.</GradientText>
+              <span className="text-[#F27125]">we see the market behind it.</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Traditional Lenders */}
               <div>
-                <h3 className="text-2xl font-bold mb-6 text-black">
-                  Traditional lenders
-                </h3>
+                <h3 className="text-2xl font-bold mb-6 text-black">Traditional lenders</h3>
                 <motion.div
                   className="space-y-4"
                   variants={{
@@ -580,29 +538,23 @@ export default function Home() {
                   viewport={{ once: true }}
                 >
                   {[
-                    "Slow, process-heavy, hard to navigate",
-                    "Assess businesses through a credit lens only",
-                    "Standard rating tables, mechanical haircuts",
-                    "Treats lending as a one-off transaction",
+                    'Slow, process-heavy, hard to navigate',
+                    'Assess businesses through a credit lens only',
+                    'Standard rating tables, mechanical haircuts',
+                    'Treats lending as a one-off transaction',
                   ].map((text, i) => (
                     <motion.div
                       key={i}
                       variants={{
                         hidden: { opacity: 0, y: 10 },
-                        show: {
-                          opacity: 1,
-                          y: 0,
-                          transition: { duration: 0.6 },
-                        },
+                        show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                       }}
                       className="bg-white border border-[var(--border-color)] rounded-xl p-6 flex gap-4"
                     >
                       <div className="w-10 h-10 rounded-full border-2 border-[var(--border-color)] flex items-center justify-center flex-shrink-0 text-[var(--text-secondary)] font-bold text-sm">
                         {i + 1}
                       </div>
-                      <p className="text-[var(--text-secondary)] font-medium pt-2">
-                        {text}
-                      </p>
+                      <p className="text-[var(--text-secondary)] font-medium pt-2">{text}</p>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -610,9 +562,7 @@ export default function Home() {
 
               {/* LRSD Capital */}
               <div>
-                <h3 className="text-2xl font-bold mb-6 text-[#F27125]">
-                  LRSD Capital
-                </h3>
+                <h3 className="text-2xl font-bold mb-6 text-[#F27125]">LRSD Capital</h3>
                 <motion.div
                   className="space-y-4"
                   variants={{
@@ -629,20 +579,16 @@ export default function Home() {
                   viewport={{ once: true }}
                 >
                   {[
-                    "Documentation Day 1, disbursement Day 2 — fast without cutting corners",
-                    "Three decades of SME equity intelligence layered onto credit discipline",
-                    "Corporate and institutional only — no retail, no unsecured lending",
-                    "Credit is one part of a long-term growth partnership",
+                    'Documentation Day 1, disbursement Day 2 — fast without cutting corners',
+                    'Three decades of SME equity intelligence layered onto credit discipline',
+                    'Corporate and institutional only — no retail, no unsecured lending',
+                    'Credit is one part of a long-term growth partnership',
                   ].map((text, i) => (
                     <motion.div
                       key={i}
                       variants={{
                         hidden: { opacity: 0, y: 10 },
-                        show: {
-                          opacity: 1,
-                          y: 0,
-                          transition: { duration: 0.6 },
-                        },
+                        show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                       }}
                       className="bg-[#0F1932] text-white border border-[#D4AF37]/20 rounded-xl p-6 flex gap-4 hover:border-[#D4AF37]/50 transition-colors duration-300"
                     >
@@ -672,7 +618,7 @@ export default function Home() {
             <h2 className="text-6xl md:text-7xl font-bold mb-16 leading-tight">
               Four letters.
               <br />
-              <GradientText>Four commitments.</GradientText>
+              <span className="text-[#F27125]">Four commitments.</span>
             </h2>
 
             {/* Cards Grid - 4 Columns */}
@@ -693,31 +639,31 @@ export default function Home() {
             >
               {[
                 {
-                  letter: "L",
-                  num: "01",
-                  title: "Long-Term Thinking",
-                  desc: "We back businesses, not transactions.",
+                  letter: 'L',
+                  num: '01',
+                  title: 'Long-Term Thinking',
+                  desc: 'We back businesses, not transactions.',
                   isDark: false,
                 },
                 {
-                  letter: "R",
-                  num: "02",
-                  title: "Rigor",
-                  desc: "We go deeper before we go faster.",
+                  letter: 'R',
+                  num: '02',
+                  title: 'Rigor',
+                  desc: 'We go deeper before we go faster.',
                   isDark: false,
                 },
                 {
-                  letter: "S",
-                  num: "03",
-                  title: "Stewardship",
-                  desc: "We are custodians of capital.",
+                  letter: 'S',
+                  num: '03',
+                  title: 'Stewardship',
+                  desc: 'We are custodians of capital.',
                   isDark: false,
                 },
                 {
-                  letter: "D",
-                  num: "04",
-                  title: "Discipline",
-                  desc: "Conservative on capital. Flexible on structure, once we found a strong borrower.",
+                  letter: 'D',
+                  num: '04',
+                  title: 'Discipline',
+                  desc: 'Conservative on capital. Flexible on structure, once we found a strong borrower.',
                   isDark: true,
                 },
               ].map((commit, idx) => (
@@ -728,36 +674,29 @@ export default function Home() {
                     show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                   }}
                   whileHover={{ y: -4 }}
-                >
-                  <Card className={`rounded-3xl transition-all duration-300 ${
+                  className={`rounded-3xl p-8 transition-all duration-300 ${
                     commit.isDark
-                      ? "bg-[#1F2B5C] text-white border-[#1F2B5C]"
-                      : "hover:border-[#F27125]"
-                  }`}>
-                    {/* Number Badge */}
-                    <div className="px-8 pt-8 pb-0">
-                      <Badge variant={commit.isDark ? "secondary" : "default"} className={commit.isDark ? "bg-gray-700 border-gray-600 text-gray-300" : ""}>
-                        {commit.num}
-                      </Badge>
-                    </div>
+                      ? 'bg-[#1F2B5C] text-white'
+                      : 'bg-white border border-gray-200 text-black hover:border-[#F27125]'
+                  }`}
+                >
+                  {/* Number Badge */}
+                  <p className={`text-xs font-semibold tracking-widest mb-4 ${commit.isDark ? 'text-gray-400' : 'text-gray-400'}`}>
+                    {commit.num}
+                  </p>
 
-                    <CardContent className="pt-6">
-                      {/* Letter */}
-                      <div className="text-7xl font-bold text-[#F27125] mb-4 leading-none">
-                        {commit.letter}
-                      </div>
+                  {/* Letter */}
+                  <div className="text-7xl font-bold text-[#F27125] mb-8 leading-none">
+                    {commit.letter}
+                  </div>
 
-                      {/* Content */}
-                      <CardTitle className={`text-xl mb-3 ${commit.isDark ? "text-white" : "text-black"}`}>
-                        {commit.title}
-                      </CardTitle>
-                      <p
-                        className={`text-sm leading-relaxed ${commit.isDark ? "text-gray-300" : "text-gray-600"}`}
-                      >
-                        {commit.desc}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  {/* Content */}
+                  <h3 className={`text-xl font-bold mb-3 ${commit.isDark ? 'text-white' : 'text-black'}`}>
+                    {commit.title}
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${commit.isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                    {commit.desc}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -768,15 +707,11 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              className="bg-[#8B5A2B] text-white rounded-3xl p-12 text-center"
             >
-              <Card className="bg-[#bc5317] text-black border-[#bc5317] p-12">
-                <CardContent className="text-center">
-                  <p className="text-5xl text-black font-bold leading-tight">
-                    "Ambitious and growth-oriented, but our ambition is guided by
-                    discipline."
-                  </p>
-                </CardContent>
-              </Card>
+              <p className="text-5xl font-bold leading-tight">
+                "Ambitious and growth-oriented, but our ambition is guided by discipline."
+              </p>
             </motion.div>
           </motion.div>
         </div>
@@ -794,16 +729,16 @@ export default function Home() {
             <h2 className="text-6xl md:text-7xl font-bold mb-12 leading-tight">
               A measured path to
               <br />
-              institutional <GradientText animate={false}>scale.</GradientText>
+              institutional <span className="text-[#F27125]">scale.</span>
             </h2>
 
             <div className="bg-[#0F1932] text-white rounded-2xl p-12">
               <div className="grid md:grid-cols-4 gap-6 text-center">
                 {[
-                  { year: "2023", title: "Our Credit Record" },
-                  { year: "2024", title: "Proof Points" },
-                  { year: "2025", title: "Our Public" },
-                  { year: "2027", title: "Institutional" },
+                  { year: '2023', title: 'Our Credit Record' },
+                  { year: '2024', title: 'Proof Points' },
+                  { year: '2025', title: 'Our Public' },
+                  { year: '2027', title: 'Institutional' },
                 ].map((milestone, idx) => (
                   <motion.div
                     key={idx}
@@ -837,14 +772,13 @@ export default function Home() {
           <h2 className="text-5xl md:text-6xl font-bold mb-8">
             Let's structure what comes next.
           </h2>
-          <motion.div
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#0F1932] px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200"
           >
-            <Button size="lg" className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#0F1932] font-bold text-lg">
-              Get in touch
-            </Button>
-          </motion.div>
+            Get in touch
+          </motion.button>
         </motion.div>
       </section>
 
@@ -860,21 +794,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 relative z-10">
           {/* CTA Section */}
           <div className="mb-16 bg-gradient-to-r from-[#F27125] to-[#E8651E] rounded-2xl p-10 shadow-2xl">
-            <h3 className="text-3xl font-bold mb-3 text-white">
-              Get Started Today
-            </h3>
-            <p className="text-white/95 mb-8 text-lg">
-              Contact us today to explore how LRSD Securities can help you
-              unlock the potential of your assets.
-            </p>
-            <motion.div
-              whileHover={{ scale: 1.08 }}
+            <h3 className="text-3xl font-bold mb-3 text-white">Get Started Today</h3>
+            <p className="text-white/95 mb-8 text-lg">Contact us today to explore how LRSD Securities can help you unlock the potential of your assets.</p>
+            <motion.button
+              whileHover={{ scale: 1.08, boxShadow: "0 20px 40px rgba(242, 113, 37, 0.4)" }}
               whileTap={{ scale: 0.95 }}
+              className="bg-white hover:bg-gray-100 text-[#F27125] px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg"
             >
-              <Button size="lg" className="bg-white hover:bg-gray-100 text-[#F27125] font-bold text-lg">
-                Contact Us Now
-              </Button>
-            </motion.div>
+              Contact Us Now
+            </motion.button>
           </div>
 
           {/* Main Content Grid */}
@@ -889,9 +817,7 @@ export default function Home() {
                 />
                 <div>
                   <h3 className="font-bold text-lg">LRSD Capital</h3>
-                  <p className="text-white/60 text-xs">
-                    Building capital with conviction
-                  </p>
+                  <p className="text-white/60 text-xs">Building capital with conviction</p>
                 </div>
               </div>
               <p className="text-white/70 text-sm leading-relaxed mb-6">
@@ -899,222 +825,63 @@ export default function Home() {
               </p>
               {/* Social Icons */}
               <div className="flex gap-3">
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="Instagram"
-                >
-                  <Instagram className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="Facebook"
-                >
-                  <Facebook className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="Twitter"
-                >
-                  <Twitter className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="YouTube"
-                >
-                  <Youtube className="w-4 h-4 text-white" />
-                </a>
+                <a href="#" className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors">in</a>
+                <a href="#" className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors">📷</a>
+                <a href="#" className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors">f</a>
+                <a href="#" className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors">𝕏</a>
+                <a href="#" className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors">▶️</a>
               </div>
             </div>
 
             {/* Company Policies */}
             <div>
-              <h4 className="font-bold text-base mb-6 uppercase tracking-wider text-[#F27125] border-b-2 border-[#F27125]/30 pb-3">
-                Company Policies
-              </h4>
+              <h4 className="font-bold text-base mb-6 uppercase tracking-wider text-[#F27125] border-b-2 border-[#F27125]/30 pb-3">Company Policies</h4>
               <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Audit Related
-                    Policies
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Corporate Social
-                    Responsibility
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>IT Policies
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Public Disclosures
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Scale Based
-                    Regulations
-                  </a>
-                </li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Audit Related Policies</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Corporate Social Responsibility</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>IT Policies</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Public Disclosures</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Scale Based Regulations</a></li>
               </ul>
             </div>
 
             {/* Compliance & Support */}
             <div>
-              <h4 className="font-bold text-base mb-6 uppercase tracking-wider text-[#F27125] border-b-2 border-[#F27125]/30 pb-3">
-                Compliance & Support
-              </h4>
+              <h4 className="font-bold text-base mb-6 uppercase tracking-wider text-[#F27125] border-b-2 border-[#F27125]/30 pb-3">Compliance & Support</h4>
               <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>KYC & AML Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Awareness
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Customer Support
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Grievance Redressal
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Mechanism Flowchart
-                  </a>
-                </li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>KYC & AML Policy</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Awareness</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Customer Support</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Grievance Redressal</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Mechanism Flowchart</a></li>
               </ul>
             </div>
 
             {/* Products */}
             <div>
-              <h4 className="font-bold text-base mb-6 uppercase tracking-wider text-[#F27125] border-b-2 border-[#F27125]/30 pb-3">
-                Our Products
-              </h4>
+              <h4 className="font-bold text-base mb-6 uppercase tracking-wider text-[#F27125] border-b-2 border-[#F27125]/30 pb-3">Our Products</h4>
               <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Loan Against
-                    Securities
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Receivables
-                    Factoring
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Mortgage-Backed
-                    Loans
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Structured Lending
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <span className="text-[#F27125]">›</span>Structured Credit
-                  </a>
-                </li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Loan Against Securities</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Receivables Factoring</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Mortgage-Backed Loans</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Structured Lending</a></li>
+                <li><a href="#" className="text-white hover:text-[#F27125] transition-colors text-sm font-medium flex items-center gap-2"><span className="text-[#F27125]">›</span>Structured Credit</a></li>
               </ul>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-bold text-base mb-6 uppercase tracking-wider text-[#F27125] border-b-2 border-[#F27125]/30 pb-3">
-                Contact Information
-              </h4>
+              <h4 className="font-bold text-base mb-6 uppercase tracking-wider text-[#F27125] border-b-2 border-[#F27125]/30 pb-3">Contact Information</h4>
               <div className="space-y-5">
                 <div>
-                  <p className="text-white/60 text-xs font-semibold mb-2 uppercase tracking-wide">
-                    Email
-                  </p>
-                  <a
-                    href="mailto:admin@lrsdindia.com"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-bold"
-                  >
+                  <p className="text-white/60 text-xs font-semibold mb-2 uppercase tracking-wide">Email</p>
+                  <a href="mailto:admin@lrsdindia.com" className="text-white hover:text-[#F27125] transition-colors text-sm font-bold">
                     admin@lrsdindia.com
                   </a>
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs font-semibold mb-2 uppercase tracking-wide">
-                    Call
-                  </p>
-                  <a
-                    href="tel:+919810278244"
-                    className="text-white hover:text-[#F27125] transition-colors text-sm font-bold"
-                  >
+                  <p className="text-white/60 text-xs font-semibold mb-2 uppercase tracking-wide">Call</p>
+                  <a href="tel:+919810278244" className="text-white hover:text-[#F27125] transition-colors text-sm font-bold">
                     +919810278244
                   </a>
                 </div>
@@ -1129,46 +896,20 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Footer Links */}
             <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
-              <a
-                href="#"
-                className="text-[#F27125] hover:text-white transition-colors font-bold"
-              >
-                Contact Us
-              </a>
+              <a href="#" className="text-[#F27125] hover:text-white transition-colors font-bold">Contact Us</a>
               <span className="text-white/40">|</span>
-              <a
-                href="#"
-                className="text-[#F27125] hover:text-white transition-colors font-bold"
-              >
-                Terms & Conditions
-              </a>
+              <a href="#" className="text-[#F27125] hover:text-white transition-colors font-bold">Terms & Conditions</a>
               <span className="text-white/40">|</span>
-              <a
-                href="#"
-                className="text-[#F27125] hover:text-white transition-colors font-bold"
-              >
-                Privacy Policy
-              </a>
+              <a href="#" className="text-[#F27125] hover:text-white transition-colors font-bold">Privacy Policy</a>
               <span className="text-white/40">|</span>
-              <a
-                href="#"
-                className="text-[#F27125] hover:text-white transition-colors font-bold"
-              >
-                Structured Lending
-              </a>
+              <a href="#" className="text-[#F27125] hover:text-white transition-colors font-bold">Structured Lending</a>
               <span className="text-white/40">|</span>
-              <a
-                href="#"
-                className="text-[#F27125] hover:text-white transition-colors font-bold"
-              >
-                Policies
-              </a>
+              <a href="#" className="text-[#F27125] hover:text-white transition-colors font-bold">Policies</a>
             </div>
 
             {/* Copyright */}
             <p className="text-white/70 text-xs text-center md:text-right font-medium">
-              Copyright © 2026 LRSD Securities Private Limited. All rights
-              reserved.
+              Copyright © 2026 LRSD Securities Private Limited. All rights reserved.
             </p>
           </div>
         </div>

@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #0F1932;
+  --navy-light: #1A1F2E;
+  --gold: #D4AF37;
+  --white-warm: #FAFAF8;
+  --gray-neutral: #8B8E96;
+  --text-primary: #0F1932;
+  --text-secondary: #5B5D66;
+  --border-color: #E5E5E0;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F4F0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --navy: #FFFFFF;
+    --navy-light: #F0F0F0;
+    --gold: #D4AF37;
+    --white-warm: #0F1932;
+    --gray-neutral: #999999;
+    --text-primary: #FFFFFF;
+    --text-secondary: #CCCCCC;
+    --border-color: #333333;
+    --bg-primary: #0F1932;
+    --bg-secondary: #1A1F2E;
   }
 }
 
+[data-theme="dark"] {
+  --navy: #FFFFFF;
+  --navy-light: #F0F0F0;
+  --gold: #D4AF37;
+  --white-warm: #0F1932;
+  --gray-neutral: #999999;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --border-color: #333333;
+  --bg-primary: #0F1932;
+  --bg-secondary: #1A1F2E;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--gold);
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
 }

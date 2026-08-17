@@ -2,12 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { GradientText } from '@/components/magic/gradient-text';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const AnimatedWaveBackground = () => {
   return (
@@ -99,25 +94,25 @@ export default function Home() {
             className="h-16 w-auto"
           />
 
-          <nav className="hidden md:flex gap-2">
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              About <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Products <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Grievance <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Reports <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Careers <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
-              Policies <ChevronDown className="w-4 h-4 ml-1" />
-            </Button>
+          <nav className="hidden md:flex gap-8 text-sm text-[var(--text-secondary)]">
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              About <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Products <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Grievance <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Reports <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Careers <ChevronDown className="w-4 h-4" />
+            </button>
+            <button className="flex items-center gap-1 hover:text-[var(--gold)] transition-colors">
+              Policies <ChevronDown className="w-4 h-4" />
+            </button>
             <a
               href="#contact"
               className="hover:text-[var(--gold)] transition-colors"
@@ -126,12 +121,16 @@ export default function Home() {
             </a>
           </nav>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="rounded-full">
-              <ArrowRight className="w-4 h-4" />
-              Start a conversation
-            </Button>
-          </motion.div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#F27125] hover:bg-[#E8651E] text-black px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition-colors"
+          >
+            <span className="bg-black text-white p-1.5 rounded-md flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+            <span>Start a conversation</span>
+          </motion.button>
         </div>
       </header>
 
@@ -188,18 +187,19 @@ export default function Home() {
                 disciplined capital from the Rajasthan Global Securities Group.
               </motion.p>
 
-              <motion.div
+              <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-3 bg-[#F27125] hover:bg-[#E8651E] text-black px-8 py-4 rounded-full font-bold text-base transition-colors"
               >
-                <Button size="lg" className="rounded-full">
-                  <ArrowRight className="w-5 h-5" />
-                  Explore solutions
-                </Button>
-              </motion.div>
+                <span className="bg-black text-white p-2 rounded-md flex items-center justify-center">
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+                <span>Explore solutions</span>
+              </motion.button>
             </motion.div>
 
             {/* Right Content - Our Lending Stance */}
@@ -238,7 +238,7 @@ export default function Home() {
             </div>
 
             <h2 className="text-6xl md:text-7xl font-bold mb-12 leading-tight text-black">
-              To be the most <GradientText className="text-6xl md:text-7xl">respected name</GradientText> in Indian lending.
+              To be the most respected name in Indian lending.
             </h2>
 
             {/* Stats Grid */}
@@ -302,17 +302,14 @@ export default function Home() {
                   hidden: { opacity: 0, y: 20 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                 }}
+                className="bg-white border border-[var(--border-color)] rounded-2xl p-10 hover:border-[#F27125] transition-colors duration-300"
               >
-                <Card className="hover:border-[#F27125] transition-colors">
-                  <CardHeader>
-                    <Badge variant="default">VISION</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <CardTitle className="text-black">
-                      A specialist credit institution for Indian enterprise.
-                    </CardTitle>
-                  </CardContent>
-                </Card>
+                <p className="text-xs font-semibold tracking-widest text-[#F27125] mb-6">
+                  VISION
+                </p>
+                <h3 className="text-2xl font-bold text-black">
+                  A specialist credit institution for Indian enterprise.
+                </h3>
               </motion.div>
 
               <motion.div
@@ -320,17 +317,14 @@ export default function Home() {
                   hidden: { opacity: 0, y: 20 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                 }}
+                className="bg-white border border-[var(--border-color)] rounded-2xl p-10 hover:border-[#F27125] transition-colors duration-300"
               >
-                <Card className="hover:border-[#F27125] transition-colors">
-                  <CardHeader>
-                    <Badge variant="default">MISSION</Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <CardTitle className="text-black">
-                      Enduring value through disciplined lending.
-                    </CardTitle>
-                  </CardContent>
-                </Card>
+                <p className="text-xs font-semibold tracking-widest text-[#F27125] mb-6">
+                  MISSION
+                </p>
+                <h3 className="text-2xl font-bold text-black">
+                  Enduring value through disciplined lending.
+                </h3>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -352,7 +346,7 @@ export default function Home() {
                 <h2 className="text-6xl md:text-7xl font-bold leading-tight">
                   Structured Credit,
                   <br />
-                  <GradientText>Built to Scale</GradientText>
+                  <span className="text-[#F27125]">Built to Scale</span>
                 </h2>
               </div>
               <div className="hidden md:block text-right max-w-sm">
@@ -433,16 +427,14 @@ export default function Home() {
                 </div>
 
                 {/* CTA Button */}
-                <motion.div
+                <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="mt-8 w-fit"
+                  className="mt-8 flex items-center gap-2 text-[#F27125] font-bold hover:gap-3 transition-all"
                 >
-                  <Button variant="link" className="text-[#F27125] font-bold p-0">
-                    Learn more
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </motion.div>
+                  Learn more
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
               </motion.div>
             </div>
           </motion.div>
@@ -555,7 +547,9 @@ export default function Home() {
             <h2 className="text-6xl md:text-7xl font-bold mb-16 leading-tight">
               Where a bank sees a balance sheet,
               <br />
-              <GradientText>we see the market behind it.</GradientText>
+              <span className="text-[#F27125]">
+                we see the market behind it.
+              </span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -672,7 +666,7 @@ export default function Home() {
             <h2 className="text-6xl md:text-7xl font-bold mb-16 leading-tight">
               Four letters.
               <br />
-              <GradientText>Four commitments.</GradientText>
+              <span className="text-[#F27125]">Four commitments.</span>
             </h2>
 
             {/* Cards Grid - 4 Columns */}
@@ -728,36 +722,35 @@ export default function Home() {
                     show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                   }}
                   whileHover={{ y: -4 }}
-                >
-                  <Card className={`rounded-3xl transition-all duration-300 ${
+                  className={`rounded-3xl p-8 transition-all duration-300 ${
                     commit.isDark
-                      ? "bg-[#1F2B5C] text-white border-[#1F2B5C]"
-                      : "hover:border-[#F27125]"
-                  }`}>
-                    {/* Number Badge */}
-                    <div className="px-8 pt-8 pb-0">
-                      <Badge variant={commit.isDark ? "secondary" : "default"} className={commit.isDark ? "bg-gray-700 border-gray-600 text-gray-300" : ""}>
-                        {commit.num}
-                      </Badge>
-                    </div>
+                      ? "bg-[#1F2B5C] text-white"
+                      : "bg-white border border-gray-200 text-black hover:border-[#F27125]"
+                  }`}
+                >
+                  {/* Number Badge */}
+                  <p
+                    className={`text-xs font-semibold tracking-widest mb-4 ${commit.isDark ? "text-gray-400" : "text-gray-400"}`}
+                  >
+                    {commit.num}
+                  </p>
 
-                    <CardContent className="pt-6">
-                      {/* Letter */}
-                      <div className="text-7xl font-bold text-[#F27125] mb-4 leading-none">
-                        {commit.letter}
-                      </div>
+                  {/* Letter */}
+                  <div className="text-7xl font-bold text-[#F27125] mb-8 leading-none">
+                    {commit.letter}
+                  </div>
 
-                      {/* Content */}
-                      <CardTitle className={`text-xl mb-3 ${commit.isDark ? "text-white" : "text-black"}`}>
-                        {commit.title}
-                      </CardTitle>
-                      <p
-                        className={`text-sm leading-relaxed ${commit.isDark ? "text-gray-300" : "text-gray-600"}`}
-                      >
-                        {commit.desc}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  {/* Content */}
+                  <h3
+                    className={`text-xl font-bold mb-3 ${commit.isDark ? "text-white" : "text-black"}`}
+                  >
+                    {commit.title}
+                  </h3>
+                  <p
+                    className={`text-sm leading-relaxed ${commit.isDark ? "text-gray-300" : "text-gray-600"}`}
+                  >
+                    {commit.desc}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -768,15 +761,12 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              className="bg-[#F27125] text-white rounded-3xl p-12 text-center"
             >
-              <Card className="bg-[#bc5317] text-black border-[#bc5317] p-12">
-                <CardContent className="text-center">
-                  <p className="text-5xl text-black font-bold leading-tight">
-                    "Ambitious and growth-oriented, but our ambition is guided by
-                    discipline."
-                  </p>
-                </CardContent>
-              </Card>
+              <p className="text-5xl font-bold leading-tight">
+                "Ambitious and growth-oriented, but our ambition is guided by
+                discipline."
+              </p>
             </motion.div>
           </motion.div>
         </div>
@@ -794,7 +784,7 @@ export default function Home() {
             <h2 className="text-6xl md:text-7xl font-bold mb-12 leading-tight">
               A measured path to
               <br />
-              institutional <GradientText animate={false}>scale.</GradientText>
+              institutional <span className="text-[#F27125]">scale.</span>
             </h2>
 
             <div className="bg-[#0F1932] text-white rounded-2xl p-12">
@@ -837,14 +827,13 @@ export default function Home() {
           <h2 className="text-5xl md:text-6xl font-bold mb-8">
             Let's structure what comes next.
           </h2>
-          <motion.div
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#0F1932] px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200"
           >
-            <Button size="lg" className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#0F1932] font-bold text-lg">
-              Get in touch
-            </Button>
-          </motion.div>
+            Get in touch
+          </motion.button>
         </motion.div>
       </section>
 
@@ -867,14 +856,16 @@ export default function Home() {
               Contact us today to explore how LRSD Securities can help you
               unlock the potential of your assets.
             </p>
-            <motion.div
-              whileHover={{ scale: 1.08 }}
+            <motion.button
+              whileHover={{
+                scale: 1.08,
+                boxShadow: "0 20px 40px rgba(242, 113, 37, 0.4)",
+              }}
               whileTap={{ scale: 0.95 }}
+              className="bg-white hover:bg-gray-100 text-[#F27125] px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg"
             >
-              <Button size="lg" className="bg-white hover:bg-gray-100 text-[#F27125] font-bold text-lg">
-                Contact Us Now
-              </Button>
-            </motion.div>
+              Contact Us Now
+            </motion.button>
           </div>
 
           {/* Main Content Grid */}
@@ -901,38 +892,33 @@ export default function Home() {
               <div className="flex gap-3">
                 <a
                   href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="LinkedIn"
+                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors"
                 >
-                  <Linkedin className="w-4 h-4 text-white" />
+                  in
                 </a>
                 <a
                   href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="Instagram"
+                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors"
                 >
-                  <Instagram className="w-4 h-4 text-white" />
+                  📷
                 </a>
                 <a
                   href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="Facebook"
+                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors"
                 >
-                  <Facebook className="w-4 h-4 text-white" />
+                  f
                 </a>
                 <a
                   href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="Twitter"
+                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors"
                 >
-                  <Twitter className="w-4 h-4 text-white" />
+                  𝕏
                 </a>
                 <a
                   href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="YouTube"
+                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center text-xs font-bold transition-colors"
                 >
-                  <Youtube className="w-4 h-4 text-white" />
+                  ▶️
                 </a>
               </div>
             </div>
