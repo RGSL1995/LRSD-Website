@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Link2, Camera, MessageCircle, Share2, Play } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import { FaFacebook, FaXTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -902,37 +903,30 @@ export default function Home() {
                 <a
                   href="#"
                   className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="LinkedIn"
-                >
-                  <Link2 className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="Instagram"
-                >
-                  <Camera className="w-4 h-4 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
                   title="Facebook"
                 >
-                  <MessageCircle className="w-4 h-4 text-white" />
+                  <FaFacebook className="w-4 h-4 text-white" />
                 </a>
                 <a
                   href="#"
                   className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
                   title="Twitter"
                 >
-                  <Share2 className="w-4 h-4 text-white" />
+                  <FaXTwitter className="w-4 h-4 text-white" />
                 </a>
                 <a
                   href="#"
                   className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
-                  title="YouTube"
+                  title="LinkedIn"
                 >
-                  <Play className="w-4 h-4 text-white" />
+                  <FaLinkedin className="w-4 h-4 text-white" />
+                </a>
+                <a
+                  href="#"
+                  className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
+                  title="Instagram"
+                >
+                  <FaInstagram className="w-4 h-4 text-white" />
                 </a>
               </div>
             </div>
