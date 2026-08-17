@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { ArrowRight, ChevronDown, Link2, Camera, MessageCircle, Share2, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -904,35 +904,35 @@ export default function Home() {
                   className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
                   title="LinkedIn"
                 >
-                  <Linkedin className="w-4 h-4 text-white" />
+                  <Link2 className="w-4 h-4 text-white" />
                 </a>
                 <a
                   href="#"
                   className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
                   title="Instagram"
                 >
-                  <Instagram className="w-4 h-4 text-white" />
+                  <Camera className="w-4 h-4 text-white" />
                 </a>
                 <a
                   href="#"
                   className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
                   title="Facebook"
                 >
-                  <Facebook className="w-4 h-4 text-white" />
+                  <MessageCircle className="w-4 h-4 text-white" />
                 </a>
                 <a
                   href="#"
                   className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
                   title="Twitter"
                 >
-                  <Twitter className="w-4 h-4 text-white" />
+                  <Share2 className="w-4 h-4 text-white" />
                 </a>
                 <a
                   href="#"
                   className="w-9 h-9 bg-white/10 hover:bg-[#F27125] rounded-full flex items-center justify-center transition-colors"
                   title="YouTube"
                 >
-                  <Youtube className="w-4 h-4 text-white" />
+                  <Play className="w-4 h-4 text-white" />
                 </a>
               </div>
             </div>
