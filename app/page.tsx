@@ -889,13 +889,13 @@ export default function Home() {
                   className="h-12 w-auto brightness-0 invert"
                 />
                 <div>
-                  <h3 className="font-bold text-lg">LRSD Capital</h3>
-                  <p className="text-white/60 text-xs">
+                  <h3 className="font-bold text-lg text-white">LRSD Capital</h3>
+                  <p className="text-white text-xs">
                     Building capital with conviction
                   </p>
                 </div>
               </div>
-              <p className="text-white/70 text-sm leading-relaxed mb-6">
+              <p className="text-white text-sm leading-relaxed mb-6">
                 Empowering your financial growth with trust and expertise.
               </p>
               {/* Social Icons */}
