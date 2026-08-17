@@ -101,27 +101,27 @@ export default function Home() {
           />
 
           <nav className="hidden md:flex gap-2">
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
+            <Button variant="ghost" size="sm" className="text-sm text-[var(--text-secondary)] hover:text-[var(--gold)]">
               About <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
+            <Button variant="ghost" size="sm" className="text-sm text-[var(--text-secondary)] hover:text-[var(--gold)]">
               Products <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
+            <Button variant="ghost" size="sm" className="text-sm text-[var(--text-secondary)] hover:text-[var(--gold)]">
               Grievance <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
+            <Button variant="ghost" size="sm" className="text-sm text-[var(--text-secondary)] hover:text-[var(--gold)]">
               Reports <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
+            <Button variant="ghost" size="sm" className="text-sm text-[var(--text-secondary)] hover:text-[var(--gold)]">
               Careers <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
-            <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
+            <Button variant="ghost" size="sm" className="text-sm text-[var(--text-secondary)] hover:text-[var(--gold)]">
               Policies <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
           </nav>
 
-          <Button variant="ghost" size="sm" className="text-[#F27125] hover:text-[#F27125] hover:opacity-80 font-semibold">
+          <Button variant="ghost" size="sm" className="text-sm text-[#F27125] hover:text-[#F27125] hover:opacity-80 font-semibold">
             Contact
           </Button>
 
