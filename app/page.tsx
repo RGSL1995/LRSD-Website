@@ -119,13 +119,11 @@ export default function Home() {
             <Button variant="ghost" size="sm" className="text-[var(--text-secondary)] hover:text-[var(--gold)]">
               Policies <ChevronDown className="w-4 h-4 ml-1" />
             </Button>
-            <a
-              href="#contact"
-              className="hover:text-[var(--gold)] transition-colors"
-            >
-              Contact
-            </a>
           </nav>
+
+          <Button variant="ghost" size="sm" className="text-[#F27125] hover:text-[#F27125] hover:opacity-80 font-semibold">
+            Contact
+          </Button>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button className="rounded-full">
