@@ -798,8 +798,8 @@ export default function Home() {
               institutional <GradientText animate={false}>scale.</GradientText>
             </h2>
 
-            <div className="bg-[#0F1932] text-white rounded-2xl p-12">
-              <div className="grid md:grid-cols-4 gap-6 text-center">
+            <div className="bg-[#1F2B5C] text-white rounded-2xl p-16 border border-[#D4AF37]/20">
+              <div className="grid md:grid-cols-4 gap-8 text-center">
                 {[
                   { year: "2023", title: "Our Credit Record" },
                   { year: "2024", title: "Proof Points" },
@@ -812,12 +812,12 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="border-r border-[#D4AF37]/30 last:border-r-0 pr-6 last:pr-0"
+                    className="border-r border-[#D4AF37]/30 last:border-r-0 pr-8 last:pr-0"
                   >
-                    <p className="text-sm font-semibold text-[#D4AF37] mb-2">
+                    <p className="text-lg font-semibold text-[#D4AF37] mb-3">
                       {milestone.year}
                     </p>
-                    <p className="font-bold">{milestone.title}</p>
+                    <p className="text-lg font-bold text-white">{milestone.title}</p>
                   </motion.div>
                 ))}
               </div>
