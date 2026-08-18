@@ -1,16 +1,24 @@
 @import "tailwindcss";
 
 :root {
+  /* Core palette — matches Figma exactly */
   --navy: #0F1932;
-  --navy-light: #1A1F2E;
+  --navy-light: #1A2347;
   --gold: #D4AF37;
+  --orange: #E8621A;
+  --orange-light: #F27125;
+  --chocolate: #2B1A0E;
+  --chocolate-dark: #1C0F06;
   --white-warm: #FAFAF8;
   --gray-neutral: #8B8E96;
+
+  /* Semantic tokens (always light-mode — matches Figma) */
   --text-primary: #0F1932;
   --text-secondary: #5B5D66;
   --border-color: #E5E5E0;
   --bg-primary: #FFFFFF;
   --bg-secondary: #F5F4F0;
+  --bg-chocolate: #2B1A0E;
 }
 
 @theme inline {
@@ -20,39 +28,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --navy: #FFFFFF;
-    --navy-light: #F0F0F0;
-    --gold: #D4AF37;
-    --white-warm: #0F1932;
-    --gray-neutral: #999999;
-    --text-primary: #FFFFFF;
-    --text-secondary: #CCCCCC;
-    --border-color: #333333;
-    --bg-primary: #0F1932;
-    --bg-secondary: #1A1F2E;
-  }
-}
-
-[data-theme="dark"] {
-  --navy: #FFFFFF;
-  --navy-light: #F0F0F0;
-  --gold: #D4AF37;
-  --white-warm: #0F1932;
-  --gray-neutral: #999999;
-  --text-primary: #FFFFFF;
-  --text-secondary: #CCCCCC;
-  --border-color: #333333;
-  --bg-primary: #0F1932;
-  --bg-secondary: #1A1F2E;
-}
-
+/* Force light mode — Figma design is strictly light */
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -73,4 +53,21 @@ a {
 
 a:hover {
   opacity: 0.8;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ribbon animation for hero */
+@keyframes ribbonFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.5deg); }
+}
+
+/* Stat number counter shimmer */
+@keyframes statShimmer {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
