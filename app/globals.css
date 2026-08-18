@@ -1,58 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  /* Core palette — matches Figma exactly */
+  /* Core Figma Palette */
   --navy: #0F1932;
-  --navy-light: #1A2347;
+  --navy-light: #16203D;
+  --navy-dark: #080E1E;
   --gold: #D4AF37;
   --orange: #E8621A;
   --orange-light: #F27125;
-  --chocolate: #2B1A0E;
-  --chocolate-dark: #1C0F06;
-  --white-warm: #FAFAF8;
-  --gray-neutral: #8B8E96;
-
-  /* Semantic tokens (always light-mode — matches Figma) */
+  --chocolate-gradient-start: #3A1B0E;
+  --chocolate-gradient-end: #1D0A03;
+  --terracotta: #7C3018;
+  --terracotta-dark: #632410;
+  --canvas-warm: #F8F7F4;
+  --canvas-ivory: #FAF9F6;
   --text-primary: #0F1932;
   --text-secondary: #5B5D66;
-  --border-color: #E5E5E0;
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F5F4F0;
-  --bg-chocolate: #2B1A0E;
+  --text-muted: #8E929E;
+  --border-subtle: #E8E7E3;
 }
 
 @theme inline {
-  --color-background: var(--bg-primary);
+  --color-background: var(--canvas-warm);
   --color-foreground: var(--text-primary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Force light mode — Figma design is strictly light */
 body {
-  background: var(--bg-primary);
+  background: #FFFFFF;
   color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.02em;
-  font-weight: 600;
-  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  font-family: var(--font-plus-jakarta), sans-serif;
 }
 
-p {
-  color: var(--text-secondary);
-  line-height: 1.6;
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
-
-a {
-  color: var(--gold);
-  transition: opacity 0.2s ease;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
-
-a:hover {
-  opacity: 0.8;
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0;
 }
 
 /* Smooth scroll */
@@ -60,14 +59,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Ribbon animation for hero */
-@keyframes ribbonFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(0.5deg); }
+/* Shimmer animations */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
 }
 
-/* Stat number counter shimmer */
-@keyframes statShimmer {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+.animate-pulse-subtle {
+  animation: pulseSubtle 6s ease-in-out infinite;
 }
+
