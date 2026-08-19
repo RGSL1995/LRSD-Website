@@ -210,14 +210,9 @@ export default function Navbar() {
                           {item.icon}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-2">
-                            <p className="text-xs font-bold text-[#0F1932] truncate">
-                              {item.title}
-                            </p>
-                            <span className="text-[9px] font-bold text-[#E8621A] bg-[#FAF9F6] px-1.5 py-0.5 rounded border border-gray-200 shrink-0">
-                              {item.badge}
-                            </span>
-                          </div>
+                          <p className="text-xs font-bold text-[#0F1932] truncate">
+                            {item.title}
+                          </p>
                           <p className="text-[11px] text-gray-500 line-clamp-2 mt-0.5 leading-snug">
                             {item.desc}
                           </p>
@@ -286,14 +281,9 @@ export default function Navbar() {
                           {item.icon}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-2">
-                            <p className="text-xs font-bold text-[#0F1932] truncate">
-                              {item.title}
-                            </p>
-                            <span className="text-[9px] font-bold text-[#E8621A] bg-[#FAF9F6] px-1.5 py-0.5 rounded border border-gray-200 shrink-0">
-                              {item.badge}
-                            </span>
-                          </div>
+                          <p className="text-xs font-bold text-[#0F1932] truncate">
+                            {item.title}
+                          </p>
                           <p className="text-[11px] text-gray-500 line-clamp-2 mt-0.5 leading-snug">
                             {item.desc}
                           </p>
