@@ -2,15 +2,236 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronsRight, ChevronRight, ChevronDown, ArrowRight, TrendingUp, Building2, Layers, Award } from 'lucide-react';
-import Navbar, { ActionButton } from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { TorusWireframe, SphereWireframe, GyroWireframe, SilkWaves } from '@/components/SharedWireframes';
+import { FaFacebook, FaXTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 
+/* ─────────────────────────────────────────────
+   3D WIREFRAME SVG GRAPHICS
+───────────────────────────────────────────── */
+const TorusWireframe = ({ className = "w-16 h-16", color = "#D99873" }: { className?: string; color?: string }) => (
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <ellipse cx="50" cy="50" rx="38" ry="24" stroke={color} strokeWidth="1.5" strokeDasharray="3 2" opacity="0.8" />
+    <ellipse cx="50" cy="50" rx="28" ry="16" stroke={color} strokeWidth="1.5" opacity="0.6" />
+    <ellipse cx="50" cy="50" rx="16" ry="8" stroke={color} strokeWidth="1.5" opacity="0.9" />
+    <circle cx="50" cy="50" r="4" fill={color} opacity="0.7" />
+    <path d="M12 50 C12 36 28 26 50 26 C72 26 88 36 88 50" stroke={color} strokeWidth="1" opacity="0.5" />
+    <path d="M12 50 C12 64 28 74 50 74 C72 74 88 64 88 50" stroke={color} strokeWidth="1" opacity="0.5" />
+  </svg>
+);
 
+const SphereWireframe = ({ className = "w-16 h-16", color = "#D99873" }: { className?: string; color?: string }) => (
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <circle cx="50" cy="50" r="38" stroke={color} strokeWidth="1.5" opacity="0.8" />
+    <ellipse cx="50" cy="50" rx="38" ry="18" stroke={color} strokeWidth="1.2" opacity="0.7" />
+    <ellipse cx="50" cy="50" rx="18" ry="38" stroke={color} strokeWidth="1.2" opacity="0.7" />
+  </svg>
+);
 
+const GyroWireframe = ({ className = "w-16 h-16", color = "#D99873" }: { className?: string; color?: string }) => (
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <circle cx="50" cy="50" r="38" stroke={color} strokeWidth="1.2" opacity="0.4" />
+    <ellipse cx="50" cy="50" rx="36" ry="24" transform="rotate(25 50 50)" stroke={color} strokeWidth="1.4" opacity="0.7" />
+    <ellipse cx="50" cy="50" rx="36" ry="24" transform="rotate(-25 50 50)" stroke={color} strokeWidth="1.4" opacity="0.7" />
+    <circle cx="50" cy="50" r="16" stroke={color} strokeWidth="1.5" opacity="0.9" />
+  </svg>
+);
+
+/* ─────────────────────────────────────────────
+   PHOTOREALISTIC SILK SATIN WAVES
+   Matching the exact color, gradient, smooth curve,
+   and fluid breathing movement of the Figma screenshot.
+───────────────────────────────────────────── */
+const SilkWaves = () => {
+  return (
+    <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden select-none z-0">
+      <svg
+        viewBox="0 0 1800 1000"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="absolute top-0 right-0 w-full h-full min-w-[1400px] object-cover"
+        preserveAspectRatio="xMaxYMid slice"
+      >
+        <defs>
+          {/* Main Top Ribbon Gradients */}
+          <linearGradient id="silkGlowMain" x1="100%" y1="10%" x2="0%" y2="85%">
+            <stop offset="0%" stopColor="#8A3816" stopOpacity="0.85" />
+            <stop offset="25%" stopColor="#C45A2C" stopOpacity="0.75" />
+            <stop offset="50%" stopColor="#E28659" stopOpacity="0.5" />
+            <stop offset="75%" stopColor="#F5B898" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#FDF4ED" stopOpacity="0" />
+          </linearGradient>
+
+          <linearGradient id="silkCoreHighlight" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#DE6C37" stopOpacity="0.95" />
+            <stop offset="40%" stopColor="#F08E5C" stopOpacity="0.85" />
+            <stop offset="75%" stopColor="#F8C4A7" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#FFF2EB" stopOpacity="0.05" />
+          </linearGradient>
+
+          {/* Lower Ribbon Gradients */}
+          <linearGradient id="silkLowerGlow" x1="100%" y1="5%" x2="10%" y2="95%">
+            <stop offset="0%" stopColor="#A84C24" stopOpacity="0.8" />
+            <stop offset="35%" stopColor="#D97241" stopOpacity="0.65" />
+            <stop offset="70%" stopColor="#EFA47B" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#FCEDE4" stopOpacity="0" />
+          </linearGradient>
+
+          <linearGradient id="silkAmbientFeather" x1="90%" y1="10%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#E58252" stopOpacity="0.3" />
+            <stop offset="45%" stopColor="#F2B495" stopOpacity="0.2" />
+            <stop offset="85%" stopColor="#FDF0E9" stopOpacity="0.05" />
+            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
+          </linearGradient>
+
+          {/* Precision Gaussian Glow Filters */}
+          <filter id="silkIntenseGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur1" />
+            <feGaussianBlur stdDeviation="12" result="blur2" />
+            <feMerge>
+              <feMergeNode in="blur2" />
+              <feMergeNode in="blur1" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          <filter id="silkFeatherSoft" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="22" />
+          </filter>
+
+          <filter id="silkFeatherMedium" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="10" />
+          </filter>
+
+          <filter id="silkFeatherMicro" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur stdDeviation="2.5" />
+          </filter>
+        </defs>
+
+        {/* ── Layer 1: Ambient Broad Silk Diffusion (Softest Glow) ── */}
+        <motion.path
+          d="M 500,280 C 850,260 1200,80 1800,20 L 1800,220 C 1300,260 900,420 500,420 Z"
+          fill="url(#silkAmbientFeather)"
+          filter="url(#silkFeatherSoft)"
+          animate={{
+            d: [
+              "M 500,280 C 850,260 1200,80 1800,20 L 1800,220 C 1300,260 900,420 500,420 Z",
+              "M 500,300 C 850,290 1200,100 1800,40 L 1800,240 C 1300,280 900,440 500,440 Z",
+              "M 500,280 C 850,260 1200,80 1800,20 L 1800,220 C 1300,260 900,420 500,420 Z",
+            ],
+          }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* ── Layer 2: Main Upper Silk Ribbon Body ── */}
+        <motion.path
+          d="M 650,330 C 950,310 1300,130 1800,50 L 1800,110 C 1350,190 980,360 650,370 Z"
+          fill="url(#silkGlowMain)"
+          filter="url(#silkFeatherMedium)"
+          animate={{
+            d: [
+              "M 650,330 C 950,310 1300,130 1800,50 L 1800,110 C 1350,190 980,360 650,370 Z",
+              "M 650,350 C 950,330 1300,150 1800,70 L 1800,130 C 1350,210 980,380 650,390 Z",
+              "M 650,330 C 950,310 1300,130 1800,50 L 1800,110 C 1350,190 980,360 650,370 Z",
+            ],
+          }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* ── Layer 3: Main Upper Silk Sharp Luminous Core Spine ── */}
+        <motion.path
+          d="M 680,340 C 980,320 1320,140 1800,65 L 1800,85 C 1340,160 990,335 680,355 Z"
+          fill="url(#silkCoreHighlight)"
+          filter="url(#silkIntenseGlow)"
+          animate={{
+            d: [
+              "M 680,340 C 980,320 1320,140 1800,65 L 1800,85 C 1340,160 990,335 680,355 Z",
+              "M 680,360 C 980,340 1320,160 1800,85 L 1800,105 C 1340,180 990,355 680,375 Z",
+              "M 680,340 C 980,320 1320,140 1800,65 L 1800,85 C 1340,160 990,335 680,355 Z",
+            ],
+          }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* ── Layer 4: Lower Flowing Silk Wave (Medium Diffusion) ── */}
+        <motion.path
+          d="M 800,580 C 1150,560 1480,480 1800,420 L 1800,490 C 1450,550 1150,625 800,640 Z"
+          fill="url(#silkLowerGlow)"
+          filter="url(#silkFeatherMedium)"
+          animate={{
+            d: [
+              "M 800,580 C 1150,560 1480,480 1800,420 L 1800,490 C 1450,550 1150,625 800,640 Z",
+              "M 800,560 C 1150,540 1480,460 1800,400 L 1800,470 C 1450,530 1150,605 800,620 Z",
+              "M 800,580 C 1150,560 1480,480 1800,420 L 1800,490 C 1450,550 1150,625 800,640 Z",
+            ],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+        />
+
+        {/* ── Layer 5: Lower Silk Luminous Core Spine ── */}
+        <motion.path
+          d="M 830,590 C 1170,570 1500,490 1800,435 L 1800,455 C 1490,510 1170,585 830,605 Z"
+          fill="url(#silkCoreHighlight)"
+          filter="url(#silkIntenseGlow)"
+          animate={{
+            d: [
+              "M 830,590 C 1170,570 1500,490 1800,435 L 1800,455 C 1490,510 1170,585 830,605 Z",
+              "M 830,570 C 1170,550 1500,470 1800,415 L 1800,435 C 1490,490 1170,565 830,585 Z",
+              "M 830,590 C 1170,570 1500,490 1800,435 L 1800,455 C 1490,510 1170,585 830,605 Z",
+            ],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+        />
+
+        {/* ── Layer 6: Extra Soft Background Wave Feather ── */}
+        <motion.path
+          d="M 900,530 C 1250,510 1550,440 1800,380 L 1800,560 C 1500,620 1200,680 900,700 Z"
+          fill="url(#silkAmbientFeather)"
+          filter="url(#silkFeatherSoft)"
+          animate={{
+            d: [
+              "M 900,530 C 1250,510 1550,440 1800,380 L 1800,560 C 1500,620 1200,680 900,700 Z",
+              "M 900,550 C 1250,530 1550,460 1800,400 L 1800,580 C 1500,640 1200,700 900,720 Z",
+              "M 900,530 C 1250,510 1550,440 1800,380 L 1800,560 C 1500,620 1200,680 900,700 Z",
+            ],
+          }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+        />
+      </svg>
+    </div>
+  );
+};
+
+/* ─────────────────────────────────────────────
+   EXACT FIGMA ACTION BUTTON COMPONENT
+   Dark rounded box with vibrant orange double-chevron badge
+───────────────────────────────────────────── */
+const ActionButton = ({
+  label,
+  href = '#',
+  className = '',
+}: {
+  label: string;
+  href?: string;
+  className?: string;
+}) => {
+  return (
+    <motion.a
+      href={href}
+      whileHover={{ scale: 1.03, y: -1 }}
+      whileTap={{ scale: 0.97 }}
+      className={`inline-flex items-center gap-3 bg-[#1C1E22] hover:bg-[#15171A] text-white pl-2.5 pr-6 py-2.5 rounded-xl shadow-lg shadow-black/15 transition-all group ${className}`}
+    >
+      {/* Orange Squircle with White Double Chevron */}
+      <div className="w-8 h-8 rounded-lg bg-[#E8621A] group-hover:bg-[#F27125] flex items-center justify-center text-white shadow-sm transition-colors shrink-0">
+        <ChevronsRight className="w-4 h-4 text-white stroke-[2.5]" />
+      </div>
+      <span className="text-xs md:text-sm font-semibold tracking-normal text-white">
+        {label}
+      </span>
+    </motion.a>
+  );
+};
 
 
 /* ─────────────────────────────────────────────
@@ -22,7 +243,7 @@ const PRODUCTS = [
     title: 'Loan Against Securities',
     tag: 'FLAGSHIP · LAS',
     badge: '01 / LAS LIQUIDITY',
-    desc: 'Most lenders size an SME facility by how fast they could sell the pledge. On a stock that trades thinly, that arithmetic returns nothing — and a profitable company gets declined for a reason that has nothing to do with its ability to repay. We underwrite the business instead: earnings, sector, promoter, trajectory. The volume tells us how to structure the facility. It does not decide whether we do it.',
+    desc: 'Liquidity backed by listed equity and debt instruments, with LTVs shaped by thirty years of micro-cap equity knowledge.',
     features: ['Loan-to-Value: Up to 65%', 'Turnaround: 48 Hours', 'Structure: Bullet / EMI'],
   },
   {
@@ -30,15 +251,15 @@ const PRODUCTS = [
     title: 'Receivables Factoring',
     tag: 'PRODUCT · RF',
     badge: '02 / CASH FLOW FINANCING',
-    desc: 'Unlocking cash trapped in 60–180 day payment cycles — improving ROCE, RONW and cash flow.',
+    desc: 'Convert outstanding enterprise receivables into immediate working capital. Fast, transparent, and structured for growing companies.',
     features: ['Recourse & Non-Recourse', 'Disbursement: Day 2', 'Invoice Coverage: Up to 90%'],
   },
   {
     num: '03',
-    title: 'Mortgage-Backed Loans ',
+    title: 'Real Estate Structured Debt',
     tag: 'PRODUCT · RESD',
     badge: '03 / SECURED REAL ESTATE',
-    desc: 'We underwrite the cash-flow waterfall, not just the collateral value. Last-mile developer credit from ₹5 crore to ₹200 crore — drawdowns released against construction milestones, receipts escrowed, and repayment structured around when the project actually generates cash.',
+    desc: 'Structured credit against commercial and high-grade residential assets, underwritten with rigorous collateral and cash flow appraisal.',
     features: ['Security: 1.5x–2.0x Cover', 'Tenure: 12–36 Months', 'Flexible Moratorium'],
   },
   {
@@ -46,7 +267,7 @@ const PRODUCTS = [
     title: 'Structured Credit',
     tag: 'BESPOKE · SC',
     badge: '04 / BESPOKE STRUCTURE',
-    desc: 'Mezzanine debt, convertible instruments, pre-IPO bridge capital and event-driven financing.',
+    desc: 'Custom credit solutions designed around your capital needs — no off-the-shelf products, only bespoke structures with deep risk calibration.',
     features: ['Turnaround: 7–14 Days', 'Security: 100% Asset-Backed', 'Structure: Tailored Amortization'],
   },
 ];
@@ -62,7 +283,45 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════════
           NAVIGATION HEADER
       ══════════════════════════════════════════════════════════ */}
-      <Navbar />
+      <header className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md transition-all">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-2">
+            <img
+              src="/LRSD-logo-removebg-preview.png"
+              alt="LRSD Capital"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+          </a>
+
+          {/* Navigation Links with Dropdown Indicators */}
+          <nav className="hidden lg:flex items-center gap-7">
+            {[
+              { label: "About", hasDropdown: true },
+              { label: "Products", hasDropdown: true },
+              { label: "Grievance", hasDropdown: true },
+              { label: "Reports", hasDropdown: true },
+              { label: "Careers", hasDropdown: true },
+              { label: "Policies", hasDropdown: true },
+              { label: "Contact", hasDropdown: false },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={`#${item.label.toLowerCase()}`}
+                className="inline-flex items-center gap-1 text-xs font-semibold text-gray-700 hover:text-[#0F1932] tracking-wide transition-colors group"
+              >
+                <span>{item.label}</span>
+                {item.hasDropdown && (
+                  <ChevronDown className="w-3 h-3 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                )}
+              </a>
+            ))}
+          </nav>
+
+          {/* Top Right Button */}
+          <ActionButton label="Start a conversation" href="#contact" />
+        </div>
+      </header>
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 1: HERO
@@ -111,7 +370,7 @@ export default function Home() {
               className="flex justify-start lg:justify-end"
             >
               <div className="border-l border-gray-200/80 pl-6 py-2 max-w-xs">
-                <p className="text-[15px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-3">
+                <p className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-3">
                   OUR LENDING STANCE
                 </p>
                 <p className="text-xs sm:text-sm font-semibold text-gray-800 leading-relaxed">
@@ -247,21 +506,22 @@ export default function Home() {
           <div className="inline-flex items-center gap-2 mb-8">
             <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
             <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
-              Focused Solutions
+              02 / Solutions
             </p>
           </div>
 
           {/* Header */}
           <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 items-start mb-14">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] text-[#0F1932]">
-              Structured Credit, Built to Scale 
+              Structured Credit.
               <br />
               <span className="text-[#E8621A]">Built to Scale</span>
             </h2>
             <div className="lg:pt-2">
               <div className="w-8 h-0.5 bg-[#E8621A] mb-3" />
               <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
-                “Four highly-focused products. Zero exposure to retail or unsecured lending.”
+                Four highly-focused products. Zero exposure to retail or
+                unsecured lending.
               </p>
             </div>
           </div>
@@ -431,12 +691,11 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 5: MARKET PERSPECTIVE / COMPARISON (COMMENTED OUT)
+          SECTION 5: MARKET PERSPECTIVE / COMPARISON
       ══════════════════════════════════════════════════════════ */}
-      {/*
       <section className="py-24 md:py-32 px-6 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          // Badge
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 mb-8">
             <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
             <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
@@ -444,15 +703,15 @@ export default function Home() {
             </p>
           </div>
 
-          // Headline
+          {/* Headline */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.08] text-[#0F1932] mb-16 max-w-3xl">
             Where a bank sees a balance sheet,{" "}
             <span className="text-[#E8621A]">we see the market behind it.</span>
           </h2>
 
-          // Comparison Two Columns
+          {/* Comparison Two Columns */}
           <div className="grid md:grid-cols-2 gap-8 items-start">
-            // Left Column: Traditional Lenders
+            {/* Left Column: Traditional Lenders */}
             <div>
               <p className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-5">
                 Traditional Lenders
@@ -479,7 +738,7 @@ export default function Home() {
               </div>
             </div>
 
-            // Right Column: LRSD Capital
+            {/* Right Column: LRSD Capital */}
             <div>
               <p className="text-xs font-bold tracking-widest text-[#E8621A] uppercase mb-5">
                 LRSD Capital
@@ -508,12 +767,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      */}
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 6: FOUR COMMITMENTS (L R S D)
       ══════════════════════════════════════════════════════════ */}
-      <section id="dna" className="py-24 md:py-32 px-6 md:px-8 bg-[#FAF9F6]">
+      <section className="py-24 md:py-32 px-6 md:px-8 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 mb-8">
@@ -536,29 +794,29 @@ export default function Home() {
               {
                 letter: "L",
                 num: "01",
-                title: "Long Term Thinking",
-                desc: "We back businesses, not transactions.",
+                title: "Liquidity with Integrity",
+                desc: "We back businesses with long-term perspective, not quick transactions.",
                 dark: false,
               },
               {
                 letter: "R",
                 num: "02",
-                title: "Rigor",
-                desc: "We go deeper before we go faster.",
+                title: "Rigor in Underwriting",
+                desc: "Deep domain analysis before credit deployment. We go deeper before we go faster.",
                 dark: false,
               },
               {
                 letter: "S",
                 num: "03",
-                title: "Stewardship",
-                desc: "We are Custodians before we are capital providers.",
+                title: "Stewardship of Capital",
+                desc: "Custodians of institutional trust with three decades of group legacy.",
                 dark: false,
               },
               {
                 letter: "D",
                 num: "04",
-                title: "Discipline",
-                desc: "Conservative on capital, flexible on structure once we've found a strong borrowe.",
+                title: "Disciplined Execution",
+                desc: "Conservative on capital risk, flexible on structure for proven borrowers.",
                 dark: true,
               },
             ].map((card, i) => (
@@ -635,7 +893,6 @@ export default function Home() {
           SECTION 7: INSTITUTIONAL SCALE ROADMAP (Deep Navy)
       ══════════════════════════════════════════════════════════ */}
       <section
-        id="roadmap"
         className="py-24 md:py-32 px-6 md:px-8 text-white relative overflow-hidden"
         style={{
           background:
@@ -870,7 +1127,167 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <Footer />
+      <footer className="bg-[#0F1932] text-white border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-14">
+            {/* Column 1: Brand */}
+            <div className="md:col-span-1">
+              <img
+                src="/LRSD-logo-removebg-preview.png"
+                alt="LRSD Capital"
+                className="h-10 w-auto brightness-0 invert mb-5"
+              />
+              <p className="text-xs text-gray-400 leading-relaxed mb-6">
+                Specialist credit institution for Indian enterprises. Three
+                decades of capital conviction.
+              </p>
+              <div className="flex gap-2.5">
+                {[
+                  {
+                    icon: <FaLinkedin className="w-3.5 h-3.5" />,
+                    label: "LinkedIn",
+                  },
+                  {
+                    icon: <FaXTwitter className="w-3.5 h-3.5" />,
+                    label: "Twitter",
+                  },
+                  {
+                    icon: <FaFacebook className="w-3.5 h-3.5" />,
+                    label: "Facebook",
+                  },
+                  {
+                    icon: <FaInstagram className="w-3.5 h-3.5" />,
+                    label: "Instagram",
+                  },
+                ].map(({ icon, label }) => (
+                  <a
+                    key={label}
+                    href="#"
+                    aria-label={label}
+                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#E8621A] flex items-center justify-center text-white transition-colors"
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Column 2: Governance */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8621A] mb-4">
+                Governance
+              </h4>
+              <ul className="space-y-2.5 text-xs text-gray-400">
+                {[
+                  "Audit Related Policies",
+                  "CSR Policy",
+                  "IT & Cyber Security",
+                  "Public Disclosures",
+                  "Scale Based Regulation",
+                ].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Compliance */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8621A] mb-4">
+                Compliance
+              </h4>
+              <ul className="space-y-2.5 text-xs text-gray-400">
+                {[
+                  "KYC & AML Policy",
+                  "Fair Practices Code",
+                  "Customer Support",
+                  "Grievance Redressal",
+                  "Mechanism Flowchart",
+                ].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 4: Solutions */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8621A] mb-4">
+                Solutions
+              </h4>
+              <ul className="space-y-2.5 text-xs text-gray-400">
+                {[
+                  "Loan Against Securities",
+                  "Receivables Factoring",
+                  "Real Estate Structured Debt",
+                  "Promoter Financing",
+                ].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 5: Contact */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8621A] mb-4">
+                Contact Desk
+              </h4>
+              <div className="space-y-3 text-xs">
+                <div>
+                  <p className="text-gray-500 uppercase text-[10px] tracking-wider mb-0.5">
+                    Email
+                  </p>
+                  <a
+                    href="mailto:admin@lrsdindia.com"
+                    className="text-white hover:text-[#E8621A] font-medium transition-colors"
+                  >
+                    admin@lrsdindia.com
+                  </a>
+                </div>
+                <div>
+                  <p className="text-gray-500 uppercase text-[10px] tracking-wider mb-0.5">
+                    Direct Line
+                  </p>
+                  <a
+                    href="tel:+919810278244"
+                    className="text-white hover:text-[#E8621A] font-medium transition-colors"
+                  >
+                    +91 98102 78244
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <div className="flex flex-wrap gap-4">
+              <a href="#" className="hover:text-gray-300">
+                Privacy Policy
+              </a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-300">
+                Terms of Use
+              </a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-300">
+                Statutory Disclosures
+              </a>
+            </div>
+            <p>© 2026 LRSD Securities Private Limited. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
