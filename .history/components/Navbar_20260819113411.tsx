@@ -87,21 +87,21 @@ export default function Navbar() {
       desc: "Secured credit for India's emerging listed companies backed by Rajasthan Global legacy.",
       href: "/about/lrsd-capital",
       icon: <Building2 className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "Group Legacy"
+      badge: "Group Legacy"
     },
     {
       title: "LRSD Edge",
       desc: "7–14 day turnaround, market intelligence & cash flow structuring.",
       href: "/about/edge",
       icon: <Zap className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "Advantage"
+      badge: "Advantage"
     },
     {
       title: "Leadership & Board",
       desc: "Institutional stewardship, executive leadership & governance framework.",
       href: "/about/leadership",
       icon: <Users className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "Governance"
+      badge: "Governance"
     }
   ];
 
@@ -111,28 +111,28 @@ export default function Navbar() {
       desc: "Promoter liquidity & growth capital underwritten on company fundamentals.",
       href: "/products/loan-against-shares",
       icon: <TrendingUp className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "Up to 65% LTV"
+      badge: "Up to 65% LTV"
     },
     {
       title: "Receivables Discounting / Factoring",
       desc: "Unlock cash trapped in 60–180 day corporate invoice payment cycles.",
       href: "/products/receivables-discounting",
       icon: <Layers className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "Day 2 Liquidity"
+      badge: "Day 2 Liquidity"
     },
     {
       title: "Mortgage-Backed Loans",
       desc: "Milestone-linked developer debt & asset-backed structured loans.",
       href: "/products/mortgage-backed-loans",
       icon: <ShieldCheck className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "1.5x–2.0x Cover"
+      badge: "1.5x–2.0x Cover"
     },
     {
       title: "Structured Credit Solutions",
       desc: "Mezzanine debt, convertible notes, pre-IPO bridges & tailored amortizations.",
       href: "/products/structured-credit",
       icon: <Award className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "Bespoke"
+      badge: "Bespoke"
     }
   ];
 

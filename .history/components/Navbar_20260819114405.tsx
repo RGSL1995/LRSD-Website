@@ -132,7 +132,7 @@ export default function Navbar() {
       desc: "Mezzanine debt, convertible notes, pre-IPO bridges & tailored amortizations.",
       href: "/products/structured-credit",
       icon: <Award className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "Bespoke"
+      badge: "Bespoke"
     }
   ];
 
