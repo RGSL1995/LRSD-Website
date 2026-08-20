@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import Navbar, { ActionButton } from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TorusWireframe, SphereWireframe, GyroWireframe, SilkWaves } from '@/components/SharedWireframes';
-import { Building2, ShieldCheck, TrendingUp, Award, ArrowRight, CheckCircle2, Landmark } from 'lucide-react';
+import { Building2, ShieldCheck, TrendingUp, Award, ArrowRight, CheckCircle2, Landmark, Coins, Scale, Sparkles } from 'lucide-react';
 
 export default function AboutLRSDCapitalPage() {
   return (
@@ -33,7 +33,7 @@ export default function AboutLRSDCapitalPage() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-normal mb-8 max-w-2xl">
-                We are a secured lender to India&apos;s emerging listed companies, their promoters, and their supply chains — underwritten with three decades of equity intelligence.
+                We are a secured lender to India&apos;s emerging listed and pre-IPO companies, their promoters, and their supply chains — underwritten with what the Rajasthan Global Securities Group has learned about these companies since 2002.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -53,25 +53,25 @@ export default function AboutLRSDCapitalPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-[#0F1932] text-white p-8 rounded-3xl shadow-xl relative overflow-hidden"
+              className="bg-[#0F1932] text-white p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden"
             >
               <div className="flex justify-between items-center mb-6">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#E8621A]">
-                  Market Thesis
+                  Institutional Standing
                 </span>
                 <TorusWireframe className="w-10 h-10" color="#E8621A" />
               </div>
-              <p className="text-sm text-gray-200 leading-relaxed mb-6">
-                When traditional banks look only at credit rating stamps and mechanical LTVs, they decline fundamentally sound, high-margin businesses. We underwrite what others cannot evaluate.
+              <p className="text-sm text-gray-200 leading-relaxed mb-8">
+                When traditional banks decline for want of a rating and large NBFCs decline for want of ticket size, LRSD Capital delivers structured, secured capital with 24 years of zero borrowed debt.
               </p>
-              <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-4">
+              <div className="pt-6 border-t border-white/10 grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-2xl font-extrabold text-white">1,200+</p>
-                  <p className="text-[11px] text-gray-400">SME Listed Firms</p>
+                  <p className="text-2xl sm:text-3xl font-extrabold text-white">₹3,500 Cr</p>
+                  <p className="text-[11px] text-gray-400 mt-0.5">Group Net Worth (Market Value)</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-extrabold text-[#E8621A]">Since 2002</p>
-                  <p className="text-[11px] text-gray-400">Group Pedigree</p>
+                  <p className="text-2xl sm:text-3xl font-extrabold text-[#E8621A]">24 Years</p>
+                  <p className="text-[11px] text-gray-400 mt-0.5">Retained Capital Legacy</p>
                 </div>
               </div>
             </motion.div>
@@ -79,7 +79,7 @@ export default function AboutLRSDCapitalPage() {
         </div>
       </section>
 
-      {/* The Market Gap Section (Exact Prompt Copy) */}
+      {/* The Market Gap Section */}
       <section className="py-24 md:py-32 px-6 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
@@ -88,21 +88,21 @@ export default function AboutLRSDCapitalPage() {
                 <div className="inline-flex items-center gap-2 mb-4">
                   <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
                   <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
-                    The Reality of Indian SME Debt
+                    The Problem We Solve
                   </p>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1932] tracking-tight leading-tight mb-6">
-                  Where banks see an unrated risk, we see a viable enterprise.
+                  Where traditional credit models fail emerging enterprises.
                 </h2>
                 <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                  Neither decision to decline an SME credit facility has anything to do with whether the company can repay. It is an artifact of standardized formulas.
+                  Neither decision to decline an SME credit facility has anything to do with whether the business can repay. It is an artifact of rigid formulas and mechanical box-checking.
                 </p>
                 <div className="p-6 rounded-2xl bg-[#FAF9F6] border border-gray-200">
                   <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
-                    Our Core Mandate
+                    Our Direct Mandate
                   </p>
                   <p className="text-xs font-semibold text-[#0F1932] leading-relaxed">
-                    100% Secured Lending. Ticket sizes ₹1 Cr – ₹100 Cr. Zero retail exposure.
+                    100% Secured Lending • ₹1 Cr to ₹100 Cr off our balance sheet • ₹200 Cr Developer Credit • Zero Retail Exposure.
                   </p>
                 </div>
               </div>
@@ -110,19 +110,21 @@ export default function AboutLRSDCapitalPage() {
 
             <div className="lg:col-span-8 space-y-8">
               {/* Highlighted Manifesto Box */}
-              <div className="bg-[#FAF9F6] border-l-4 border-[#E8621A] p-8 sm:p-10 rounded-2xl shadow-sm">
-                <p className="text-base sm:text-lg md:text-xl text-[#0F1932] leading-relaxed font-medium mb-6">
+              <div className="bg-[#FAF9F6] border-l-4 border-[#E8621A] p-8 sm:p-10 rounded-2xl shadow-sm space-y-6">
+                <p className="text-base sm:text-lg md:text-xl text-[#0F1932] leading-relaxed font-normal">
                   India now has more than <strong className="font-extrabold text-[#0F1932]">1,200 companies listed on its SME exchanges</strong>, and several hundred more small-caps on the mainboard. Almost none of them carry a credit rating. Most trade thinly. Their promoters&apos; wealth sits entirely in their own stock.
                 </p>
-                <p className="text-base sm:text-lg md:text-xl text-[#0F1932] leading-relaxed font-medium mb-6">
-                  When one of these companies needs credit, <span className="text-[#E8621A] font-semibold">a bank declines for want of a rating</span> and a large NBFC declines for want of ticket size — and neither decision has anything to do with whether the business can repay.
+                <p className="text-base sm:text-lg md:text-xl text-[#0F1932] leading-relaxed font-normal">
+                  When one of these companies needs credit, <span className="text-[#E8621A] font-bold">a bank declines for want of a rating</span> and <span className="text-[#E8621A] font-bold">a large NBFC declines for want of ticket size</span> — and neither decision has anything to do with whether the business can repay.
                 </p>
-                <p className="text-base sm:text-lg md:text-xl text-[#0F1932] leading-relaxed font-bold">
-                  LRSD Capital was built for that gap. We are a secured lender to India&apos;s emerging listed companies, their promoters and their supply chains, underwritten with what the Rajasthan Global Securities Group has learned about these companies since 2002.
-                </p>
+                <div className="pt-4 border-t border-gray-200/80">
+                  <p className="text-base sm:text-lg md:text-xl text-[#0F1932] leading-relaxed font-semibold">
+                    LRSD Capital was built for that gap. We are a secured lender to India&apos;s emerging listed and pre-IPO companies, their promoters and their supply chains, underwritten with what the Rajasthan Global Securities Group has learned about these companies since 2002.
+                  </p>
+                </div>
               </div>
 
-              {/* 3 Pillars of Underwriting */}
+              {/* 3 Pillars of Solution */}
               <div className="grid sm:grid-cols-3 gap-6 pt-4">
                 <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
                   <div className="w-10 h-10 rounded-xl bg-[#FAF9F6] border border-gray-200 flex items-center justify-center mb-4 text-[#E8621A]">
@@ -132,7 +134,7 @@ export default function AboutLRSDCapitalPage() {
                     Collateralized Security
                   </h3>
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    First charge on equity shares, commercial receivables, or prime real estate with rigorous margin monitoring.
+                    First charge on equity shares, commercial receivables, or real estate with active risk surveillance.
                   </p>
                 </div>
 
@@ -141,10 +143,10 @@ export default function AboutLRSDCapitalPage() {
                     <TrendingUp className="w-5 h-5" />
                   </div>
                   <h3 className="font-bold text-sm text-[#0F1932] mb-2">
-                    Cash Flow Waterfall
+                    Cash Flow Structuring
                   </h3>
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    Amortization and escrow structures tailored precisely to when operating revenues and orders realize.
+                    Disbursements against milestones and repayments mapped precisely to real business receipts.
                   </p>
                 </div>
 
@@ -153,10 +155,10 @@ export default function AboutLRSDCapitalPage() {
                     <Award className="w-5 h-5" />
                   </div>
                   <h3 className="font-bold text-sm text-[#0F1932] mb-2">
-                    7–14 Day Velocity
+                    Zero Write-Off Record
                   </h3>
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    Underwriting by the investment committee without the 60-day bureaucratic lag of traditional banking.
+                    Proven discipline across 24 years through every market and macroeconomic credit cycle.
                   </p>
                 </div>
               </div>
@@ -165,7 +167,7 @@ export default function AboutLRSDCapitalPage() {
         </div>
       </section>
 
-      {/* The Ground Behind Us — Group Legacy */}
+      {/* The Ground Behind Us — Rajasthan Global Securities Group */}
       <section
         className="py-24 md:py-32 px-6 md:px-8 text-white relative overflow-hidden"
         style={{
@@ -180,42 +182,67 @@ export default function AboutLRSDCapitalPage() {
             </span>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white mb-6">
+          <div className="grid lg:grid-cols-12 gap-12 items-start mb-16">
+            <div className="lg:col-span-7 space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white">
                 Rajasthan Global Securities Group
               </h2>
-              <p className="text-base text-white/80 leading-relaxed mb-6">
-                Founded in 2002, the Rajasthan Global Securities Group has spent over two decades identifying, researching, and backing India&apos;s micro, small, and mid-cap corporate landscape.
+              <div className="w-12 h-1 bg-[#E8621A] rounded-full" />
+              
+              <p className="text-xl sm:text-2xl font-bold text-[#E8621A] leading-snug">
+                Twenty-four years of capital that was never borrowed.
               </p>
-              <p className="text-sm text-white/70 leading-relaxed mb-6">
-                That deep reservoir of proprietary market knowledge — understanding promoter track records, cyclical sector dynamics, and balance sheet integrity — forms the foundational bedrock of every credit facility structured by LRSD Capital.
-              </p>
+
+              <div className="space-y-4 text-sm sm:text-base text-white/80 leading-relaxed font-normal">
+                <p>
+                  Rajasthan Global Securities Private Limited was founded in 2002 by <strong className="text-white font-semibold">Mr. Lalit Dua</strong> with equity capital of ₹29.57 lakh. It is today an RBI-registered Middle Layer NBFC and Investment & Credit Company, with a net worth of approximately <strong className="text-white font-semibold">₹3,500 crore at market value</strong>.
+                </p>
+                <p>
+                  That net worth was built entirely from retained earnings. <strong className="text-white font-semibold">No external equity. No borrowings. No public deposits. No marketing.</strong> Every rupee the Group lends is a rupee it earned and chose not to distribute.
+                </p>
+                <p>
+                  Across those twenty-four years the Group became one of India&apos;s most active anchor investors in public issues, and deployed direct growth capital into hundreds of Indian companies — including approximately <strong className="text-white font-semibold">₹1,114 crore into SME and mid-cap issuers</strong>, and approximately <strong className="text-white font-semibold">₹405 crore into the qualified institutional placements of twelve public-sector banks</strong>.
+                </p>
+                <p className="text-white font-medium pt-2 border-t border-white/10">
+                  LRSD Capital is the Group&apos;s lending arm. It carries forward that balance sheet, that credit discipline, and — more valuable than either — that knowledge of the companies it lends to.
+                </p>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-center">
-                <p className="text-4xl font-extrabold text-[#E8621A] mb-2">2002</p>
-                <p className="text-xs font-semibold text-white/90 uppercase tracking-wider">Group Foundation</p>
-                <p className="text-[11px] text-white/60 mt-1">20+ years of Indian market history</p>
+            {/* 4 Stat Cards */}
+            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 sm:p-7 rounded-2xl text-center flex flex-col justify-center">
+                <p className="text-3xl sm:text-4xl font-extrabold text-[#E8621A] mb-1">₹3,500 Cr</p>
+                <p className="text-xs font-bold text-white uppercase tracking-wider">Group Net Worth</p>
+                <p className="text-[11px] text-white/60 mt-1">At market value, 100% retained earnings</p>
               </div>
 
-              <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-center">
-                <p className="text-4xl font-extrabold text-white mb-2">100%</p>
-                <p className="text-xs font-semibold text-white/90 uppercase tracking-wider">Secured Credit</p>
-                <p className="text-[11px] text-white/60 mt-1">Capital preservation first</p>
+              <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 sm:p-7 rounded-2xl text-center flex flex-col justify-center">
+                <p className="text-3xl sm:text-4xl font-extrabold text-white mb-1">2002</p>
+                <p className="text-xs font-bold text-white uppercase tracking-wider">Founded by Lalit Dua</p>
+                <p className="text-[11px] text-white/60 mt-1">Started with ₹29.57 lakh equity capital</p>
               </div>
 
-              <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-center">
-                <p className="text-4xl font-extrabold text-white mb-2">₹1 Cr–100 Cr</p>
-                <p className="text-xs font-semibold text-white/90 uppercase tracking-wider">Ticket Size</p>
-                <p className="text-[11px] text-white/60 mt-1">Focused mid-market mandate</p>
+              <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 sm:p-7 rounded-2xl text-center flex flex-col justify-center">
+                <p className="text-3xl sm:text-4xl font-extrabold text-white mb-1">₹1,114 Cr</p>
+                <p className="text-xs font-bold text-white uppercase tracking-wider">SME & Mid-Cap Growth</p>
+                <p className="text-[11px] text-white/60 mt-1">Directly deployed into Indian issuers</p>
               </div>
 
-              <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-center">
-                <p className="text-4xl font-extrabold text-[#E8621A] mb-2">48h–14d</p>
-                <p className="text-xs font-semibold text-white/90 uppercase tracking-wider">Execution</p>
-                <p className="text-[11px] text-white/60 mt-1">Agile underwriting cycles</p>
+              <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 sm:p-7 rounded-2xl text-center flex flex-col justify-center">
+                <p className="text-3xl sm:text-4xl font-extrabold text-[#E8621A] mb-1">₹405 Cr</p>
+                <p className="text-xs font-bold text-white uppercase tracking-wider">PSB QIP Deployments</p>
+                <p className="text-[11px] text-white/60 mt-1">Across 12 public-sector banks</p>
+              </div>
+
+              <div className="sm:col-span-2 bg-black/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl">
+                <div className="flex items-center gap-3 mb-2">
+                  <Landmark className="w-5 h-5 text-[#E8621A]" />
+                  <p className="text-xs font-bold uppercase tracking-wider text-white">RBI Middle Layer NBFC</p>
+                </div>
+                <p className="text-xs text-white/70 leading-relaxed">
+                  Investment & Credit Company (ICC) with strict regulatory oversight, scale-based governance, and Zero Non-Performing Assets.
+                </p>
               </div>
             </div>
           </div>
@@ -223,13 +250,19 @@ export default function AboutLRSDCapitalPage() {
           <div className="p-8 sm:p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-xl font-bold text-white mb-2">
-                Need structured credit tailored to your enterprise?
+                Explore our underwriting advantages
               </h3>
               <p className="text-xs text-white/70">
-                Connect directly with our credit committee to review terms and collateral requirements.
+                Learn why proprietary market intelligence gives us a decisive edge in turnaround velocity and flexible structures.
               </p>
             </div>
-            <ActionButton label="Start a conversation" href="/#contact" className="shrink-0 bg-[#E8621A] hover:bg-[#F27125]" />
+            <Link
+              href="/about/edge"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#E8621A] hover:bg-[#F27125] text-white text-xs md:text-sm font-bold shadow-md transition-all shrink-0"
+            >
+              <span>Explore The LRSD Edge</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

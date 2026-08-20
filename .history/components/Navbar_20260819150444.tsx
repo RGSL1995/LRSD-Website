@@ -90,7 +90,7 @@ export default function Navbar() {
     },
     {
       title: "LRSD Edge",
-      desc: "Day 1-2 turnaround velocity, 24-year equity intelligence & cash cycle structuring.",
+      desc: "7–14 day turnaround, market intelligence & cash flow structuring.",
       href: "/about/edge",
       icon: <Zap className="w-5 h-5 text-[#E8621A]" />,
       // badge: "Advantage"
@@ -308,19 +308,19 @@ export default function Navbar() {
           </Link>
 
           {/* Direct Anchor Quick Links */}
-          {/* <Link
+          <Link
             href="/#dna"
             className="text-xs font-semibold text-gray-700 hover:text-[#0F1932] tracking-wide transition-colors"
           >
             Our DNA
-          </Link> */}
+          </Link>
 
-          {/* <Link
+          <Link
             href="/#roadmap"
             className="text-xs font-semibold text-gray-700 hover:text-[#0F1932] tracking-wide transition-colors"
           >
             Roadmap
-          </Link> */}
+          </Link>
         </nav>
 
         {/* Top Right Button */}
@@ -421,18 +421,18 @@ export default function Navbar() {
               </Link>
 
               {/* DNA & Roadmap */}
-              {/* <Link
+              <Link
                 href="/#dna"
                 className="block py-2 text-sm font-bold text-[#0F1932] hover:text-[#E8621A]"
               >
                 Our DNA
-              </Link> */}
-              {/* <Link
+              </Link>
+              <Link
                 href="/#roadmap"
                 className="block py-2 text-sm font-bold text-[#0F1932] hover:text-[#E8621A]"
               >
                 Roadmap
-              </Link> */}
+              </Link>
 
               {/* CTA button in mobile menu */}
               <div className="pt-4 border-t border-gray-100">

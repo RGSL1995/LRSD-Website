@@ -4,14 +4,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronsRight, ChevronRight, ChevronDown, ArrowRight, TrendingUp, Building2, Layers, Award } from 'lucide-react';
+import { ChevronsRight, ChevronRight, ChevronDown, ArrowRight, TrendingUp, Building2, Layers, Award, Briefcase } from 'lucide-react';
 import Navbar, { ActionButton } from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TorusWireframe, SphereWireframe, GyroWireframe, SilkWaves } from '@/components/SharedWireframes';
-
-
-
-
 
 /* ─────────────────────────────────────────────
    PRODUCTS DATA FOR SECTION 3
@@ -94,9 +90,9 @@ export default function Home() {
 
               {/* Subtitle */}
               <p className="text-sm md:text-base text-gray-600 max-w-lg leading-relaxed mb-10 font-normal">
-                A non-banking lender purpose-built for India's MSMEs and
-                mid-sized corporates - carrying forward three decades of
-                disciplined capital from the Rajasthan Global Securities Group.
+                A non-banking lender purpose-built for India&#39;s MSMEs and mid-sized
+                corporates – carrying forward three decades of disciplined capital from the
+                Rajasthan Global Securities Group.
               </p>
 
               {/* CTA Button */}
@@ -115,8 +111,8 @@ export default function Home() {
                   OUR LENDING STANCE
                 </p>
                 <p className="text-xs sm:text-sm font-semibold text-gray-800 leading-relaxed">
-                  Secured lending only. To Businesses, not consumers. Facilities
-                  from ₹1 crore to ₹100 crore..
+                  Secured lending only. Facility
+                  Size ranging from ₹1 crore to ₹100 crore.
                 </p>
               </div>
             </motion.div>
@@ -210,24 +206,43 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* 4 Stat Blocks */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* 4 Stat / Highlight Blocks */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { val: "31.1%", label: "Share of India's GDP" },
-              { val: "48.6%", label: "Share of India's exports" },
-              { val: "38.9 Cr", label: "People employed" },
-              { val: "₹25 L Cr+", label: "Formal credit gap" },
+              {
+                val: "Zero NPA",
+                title: "Underwriting Excellence",
+                desc: "Proven through every credit cycle",
+              },
+              {
+                val: "Bespoke",
+                title: "Client-Centric Solutions",
+                desc: "Tailored structures aligned to client needs",
+              },
+              {
+                val: "Experienced",
+                title: "Professionals",
+                desc: "Proven expertise in lending & risk management",
+              },
+              {
+                val: "~65 Crs.",
+                title: "PAT (FY26)",
+                desc: "High-quality, compounding financial performance",
+              },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.02 }}
-                className="bg-black/25 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-7 text-center transition-colors hover:border-[#E8621A]/50"
+                className="bg-black/25 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center transition-colors hover:border-[#E8621A]/50 flex flex-col justify-center items-center"
               >
-                <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
+                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">
                   {stat.val}
                 </div>
-                <p className="text-xs font-medium text-white/70 tracking-wide">
-                  {stat.label}
+                <div className="text-xs sm:text-sm font-bold text-[#E8621A] mb-1.5">
+                  {stat.title}
+                </div>
+                <p className="text-xs font-medium text-white/70 tracking-wide leading-relaxed">
+                  {stat.desc}
                 </p>
               </motion.div>
             ))}
@@ -368,63 +383,141 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 4: FOUNDER'S NOTE & QUOTE
+          SECTION 4: LEADERSHIP & ETHOS
       ══════════════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 px-6 md:px-8 bg-[#FAF9F6]">
-        <div className="max-w-7xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-            <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
-              03 / Leadership
-            </p>
-          </div>
+      <section id="leadership" className="py-20 md:py-28 px-6 md:px-8 bg-[#FAF9F6]">
+        <div className="max-w-7xl mx-auto space-y-24 md:space-y-32">
+          {/* Block 1: Managing Director / Founder's Quote Spotlight */}
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
+              <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
+                03 / Leadership & Philosophy
+              </p>
+            </div>
 
-          {/* Dark Quote Box Container */}
-          <div className="bg-[#0F1932] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-            <div className="grid lg:grid-cols-[0.85fr_1.15fr] items-stretch">
-              {/* Left Photo */}
-              <div className="relative min-h-[380px] lg:min-h-[460px] bg-gradient-to-r from-[#0F1932] to-[#1A2347]">
-                <Image
-                  src="/lalitsir.jpeg"
-                  alt="Mr. Lalit Dua, Founder & Managing Director"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-top filter brightness-95 contrast-105"
-                />
-                {/* Smooth blend overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-[#0F1932]/30 to-[#0F1932]" />
-              </div>
+            {/* Dark Quote Box Container */}
+            <div className="bg-[#0F1932] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="grid lg:grid-cols-[0.85fr_1.15fr] items-stretch">
+                {/* Left Photo */}
+                <div className="relative min-h-[380px] lg:min-h-[460px] bg-gradient-to-r from-[#0F1932] to-[#1A2347]">
+                  <Image
+                    src="/lalitdua.png"
+                    alt="Mr. Lalit Dua, Founder & Managing Director"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-top filter brightness-95 contrast-105"
+                  />
+                  {/* Smooth blend overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-[#0F1932]/30 to-[#0F1932]" />
+                </div>
 
-              {/* Right Quote Content */}
-              <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-between text-white relative z-10">
-                <div>
-                  <h3 className="text-2xl sm:text-3xl lg:text-[38px] font-extrabold text-white leading-tight tracking-tight mb-8">
-                    &ldquo;Return of capital
-                    <br />
-                    matters more to us
-                    <br />
-                    than return on capital.&rdquo;
-                  </h3>
+                {/* Right Quote Content */}
+                <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-between text-white relative z-10">
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl lg:text-[38px] font-extrabold text-white leading-tight tracking-tight mb-8">
+                      &ldquo;Discipline is not the opposite of ambition.
+                      <br />
+                      It is what makes ambition repeatable.&rdquo;
+                    </h3>
 
-                  <div className="border-l-2 border-[#E8621A] pl-5 mb-8">
-                    <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-lg">
-                      Every facility we underwrite begins with a single
-                      question: how does our capital preserve the enterprise
-                      while generating compounding value for stakeholders?
+                    <div className="border-l-2 border-[#E8621A] pl-5 mb-8">
+                      <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-lg">
+                        &ldquo;We have never written off a loan in twenty-four
+                         years. That record is not caution for its own sake — it is what allows us to back a
+                         company the market has not noticed yet, and to still be standing there when it has.&rdquo;
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-base font-bold text-white tracking-wide">
+                      Mr. Lalit Dua
+                    </p>
+                    <p className="text-xs font-semibold text-[#E8621A] tracking-wider uppercase mt-0.5">
+                      Managing Director, LRSD Capital
                     </p>
                   </div>
                 </div>
-
-                <div>
-                  <p className="text-base font-bold text-white tracking-wide">
-                    Mr. Lalit Dua
-                  </p>
-                  <p className="text-xs font-semibold text-[#E8621A] tracking-wider uppercase mt-0.5">
-                    Managing Director, LRSD Capital
-                  </p>
-                </div>
               </div>
+            </div>
+          </div>
+
+          {/* Block 2: Leadership Team Grid */}
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-[#E8621A]/20 shadow-sm mb-6">
+              <Briefcase className="w-3.5 h-3.5 text-[#E8621A]" />
+              <p className="text-[11px] font-bold tracking-widest text-[#0F1932] uppercase">
+                LEADERSHIP
+              </p>
+            </div>
+
+            {/* Heading */}
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.1] text-[#0F1932] mb-12">
+              Two generations,{" "}
+              <span className="text-gray-400 font-normal">one institutional mindset.</span>
+            </h2>
+
+            {/* 4 Leadership Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  name: "Mr. Lalit Dua",
+                  role: "Managing Director",
+                  tagline: "Founder, 30 years of compounding",
+                  image: "/lalitdua.png",
+                },
+                {
+                  name: "Ms. Shreya Dua",
+                  role: "Director",
+                  tagline: "Wharton MBA, NYU Stern BS/MS, Ex-BCG",
+                  image: "/Shreya.png",
+                },
+                {
+                  name: "Mr. Amit Arora",
+                  role: "Chief Executive Officer",
+                  tagline: "Two decades scaling India’s lending in LAS",
+                  image: "/amit arora.png",
+                },
+                {
+                  name: "Mr. Manish Chauhan",
+                  role: "Chief Financial Officer",
+                  tagline: "With the group since inception (2002)",
+                  image: "/manish.png",
+                },
+              ].map((leader, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.25 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-[#E8621A]/30 transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="relative aspect-[4/5] w-full bg-[#0F1932] overflow-hidden">
+                      <Image
+                        src={leader.image}
+                        alt={leader.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-5 bg-white flex flex-col justify-center">
+                      <h3 className="text-base sm:text-lg font-bold text-[#0F1932] tracking-tight">
+                        {leader.name}
+                      </h3>
+                      <p className="text-xs font-semibold text-[#E8621A] mt-0.5 mb-2">
+                        {leader.role}
+                      </p>
+                      <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                        {leader.tagline}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -518,9 +611,9 @@ export default function Home() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 mb-8">
             <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-            <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
+            {/* <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
               05 / DNA
-            </p>
+            </p> */}
           </div>
 
           {/* Heading */}
