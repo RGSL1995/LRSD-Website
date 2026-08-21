@@ -50,22 +50,24 @@ export default function LeadershipPage() {
         <SilkWaves />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-[#E8621A]/20 shadow-sm mb-8">
-            <Briefcase className="w-3.5 h-3.5 text-[#E8621A]" />
-            <p className="text-xs font-bold tracking-widest text-[#0F1932] uppercase">
-              Leadership & Governance
-            </p>
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-[#E8621A]/30 shadow-sm mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
+            <span className="text-xs font-extrabold tracking-widest text-[#0F1932] uppercase">
+              Leadership &amp; Governance
+            </span>
           </div>
 
-          <div className="max-w-4xl mb-16">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] leading-[1.05] text-[#0F1932] mb-6">
+          <div className="max-w-5xl mb-16">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-[-0.035em] leading-[1.04] text-[#0F1932] mb-8">
               Two generations,{" "}
               <span className="text-gray-400 font-normal">one institutional mindset.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-normal max-w-3xl">
-              Our leadership brings together three decades of capital markets mastery, corporate finance acumen, and institutional credit governance with a twenty-four-year record of zero write-offs.
-            </p>
+            <div className="border-l-2 border-[#E8621A] pl-6 py-1">
+              <p className="text-xl sm:text-2xl md:text-[26px] text-gray-800 leading-relaxed md:leading-[1.45] font-medium max-w-4xl">
+                Our leadership brings together three decades of capital markets mastery, corporate finance acumen, and institutional credit governance with a twenty-four-year record of zero write-offs.
+              </p>
+            </div>
           </div>
 
           {/* Detailed Leadership Grid */}
@@ -116,72 +118,6 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* Founder & Managing Director Quote Spotlight */}
-      <section className="py-20 md:py-28 px-6 md:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-[#0F1932] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr] items-stretch">
-              {/* Photo */}
-              <div className="relative min-h-[420px] lg:min-h-[560px] bg-gradient-to-r from-[#0F1932] to-[#1A2347]">
-                <Image
-                  src="/lalitdua.png"
-                  alt="Mr. Lalit Dua, Founder & Managing Director"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover object-top filter brightness-95 contrast-105"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-[#0F1932]/30 to-[#0F1932]" />
-              </div>
-
-              {/* Bio Content */}
-              <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-between text-white relative z-10">
-                <div>
-                  <div className="inline-flex items-center gap-2 mb-6">
-                    <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-                    <p className="text-xs font-extrabold uppercase tracking-widest text-[#E8621A]">
-                      Founder & Managing Director
-                    </p>
-                  </div>
-
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
-                    Mr. Lalit Dua
-                  </h2>
-                  <p className="text-sm font-semibold text-gray-400 mb-8">
-                    Founder & Managing Director, LRSD Capital & Rajasthan Global Securities Group
-                  </p>
-
-                  <div className="border-l-2 border-[#E8621A] pl-5 mb-8 space-y-4">
-                    <p className="text-base sm:text-lg text-white font-bold leading-snug">
-                      &ldquo;Discipline is not the opposite of ambition. <span className="text-[#E8621A]">It is what makes ambition repeatable.</span>&rdquo;
-                    </p>
-                    <p className="text-sm sm:text-base text-gray-200 italic leading-relaxed">
-                      &ldquo;We have never written off a loan in twenty-four years. That record is not caution for its own sake — it is what allows us to back a company the market has not noticed yet, and to still be standing there when it has.&rdquo;
-                    </p>
-                  </div>
-
-                  <div className="space-y-3 text-xs sm:text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      Started with initial equity infusion of ~29.57 lakhs & twenty-four years later that Group is worth approximately ₹3,500 crore — compounded at close to 48% a year, without a single rupee of outside equity, without borrowing, and without ever once advertising for a client.
-                    </p>
-                    <p>
-                      He did not build it by being early to a theme or lucky in a cycle. He built it by refusing, over and over, for twenty-four years, to take a risk he could not fully see — and by staying in the market long after the people who arrived with him had left.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="pt-8 mt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-bold text-[#E8621A]">Since 2002</span>
-                    <span className="text-xs text-gray-400">• Zero Borrowings Legacy</span>
-                  </div>
-                  <ActionButton label="Get in touch" href="/#contact" className="bg-[#E8621A] hover:bg-[#F27125]" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Governance & Committees Section */}
       <section className="py-24 md:py-32 px-6 md:px-8 bg-[#FAF9F6]">

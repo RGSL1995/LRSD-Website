@@ -106,7 +106,7 @@ export default function TestimonialsPage() {
                 </div>
                 <div>
                   <p className="text-[11px] text-gray-400 uppercase">Borrower Sectors</p>
-                  <p className="text-base font-bold text-white">Manufacturing, Real Estate, SME, Infra</p>
+                  <p className="text-base font-bold text-white">Manufacturing, Real Estate, SME, Infra, Solar</p>
                 </div>
               </div>
             </div>

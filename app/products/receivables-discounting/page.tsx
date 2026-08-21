@@ -12,9 +12,9 @@ export default function ReceivablesDiscountingPage() {
   const specs = [
     { label: "Invoice Coverage", value: "Up to 90% of accepted invoice value" },
     { label: "Disbursement Velocity", value: "Within 24 to 48 hours of invoice verification" },
-    { label: "Facility Limit", value: "₹1 Crore to ₹50 Crore revolving line" },
+    { label: "Facility Limit", value: "₹1 Crore to ₹50 Crore" },
     { label: "Credit Period / Tenor", value: "60 Days to 180 Days" },
-    { label: "Structure", value: "Recourse & Structured Non-Recourse options" },
+    { label: "Structure", value: "Recourse" },
     { label: "Anchor Profiles", value: "Listed corporates, PSUs, AAA/AA mid-market buyers" },
   ];
 
@@ -72,7 +72,7 @@ export default function ReceivablesDiscountingPage() {
                 </div>
                 <div className="border-b border-white/10 pb-3">
                   <p className="text-[11px] text-gray-400 uppercase">Liquidity Speed</p>
-                  <p className="text-2xl font-extrabold text-[#E8621A]">Day 2 Disbursement</p>
+                  <p className="text-2xl font-extrabold text-[#E8621A]">Day 3 Disbursement</p>
                 </div>
                 <div>
                   <p className="text-[11px] text-gray-400 uppercase">Cycle Solved</p>
@@ -146,7 +146,7 @@ export default function ReceivablesDiscountingPage() {
 
             <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
               <span className="text-3xl font-black text-[#E8621A] mb-4 block">02</span>
-              <h3 className="text-lg font-bold text-[#0F1932] mb-2">80–90% Day 2 Liquidity</h3>
+              <h3 className="text-lg font-bold text-[#0F1932] mb-2">Working Capital Released</h3>
               <p className="text-xs text-gray-600 leading-relaxed">
                 LRSD Capital verifies the invoice with the anchor and disburses up to 90% of the funds to your account immediately.
               </p>

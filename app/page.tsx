@@ -141,10 +141,8 @@ export default function Home() {
 
           {/* Section Header */}
           <div className="grid lg:grid-cols-[1.6fr_1fr] gap-10 items-start mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white">
-              To be India&apos;s most trusted name in secured, structured credit —
-              the lender that emerging companies turn to when the answer needs
-              judgement, not a template.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
+              To be India&apos;s most trusted name in secured, structured credit 
             </h2>
             <div className="lg:pt-2">
               <div className="w-8 h-0.5 bg-[#E8621A] mb-4" />
@@ -184,11 +182,11 @@ export default function Home() {
                   </div>
 
                   <h3 className="text-lg sm:text-xl md:text-[22px] font-bold text-[#0F1932] leading-snug tracking-tight">
-                    To become India&apos;s most trusted name in lending — a{' '}
+                    To become India&apos;s most trusted {' '}
                     <span className="text-[#E8621A]">
                       full-spectrum credit institution
                     </span>{' '}
-                    known for specialised capabilities in MSME and corporate financing.
+                    empowering MSMEs, SMEs &amp; large corporates.
                   </h3>
                 </div>
 
@@ -227,11 +225,11 @@ export default function Home() {
                   </div>
 
                   <h3 className="text-lg sm:text-xl md:text-[22px] font-bold text-[#0F1932] leading-snug tracking-tight">
-                    To build enduring value through{' '}
+                    Enabling fundamentally strong businesses{' '}
                     <span className="text-[#E8621A]">
-                      disciplined lending
+                      with responsible growth capital
                     </span>{' '}
-                    by providing structured, secured and responsible growth capital to fundamentally strong businesses — bridging the gap between today&apos;s scale and tomorrow&apos;s potential.
+                    — bridging the gap between today&apos;s scale and tomorrow&apos;s potential.
                   </h3>
                 </div>
 
@@ -657,6 +655,14 @@ export default function Home() {
         }}
       >
         <div className="max-w-7xl mx-auto relative z-10">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
+            <span className="text-[11px] font-bold tracking-widest uppercase text-white/90">
+              OUR DNA &amp; PRINCIPLES
+            </span>
+          </div>
+
           {/* Heading */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.08] text-white mb-14">
             Four letters.
@@ -665,7 +671,7 @@ export default function Home() {
           </h2>
 
           {/* 4 Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-10 items-stretch">
             {[
               {
                 letter: "L",
@@ -694,29 +700,40 @@ export default function Home() {
             ].map((card, i) => (
               <motion.div
                 key={i}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 flex flex-col justify-between min-h-[280px] hover:border-[#E8621A]/50 hover:bg-white/[0.08] transition-all shadow-xl"
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.25 }}
+                className="group relative rounded-2xl p-6 sm:p-7 flex flex-col justify-between h-full overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/10 hover:border-[#E8621A]/50 hover:bg-white/[0.07] transition-all duration-300 shadow-xl"
               >
-                <div>
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-[11px] font-extrabold tracking-widest px-2.5 py-1 rounded-full bg-white/10 text-white/90">
-                      {card.num}
-                    </span>
-                  </div>
-
-                  <div className="text-6xl font-black mb-6 leading-none text-[#E8621A]">
-                    {card.letter}
-                  </div>
-
-                  <h3 className="font-bold text-base md:text-lg mb-2 text-white">
-                    {card.title}
-                  </h3>
+                {/* Background Watermark Letter */}
+                <div className="absolute -top-2 -right-1 text-[85px] font-black text-white/[0.02] group-hover:text-[#E8621A]/[0.06] transition-all duration-500 pointer-events-none select-none leading-none">
+                  {card.letter}
                 </div>
 
-                <p className="text-xs leading-relaxed mt-4 text-gray-300 font-normal">
-                  {card.desc}
-                </p>
+                <div className="relative z-10 flex-1 flex flex-col justify-between">
+                  <div>
+                    {/* Top Row: Small Number */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-[11px] font-mono font-bold tracking-widest text-[#E8621A] bg-[#E8621A]/10 border border-[#E8621A]/20 px-2 py-0.5 rounded-full">
+                        {card.num}
+                      </span>
+                    </div>
+
+                    {/* Giant Letter LRSD */}
+                    <div className="text-6xl sm:text-7xl font-black text-[#E8621A] leading-none tracking-tight mb-4 group-hover:scale-105 transition-transform duration-300 origin-left">
+                      {card.letter}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug mb-2">
+                      {card.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mt-3">
+                    {card.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>

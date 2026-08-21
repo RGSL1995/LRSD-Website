@@ -33,7 +33,7 @@ export default function AboutLRSDCapitalPage() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-normal mb-8 max-w-2xl">
-                We are a secured lender to India&apos;s emerging listed and pre-IPO companies, their promoters, and their supply chains — underwritten with what the Rajasthan Global Securities Group has learned about these companies since 2002.
+                We are a secured lender to India&apos;s emerging listed and pre-IPO companies, their promoters, and their supply chains.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -55,23 +55,22 @@ export default function AboutLRSDCapitalPage() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="bg-[#0F1932] text-white p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden"
             >
-              <div className="flex justify-between items-center mb-6">
+              <div className="mb-6">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#E8621A]">
                   Institutional Standing
                 </span>
-                <TorusWireframe className="w-10 h-10" color="#E8621A" />
               </div>
               <p className="text-sm text-gray-200 leading-relaxed mb-8">
-                When traditional banks decline for want of a rating and large NBFCs decline for want of ticket size, LRSD Capital delivers structured, secured capital with 24 years of zero borrowed debt.
+                When traditional banks decline for want of a rating and large NBFCs decline for want of ticket size, LRSD Capital delivers with responsible growth fuel to bridge the gap.
               </p>
               <div className="pt-6 border-t border-white/10 grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-2xl sm:text-3xl font-extrabold text-white">₹3,500 Cr</p>
-                  <p className="text-[11px] text-gray-400 mt-0.5">Group Net Worth (Market Value)</p>
+                  <p className="text-[11px] text-gray-400 mt-0.5">Group Net Worth</p>
                 </div>
                 <div>
                   <p className="text-2xl sm:text-3xl font-extrabold text-[#E8621A]">24 Years</p>
-                  <p className="text-[11px] text-gray-400 mt-0.5">Retained Capital Legacy</p>
+                  <p className="text-[11px] text-gray-400 mt-0.5">Group Legacy</p>
                 </div>
               </div>
             </motion.div>
@@ -95,16 +94,16 @@ export default function AboutLRSDCapitalPage() {
                   Where traditional credit models fail emerging enterprises.
                 </h2>
                 <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                  Neither decision to decline an SME credit facility has anything to do with whether the business can repay. It is an artifact of rigid formulas and mechanical box-checking.
+                  "Small-caps get declined for missing a rating or missing a ticket size — never for an inability to repay. We lend on what the business is actually worth. UNRATED IS NOT UNBANKABLE"
                 </p>
-                <div className="p-6 rounded-2xl bg-[#FAF9F6] border border-gray-200">
+                {/* <div className="p-6 rounded-2xl bg-[#FAF9F6] border border-gray-200">
                   <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
                     Our Direct Mandate
                   </p>
                   <p className="text-xs font-semibold text-[#0F1932] leading-relaxed">
                     100% Secured Lending • ₹1 Cr to ₹100 Cr off our balance sheet • ₹200 Cr Developer Credit • Zero Retail Exposure.
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -134,7 +133,7 @@ export default function AboutLRSDCapitalPage() {
                     Collateralized Security
                   </h3>
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    First charge on equity shares, commercial receivables, or real estate with active risk surveillance.
+                    First charge on shares, receivables or real estate with active risk surveillance.
                   </p>
                 </div>
 
@@ -155,7 +154,7 @@ export default function AboutLRSDCapitalPage() {
                     <Award className="w-5 h-5" />
                   </div>
                   <h3 className="font-bold text-sm text-[#0F1932] mb-2">
-                    Zero Write-Off Record
+                    Zero NPA Track Record
                   </h3>
                   <p className="text-xs text-gray-600 leading-relaxed">
                     Proven discipline across 24 years through every market and macroeconomic credit cycle.
@@ -195,16 +194,16 @@ export default function AboutLRSDCapitalPage() {
 
               <div className="space-y-4 text-sm sm:text-base text-white/80 leading-relaxed font-normal">
                 <p>
-                  Rajasthan Global Securities Private Limited was founded in 2002 by <strong className="text-white font-semibold">Mr. Lalit Dua</strong> with equity capital of ₹29.57 lakh. It is today an RBI-registered Middle Layer NBFC and Investment & Credit Company, with a net worth of approximately <strong className="text-white font-semibold">₹3,500 crore at market value</strong>.
+                  Rajasthan Global Securities Private Limited was founded in 2002 by <strong className="text-white font-semibold">Mr. Lalit Dua</strong> with equity capital of ₹29.57 lakh. It is today an RBI-registered Middle Layer NBFC and Investment & Credit Company.
                 </p>
                 <p>
-                  That net worth was built entirely from retained earnings. <strong className="text-white font-semibold">No external equity. No borrowings. No public deposits. No marketing.</strong> Every rupee the Group lends is a rupee it earned and chose not to distribute.
+                  That net worth was built entirely from retained earnings. <strong className="text-white font-semibold">No external equity. No borrowings. No public deposits. No marketing.</strong>
                 </p>
                 <p>
-                  Across those twenty-four years the Group became one of India&apos;s most active anchor investors in public issues, and deployed direct growth capital into hundreds of Indian companies — including approximately <strong className="text-white font-semibold">₹1,114 crore into SME and mid-cap issuers</strong>, and approximately <strong className="text-white font-semibold">₹405 crore into the qualified institutional placements of twelve public-sector banks</strong>.
+                  Across the 24 years the Group became one of India's most active investors deploying direct growth capital into hundreds of indian companies.
                 </p>
                 <p className="text-white font-medium pt-2 border-t border-white/10">
-                  LRSD Capital is the Group&apos;s lending arm. It carries forward that balance sheet, that credit discipline, and — more valuable than either — that knowledge of the companies it lends to.
+                  LRSD Capital is the Group&apos;s lending arm. It carries forward that balance sheet, that credit discipline, and — more valuable than ever — that knowledge of the companies it lends to.
                 </p>
               </div>
             </div>
@@ -219,7 +218,7 @@ export default function AboutLRSDCapitalPage() {
 
               <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 sm:p-7 rounded-2xl text-center flex flex-col justify-center">
                 <p className="text-3xl sm:text-4xl font-extrabold text-white mb-1">2002</p>
-                <p className="text-xs font-bold text-white uppercase tracking-wider">Founded by Lalit Dua</p>
+                <p className="text-xs font-bold text-white uppercase tracking-wider">Founded by Mr. Lalit Dua</p>
                 <p className="text-[11px] text-white/60 mt-1">Started with ₹29.57 lakh equity capital</p>
               </div>
 

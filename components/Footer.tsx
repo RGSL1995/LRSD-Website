@@ -14,11 +14,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-14">
           {/* Column 1: Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="inline-block mb-5">
+            <Link href="/" className="inline-block mb-6">
               <img
                 src="/LRSD-logo-removebg-preview.png"
                 alt="LRSD Capital"
-                className="h-10 w-auto brightness-0 invert"
+                className="h-20 sm:h-24 md:h-28 w-auto brightness-0 invert object-contain"
               />
             </Link>
             <p className="text-xs text-gray-400 leading-relaxed mb-6">

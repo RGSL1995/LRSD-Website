@@ -138,7 +138,7 @@ export default function LRSDEdgePage() {
             </div>
 
             {/* Quick Metrics Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
                 <p className="text-3xl font-extrabold text-[#E8621A] mb-1">Day 1–2</p>
                 <p className="text-xs font-bold text-[#0F1932]">Execution Velocity</p>
@@ -162,7 +162,7 @@ export default function LRSDEdgePage() {
                 <p className="text-xs font-bold text-[#0F1932]">Own Balance Sheet</p>
                 <p className="text-[11px] text-gray-500 mt-1">No external credit lines needed</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -178,7 +178,7 @@ export default function LRSDEdgePage() {
               </p>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F1932] tracking-tight mb-4">
-              The four pillars behind our credit conviction.
+              The four pillars.
             </h2>
             <p className="text-sm md:text-base text-gray-600">
               Why our underwriting model outperforms conventional rating templates for India&apos;s emerging listed and growth enterprises.
@@ -215,10 +215,10 @@ export default function LRSDEdgePage() {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-gray-200/60 flex items-center gap-2 text-[11px] font-semibold text-[#0F1932]">
+                {/* <div className="pt-4 border-t border-gray-200/60 flex items-center gap-2 text-[11px] font-semibold text-[#0F1932]">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#E8621A]" />
                   <span>Institutional Standard</span>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>
@@ -607,7 +607,7 @@ export default function LRSDEdgePage() {
       </section>
 
       {/* Comparison Section */}
-      <section className="py-24 md:py-32 px-6 md:px-8 bg-[#FAF9F6]">
+      {/* <section className="py-24 md:py-32 px-6 md:px-8 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -654,7 +654,7 @@ export default function LRSDEdgePage() {
             </table>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

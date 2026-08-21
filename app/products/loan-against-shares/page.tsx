@@ -85,7 +85,7 @@ export default function LoanAgainstSharesPage() {
               </div>
               <div className="space-y-4">
                 <div className="border-b border-white/10 pb-3">
-                  <p className="text-[11px] text-gray-400 uppercase">Max LTV</p>
+                  <p className="text-[11px] text-gray-400 uppercase">LTV</p>
                   <p className="text-2xl font-extrabold text-white">Up to 20%</p>
                 </div>
                 <div className="border-b border-white/10 pb-3">

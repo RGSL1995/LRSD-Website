@@ -286,7 +286,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.98 }}
                   transition={{ duration: 0.18, ease: 'easeOut' }}
-                  className="absolute top-full left-0 w-[440px] bg-white rounded-2xl p-3 shadow-2xl border border-gray-100 mt-2 z-50"
+                  className="absolute top-full left-0 w-[360px] bg-white rounded-2xl p-3 shadow-2xl border border-gray-100 mt-2 z-50"
                 >
                   <div className="p-2.5 pb-2 mb-1 border-b border-gray-100 flex justify-between items-center">
                     <div>
@@ -299,12 +299,12 @@ export default function Navbar() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 gap-1.5">
+                  <div className="grid grid-cols-1 gap-1">
                     {productItems.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`flex items-start gap-3.5 p-3 rounded-xl transition-all ${
+                        className={`flex items-center gap-3 p-2.5 rounded-xl transition-all ${
                           pathname === item.href
                             ? 'bg-[#FAF9F6] border border-[#E8621A]/30'
                             : 'hover:bg-[#FAF9F6]'
@@ -316,9 +316,6 @@ export default function Navbar() {
                         <div className="flex-1 min-w-0">
                           <p className="text-xs font-bold text-[#0F1932] truncate">
                             {item.title}
-                          </p>
-                          <p className="text-[11px] text-gray-500 line-clamp-2 mt-0.5 leading-snug">
-                            {item.desc}
                           </p>
                         </div>
                       </Link>
@@ -439,7 +436,6 @@ export default function Navbar() {
                         className="block py-1.5 text-xs text-gray-600 hover:text-[#E8621A] font-medium"
                       >
                         <div className="font-bold text-[#0F1932]">{item.title}</div>
-                        <div className="text-[10px] text-gray-400">{item.desc}</div>
                       </Link>
                     ))}
                   </div>
