@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 import { ModalProvider } from "@/components/ConversationModal";
+import PageTransitionLoader from "@/components/PageTransitionLoader";
 
 export default function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-[#0F1932]">
+        <PageTransitionLoader />
         <ModalProvider>
           {children}
         </ModalProvider>
