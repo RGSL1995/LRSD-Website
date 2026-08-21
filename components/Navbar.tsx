@@ -16,31 +16,65 @@ import {
   MessageSquareQuote,
   Menu,
   X,
-  ArrowRight
+  ArrowRight,
 } from 'lucide-react';
+import { useConversationModal } from './ConversationModal';
 
 export const ActionButton = ({
   label,
   href = '/#contact',
   className = '',
+  onClick,
 }: {
   label: string;
   href?: string;
   className?: string;
+  onClick?: () => void;
 }) => {
+  const { openModal } = useConversationModal();
+
+  const isContactAction = href === '/#contact' || href === '#contact' || href === '' || !href;
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      e.preventDefault();
+      onClick();
+      return;
+    }
+    if (isContactAction) {
+      e.preventDefault();
+      openModal();
+    }
+  };
+
   return (
     <motion.div whileHover={{ scale: 1.02, y: -1 }} whileTap={{ scale: 0.98 }}>
-      <Link
-        href={href}
-        className={`inline-flex items-center gap-3 bg-[#1C1E22] hover:bg-[#15171A] text-white pl-2.5 pr-5 py-2.5 rounded-xl shadow-md transition-all group ${className}`}
-      >
-        <div className="w-7 h-7 rounded-lg bg-[#E8621A] group-hover:bg-[#F27125] flex items-center justify-center text-white shadow-sm transition-colors shrink-0">
-          <ChevronsRight className="w-3.5 h-3.5 text-white stroke-[2.5]" />
-        </div>
-        <span className="text-xs md:text-sm font-semibold tracking-normal text-white">
-          {label}
-        </span>
-      </Link>
+      {isContactAction || onClick ? (
+        <button
+          type="button"
+          onClick={handleClick}
+          className={`inline-flex items-center gap-3 bg-[#1C1E22] hover:bg-[#15171A] text-white pl-2.5 pr-5 py-2.5 rounded-xl shadow-md transition-all group cursor-pointer ${className}`}
+        >
+          <div className="w-7 h-7 rounded-lg bg-[#E8621A] group-hover:bg-[#F27125] flex items-center justify-center text-white shadow-sm transition-colors shrink-0">
+            <ChevronsRight className="w-3.5 h-3.5 text-white stroke-[2.5]" />
+          </div>
+          <span className="text-xs md:text-sm font-semibold tracking-normal text-white">
+            {label}
+          </span>
+        </button>
+      ) : (
+        <Link
+          href={href}
+          className={`inline-flex items-center gap-3 bg-[#1C1E22] hover:bg-[#15171A] text-white pl-2.5 pr-5 py-2.5 rounded-xl shadow-md transition-all group ${className}`}
+        >
+          <div className="w-7 h-7 rounded-lg bg-[#E8621A] group-hover:bg-[#F27125] flex items-center justify-center text-white shadow-sm transition-colors shrink-0">
+            <ChevronsRight className="w-3.5 h-3.5 text-white stroke-[2.5]" />
+          </div>
+          <span className="text-xs md:text-sm font-semibold tracking-normal text-white">
+            {label}
+          </span>
+        </Link>
+      )}
     </motion.div>
   );
 };
@@ -110,7 +144,7 @@ export default function Navbar() {
       desc: "Promoter liquidity & growth capital underwritten on company fundamentals.",
       href: "/products/loan-against-shares",
       icon: <TrendingUp className="w-5 h-5 text-[#E8621A]" />,
-      // badge: "Up to 65% LTV"
+      // badge: "Up to 20% LTV"
     },
     {
       title: "Receivables Discounting / Factoring",
@@ -139,17 +173,17 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 py-2 md:py-2.5'
-          : 'bg-white/75 backdrop-blur-md py-2.5 md:py-3'
+          ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 py-1 md:py-1.5'
+          : 'bg-white/75 backdrop-blur-md py-1.5 md:py-2'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group py-0.5">
+        <Link href="/" className="flex items-center gap-2 group py-0 -my-1">
           <img
             src="/LRSD-logo-removebg-preview.png"
             alt="LRSD Capital"
-            className="h-11 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-12 sm:h-14 md:h-[4.25rem] w-auto object-contain transition-transform group-hover:scale-105"
           />
         </Link>
 

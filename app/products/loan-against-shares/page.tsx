@@ -11,7 +11,7 @@ import { TrendingUp, ShieldCheck, Clock, CheckCircle2, FileText, ArrowRight, Lay
 export default function LoanAgainstSharesPage() {
   const specs = [
     { label: "Facility Ticket Size", value: "₹2 Crore to ₹100 Crore" },
-    { label: "Loan-To-Value (LTV)", value: "Up to 65% based on security quality" },
+    { label: "Loan-To-Value (LTV)", value: "Up to 20% based on security quality" },
     { label: "Turnaround Time", value: "48 – 72 Hours to sanction & pledge" },
     { label: "Eligible Collateral", value: "BSE / NSE Mainboard & SME Listed Shares" },
     { label: "Tenure", value: "6 Months to 36 Months" },
@@ -86,7 +86,7 @@ export default function LoanAgainstSharesPage() {
               <div className="space-y-4">
                 <div className="border-b border-white/10 pb-3">
                   <p className="text-[11px] text-gray-400 uppercase">Max LTV</p>
-                  <p className="text-2xl font-extrabold text-white">Up to 65%</p>
+                  <p className="text-2xl font-extrabold text-white">Up to 20%</p>
                 </div>
                 <div className="border-b border-white/10 pb-3">
                   <p className="text-[11px] text-gray-400 uppercase">Turnaround</p>

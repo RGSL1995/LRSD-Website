@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   description: "A specialist credit institution for Indian enterprise — structured capital with deep domain expertise and enduring conviction.",
 };
 
+import { ModalProvider } from "@/components/ConversationModal";
+
 export default function RootLayout({
   children,
 }: {
@@ -25,7 +27,9 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-[#0F1932]">
-        {children}
+        <ModalProvider>
+          {children}
+        </ModalProvider>
       </body>
     </html>
   );

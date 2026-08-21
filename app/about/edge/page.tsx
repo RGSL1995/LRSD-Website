@@ -19,7 +19,8 @@ import {
   Building,
   TrendingUp,
   FileCheck2,
-  Sparkles
+  Sparkles,
+  Landmark
 } from 'lucide-react';
 
 export default function LRSDEdgePage() {
@@ -225,152 +226,380 @@ export default function LRSDEdgePage() {
       </section>
 
       {/* Deep Dive 1: We were investors before we were lenders */}
-      <section
-        className="py-24 md:py-32 px-6 md:px-8 text-white relative overflow-hidden"
-        style={{
-          background: "radial-gradient(120% 120% at 85% 15%, #4A2211 0%, #2E1308 55%, #180903 100%)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-start mb-16">
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-                <span className="text-[11px] font-bold tracking-widest uppercase text-white/90">
-                  Equity DNA
-                </span>
-              </div>
+      <section className="py-24 md:py-32 bg-gradient-to-b from-[#FAF9F6] via-white to-[#FAF9F6] border-y border-gray-200/70 text-[#0F1932] relative overflow-hidden">
+        {/* Subtle Ambient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-[#E8621A]/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white">
-                We were investors before we were lenders.
-              </h2>
-              
-              <p className="text-xl sm:text-2xl font-semibold text-[#E8621A] leading-snug">
-                &ldquo;We have already underwritten these companies once — with our own equity.&rdquo;
+        <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+          {/* Header & Narrative Above */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl mb-14 space-y-6"
+          >
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#E8621A] animate-pulse" />
+              <span className="text-[11px] font-extrabold tracking-widest uppercase text-[#E8621A]">
+                Equity DNA & Anchor Pedigree
+              </span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-[#0F1932]">
+              We were investors before we were lenders.
+            </h2>
+            
+            <p className="text-xl sm:text-2xl font-bold text-[#E8621A] leading-snug">
+              &ldquo;We have already underwritten these companies once — with our own equity.&rdquo;
+            </p>
+
+            <div className="space-y-4 text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
+              <p>
+                Since 2002 the Group has been one of India&apos;s most active anchor investors in public issues and a leading provider of direct growth capital to SME and mid-cap issuers. We have read their DRHPs, met their promoters, priced their equity and held it through cycles.
               </p>
+              <p>
+                A lender starting from a rating table sees a thin float and a short history. We see a company we have been tracking for years. That is not a softer credit standard — it is a better-informed one.
+              </p>
+            </div>
+          </motion.div>
 
-              <div className="space-y-4 text-sm sm:text-base text-white/80 leading-relaxed font-normal">
-                <p>
-                  Since 2002 the Group has been one of India&apos;s most active anchor investors in public issues and a leading provider of direct growth capital to SME and mid-cap issuers. We have read their DRHPs, met their promoters, priced their equity and held it through cycles.
-                </p>
-                <p>
-                  A lender starting from a rating table sees a thin float and a short history. We see a company we have been tracking for years. That is not a softer credit standard — it is a better-informed one.
-                </p>
+          {/* Portfolio Header Above Tape */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 pt-8 border-t border-gray-200"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 mb-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E8621A]" />
+                <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#E8621A]">
+                  Market Track Record
+                </span>
+                <Sparkles className="w-3.5 h-3.5 text-[#E8621A]" />
               </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F1932] tracking-tight">
+                Portfolio Companies Anchored
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                Representative public market anchor investments & growth capital deployed across cycles
+              </p>
             </div>
 
-            {/* Anchored Portfolio Highlights */}
-            <div className="lg:col-span-6 bg-black/30 backdrop-blur-md border border-white/10 p-8 sm:p-10 rounded-3xl">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-lg font-bold text-white">
-                    Portfolio Companies Anchored
-                  </h3>
-                  <p className="text-xs text-white/60">
-                    Representative public market anchor investments & growth capital
-                  </p>
-                </div>
-                <Sparkles className="w-5 h-5 text-[#E8621A]" />
+            {/* Credibility Metric Chips */}
+            <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#0F1932] shadow-2xs">
+                <span className="text-[#E8621A]">₹1,114 Cr+</span>
+                <span className="text-gray-400 font-normal">Deployed</span>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {anchoredCompanies.map((company, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#E8621A]/40 transition-all"
-                  >
-                    <Building className="w-4 h-4 text-[#E8621A] shrink-0" />
-                    <span className="text-xs font-semibold text-white/90 leading-tight">
-                      {company}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/70">
-                <span>Over ₹1,114 Cr deployed into SME & mid-caps</span>
-                <span className="text-[#E8621A] font-bold">Direct Group Pedigree</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8621A]/10 border border-[#E8621A]/30 text-xs font-bold text-[#E8621A]">
+                <span>24-Year Legacy</span>
               </div>
             </div>
-          </div>
+          </motion.div>
+        </div>
+
+        {/* Minimalist Interactive Full-Width Rolling Tape */}
+        <div className="relative w-full overflow-hidden py-4 space-y-4 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] group/ticker">
+          {/* Track 1: Moving Left */}
+          <motion.div
+            className="flex gap-4 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+            whileHover={{ transition: { duration: 0 } }}
+          >
+            {[...anchoredCompanies, ...anchoredCompanies].map((company, i) => (
+              <motion.div
+                key={`min-track1-${i}`}
+                whileHover={{ y: -3, scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+                className="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-gray-200/90 shadow-2xs hover:border-[#E8621A] hover:shadow-md transition-all shrink-0 cursor-default group"
+              >
+                <div className="w-2 h-2 rounded-full bg-[#E8621A] shadow-[0_0_8px_rgba(232,98,26,0.5)] group-hover:scale-125 transition-transform shrink-0" />
+                <span className="text-xs sm:text-sm font-semibold text-[#0F1932] group-hover:text-[#E8621A] transition-colors whitespace-nowrap">
+                  {company}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Track 2: Moving Right */}
+          <motion.div
+            className="flex gap-4 w-max"
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 34 }}
+            whileHover={{ transition: { duration: 0 } }}
+          >
+            {[
+              ...anchoredCompanies.slice(6),
+              ...anchoredCompanies.slice(0, 6),
+              ...anchoredCompanies.slice(6),
+              ...anchoredCompanies.slice(0, 6),
+            ].map((company, i) => (
+              <motion.div
+                key={`min-track2-${i}`}
+                whileHover={{ y: -3, scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+                className="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-gray-200/90 shadow-2xs hover:border-[#E8621A] hover:shadow-md transition-all shrink-0 cursor-default group"
+              >
+                <div className="w-2 h-2 rounded-full bg-[#E8621A] shadow-[0_0_8px_rgba(232,98,26,0.5)] group-hover:scale-125 transition-transform shrink-0" />
+                <span className="text-xs sm:text-sm font-semibold text-[#0F1932] group-hover:text-[#E8621A] transition-colors whitespace-nowrap">
+                  {company}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Deep Dive 2: Fastest Turnaround — Speed Without Compromise */}
-      <section className="py-24 md:py-32 px-6 md:px-8 bg-white">
+      <section className="py-24 md:py-32 px-6 md:px-8 bg-white border-b border-gray-100 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-[#FAF9F6] border border-gray-200 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-sm">
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-                  <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
-                    Velocity & Certainty
-                  </p>
+          {/* Section Header */}
+          <div className="grid lg:grid-cols-12 gap-10 items-start mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="lg:col-span-7 space-y-6"
+            >
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF9F6] border border-gray-200 shadow-2xs">
+                <span className="w-2 h-2 rounded-full bg-[#E8621A] animate-pulse" />
+                <span className="text-[11px] font-extrabold tracking-widest text-[#E8621A] uppercase">
+                  Velocity & Certainty
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0F1932] tracking-tight leading-tight">
+                Fastest Turnaround:
+                <br />
+                <span className="text-[#E8621A]">Speed without compromise.</span>
+              </h2>
+
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-normal">
+                Most of a credit decision is spent learning the company. <strong className="text-[#0F1932] font-extrabold">We already know it.</strong> Since 2002 the Group has anchored these companies&apos; public issues, read their offer documents, met their promoters and held their stock through cycles — so we start where other lenders reach in week two.
+              </p>
+
+              <div className="border-l-4 border-[#E8621A] pl-5 py-2 bg-[#FAF9F6] rounded-r-xl">
+                <p className="text-sm sm:text-base font-bold text-[#0F1932] italic">
+                  &ldquo;The speed comes out of the front end, not out of the file. Same security, same covenants, same guarantees.&rdquo;
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Right Speed Metric Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="lg:col-span-5 bg-[#0F1932] text-white p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[320px]"
+            >
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#E8621A] block mb-1">
+                    Standard Execution Velocity
+                  </span>
+                  <p className="text-3xl sm:text-4xl font-extrabold text-white">48 Hours</p>
                 </div>
-
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0F1932] tracking-tight leading-tight">
-                  Fastest Turnaround: Speed without compromise.
-                </h2>
-
-                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  Most of a credit decision is spent learning the company. <strong className="text-[#0F1932] font-extrabold">We already know it.</strong> Since 2002 the Group has anchored these companies&apos; public issues, read their offer documents, met their promoters and held their stock through cycles — so we start where other lenders reach in week two.
-                </p>
-
-                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  The rest is structure. We lend our own money, so there is no funding line to check and no committee waiting on another committee. The people who know the company are the people who approve the file. We have completed documentation on day one and disbursed on day two.
-                </p>
-
-                {/* Callout Quote */}
-                <div className="border-l-4 border-[#E8621A] pl-5 py-2 bg-white rounded-r-xl">
-                  <p className="text-sm sm:text-base font-bold text-[#0F1932] italic">
-                    &ldquo;The speed comes out of the front end, not out of the file. Same security, same covenants, same guarantees.&rdquo;
-                  </p>
+                <div className="w-12 h-12 rounded-2xl bg-[#E8621A]/20 border border-[#E8621A]/40 flex items-center justify-center text-[#E8621A]">
+                  <Zap className="w-6 h-6" />
                 </div>
               </div>
 
-              {/* Visual Workflow comparison */}
-              <div className="lg:col-span-5 space-y-4">
-                <div className="bg-[#0F1932] text-white p-6 sm:p-8 rounded-2xl shadow-xl">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Zap className="w-6 h-6 text-[#E8621A]" />
-                    <h3 className="font-bold text-base text-white">
-                      The LRSD Execution Cycle
-                    </h3>
-                  </div>
-                  
-                  <div className="space-y-4 text-xs">
-                    <div className="p-3.5 rounded-xl bg-white/10 border border-white/10 flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-full bg-[#E8621A] text-white flex items-center justify-center font-bold shrink-0 text-[11px]">
-                        1
-                      </span>
+              <div className="space-y-3 py-4 border-y border-white/10 text-xs">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Term Sheet & Sanction</span>
+                  <span className="text-[#E8621A] font-bold">Day 1</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Pledge / Escrow & Disbursement</span>
+                  <span className="text-[#E8621A] font-bold">Day 2</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Traditional Bank Turnaround</span>
+                  <span className="text-gray-400 font-semibold line-through">45–60 Days</span>
+                </div>
+              </div>
+
+              <div className="pt-4 flex items-center gap-2 text-xs text-gray-300 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-[#E8621A] shrink-0" />
+                <span>100% proprietary capital • Zero third-party syndicate lag</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Animated 4-Stage Connected Flow Diagram */}
+          <div className="mb-20">
+            <div className="mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div>
+                <div className="inline-flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#E8621A] animate-pulse" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#E8621A]">
+                    Step-by-Step Underwriting Journey
+                  </span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0F1932] tracking-tight">
+                  How We Move from Inquiry to Capital in 48 Hours
+                </h3>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF9F6] border border-gray-200 text-xs font-semibold text-gray-600 shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Parallel Execution • Single Underwriting Committee</span>
+              </div>
+            </div>
+
+            {/* Diagram Container */}
+            <div className="relative">
+              {/* Desktop Connecting Flow Line Behind Nodes */}
+              <div className="hidden lg:block absolute top-[24px] left-[6%] right-[6%] h-1 bg-gray-200 z-0 rounded-full overflow-hidden">
+                {/* Animated Flow Beam Traveling Along Pipeline */}
+                <motion.div
+                  className="h-full w-32 bg-gradient-to-r from-transparent via-[#E8621A] to-transparent shadow-[0_0_12px_#E8621A]"
+                  animate={{ x: ["-100%", "900%"] }}
+                  transition={{ repeat: Infinity, ease: "linear", duration: 3.5 }}
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                {[
+                  {
+                    step: "01",
+                    time: "Hour 0 – 4",
+                    title: "Direct Mandate Alignment",
+                    desc: "Direct evaluation with the investment committee. We assess promoter background and capital requirements immediately.",
+                    icon: <Zap className="w-5 h-5 text-white" />,
+                    tag: "Initial Review"
+                  },
+                  {
+                    step: "02",
+                    time: "Day 1 (Morning)",
+                    title: "Term Sheet & Structure",
+                    desc: "Issuance of structured term sheet. 24-year market context eliminates weeks of introductory DRHP research.",
+                    icon: <FileCheck2 className="w-5 h-5 text-white" />,
+                    tag: "Bespoke Structuring"
+                  },
+                  {
+                    step: "03",
+                    time: "Day 1 (Afternoon)",
+                    title: "Documentation & Sanction",
+                    desc: "Standardized loan agreement, depository pledge (NSDL/CDSL) & escrow setup executed in parallel.",
+                    icon: <ShieldCheck className="w-5 h-5 text-white" />,
+                    tag: "Rapid Legal"
+                  },
+                  {
+                    step: "04",
+                    time: "Day 2",
+                    title: "100% Fund Disbursement",
+                    desc: "Funds disbursed directly to borrower account off our balance sheet with active risk surveillance.",
+                    icon: <TrendingUp className="w-5 h-5 text-white" />,
+                    tag: "Direct Capital"
+                  },
+                ].map((stage, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: idx * 0.12 }}
+                    whileHover={{ y: -8 }}
+                    className="flex flex-col relative group"
+                  >
+                    {/* Top Flow Node Circle On Pipeline */}
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="relative">
+                        <div className="w-12 h-12 rounded-2xl bg-[#0F1932] border-2 border-white shadow-md flex items-center justify-center text-white group-hover:bg-[#E8621A] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(232,98,26,0.4)] transition-all duration-300">
+                          {stage.icon}
+                        </div>
+                        <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#E8621A] text-white text-[10px] font-black flex items-center justify-center shadow-xs">
+                          {stage.step}
+                        </span>
+                      </div>
+
                       <div>
-                        <p className="font-bold text-white">Day 1: Term Sheet & Documentation</p>
-                        <p className="text-gray-300 mt-0.5">Pre-analyzed company background eliminates weeks of research.</p>
+                        <span className="text-[10px] font-extrabold tracking-widest uppercase text-[#E8621A] block">
+                          STAGE {stage.step}
+                        </span>
+                        <span className="text-xs font-bold text-[#0F1932]">
+                          {stage.time}
+                        </span>
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-white/10 border border-white/10 flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-full bg-[#E8621A] text-white flex items-center justify-center font-bold shrink-0 text-[11px]">
-                        2
-                      </span>
+                    {/* Flow Card Body */}
+                    <div className="bg-[#FAF9F6] border border-gray-200/90 rounded-3xl p-6 sm:p-7 flex flex-col justify-between flex-1 shadow-sm hover:border-[#E8621A] hover:shadow-xl hover:bg-white transition-all">
                       <div>
-                        <p className="font-bold text-white">Day 2: Final Sanction & Disbursement</p>
-                        <p className="text-gray-300 mt-0.5">Own balance sheet eliminates third-party bank syndication delays.</p>
+                        <h4 className="text-base font-bold text-[#0F1932] group-hover:text-[#E8621A] transition-colors leading-snug mb-3">
+                          {stage.title}
+                        </h4>
+
+                        <p className="text-xs text-gray-600 leading-relaxed font-normal">
+                          {stage.desc}
+                        </p>
+                      </div>
+
+                      <div className="pt-4 mt-6 border-t border-gray-200/80 flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-gray-400 group-hover:text-[#E8621A] transition-colors">
+                        <span className="px-2.5 py-1 rounded-full bg-white border border-gray-200/80 shadow-2xs group-hover:border-[#E8621A]/40 transition-colors">
+                          {stage.tag}
+                        </span>
+                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
 
-                <div className="p-6 rounded-2xl bg-white border border-gray-200">
-                  <div className="flex items-center gap-2 mb-2 text-xs font-bold text-gray-400 uppercase tracking-wider">
-                    <Clock className="w-4 h-4 text-gray-400" />
-                    <span>Traditional Banking Cycle</span>
-                  </div>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    45–60 days of repetitive due diligence, branch-level queries, and multi-tier central committee approvals.
-                  </p>
+          {/* 3 Speed Enablers / Why We Can Do This */}
+          <div className="bg-[#FAF9F6] border border-gray-200 rounded-3xl p-8 sm:p-12 shadow-sm">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#E8621A] block mb-2">
+                Underwriting Mechanics
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F1932] tracking-tight">
+                Three Reasons Why LRSD Moves 20x Faster
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200 shadow-2xs hover:border-[#E8621A]/50 transition-all">
+                <div className="w-8 h-8 rounded-xl bg-[#FAF9F6] border border-gray-200 flex items-center justify-center mb-4 text-[#E8621A]">
+                  <Eye className="w-4.5 h-4.5" />
                 </div>
+                <h4 className="font-bold text-sm text-[#0F1932] mb-2">
+                  1. Pre-Underwritten Knowledge
+                </h4>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  24 years of anchor investing means we have already researched the management, company history, and market sector before you even call.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200 shadow-2xs hover:border-[#E8621A]/50 transition-all">
+                <div className="w-8 h-8 rounded-xl bg-[#FAF9F6] border border-gray-200 flex items-center justify-center mb-4 text-[#E8621A]">
+                  <Landmark className="w-4.5 h-4.5" />
+                </div>
+                <h4 className="font-bold text-sm text-[#0F1932] mb-2">
+                  2. 100% Own Balance Sheet
+                </h4>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  We lend our own retained equity. There are no syndicate banks to consult, no LP permissions to seek, and no second-guessing committees.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200 shadow-2xs hover:border-[#E8621A]/50 transition-all">
+                <div className="w-8 h-8 rounded-xl bg-[#FAF9F6] border border-gray-200 flex items-center justify-center mb-4 text-[#E8621A]">
+                  <Repeat className="w-4.5 h-4.5" />
+                </div>
+                <h4 className="font-bold text-sm text-[#0F1932] mb-2">
+                  3. Parallel Processing
+                </h4>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Legal documentation, depository pledge creation, and background verification are processed in parallel, not sequentially.
+                </p>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronsRight, ChevronRight, ChevronDown, ArrowRight, TrendingUp, Building2, Layers, Award, Briefcase } from 'lucide-react';
+import { ChevronsRight, ChevronRight, ChevronDown, ArrowRight, Briefcase } from 'lucide-react';
 import Navbar, { ActionButton } from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TorusWireframe, SphereWireframe, GyroWireframe, SilkWaves } from '@/components/SharedWireframes';
@@ -19,13 +19,13 @@ const PRODUCTS = [
     tag: 'FLAGSHIP · LAS',
     badge: '01 / LAS LIQUIDITY',
     desc: 'Most lenders size an SME facility by how fast they could sell the pledge. On a stock that trades thinly, that arithmetic returns nothing — and a profitable company gets declined for a reason that has nothing to do with its ability to repay. We underwrite the business instead: earnings, sector, promoter, trajectory. The volume tells us how to structure the facility. It does not decide whether we do it.',
-    features: ['Loan-to-Value: Up to 65%', 'Turnaround: 48 Hours', 'Structure: Bullet / EMI'],
+    features: ['Loan-to-Value: Up to 20%', 'Turnaround: 48 Hours', 'Structure: Bullet / EMI'],
   },
   {
     num: '02',
-    title: 'Receivables Factoring',
+    title: 'Receivables Discounting/Factoring',
     tag: 'PRODUCT · RF',
-    badge: '02 / CASH FLOW FINANCING',
+    badge: '02 / Supply Chain Finance (SCF)', 
     desc: 'Unlocking cash trapped in 60–180 day payment cycles — improving ROCE, RONW and cash flow.',
     features: ['Recourse & Non-Recourse', 'Disbursement: Day 2', 'Invoice Coverage: Up to 90%'],
   },
@@ -35,7 +35,7 @@ const PRODUCTS = [
     tag: 'PRODUCT · RESD',
     badge: '03 / SECURED REAL ESTATE',
     desc: 'We underwrite the cash-flow waterfall, not just the collateral value. Last-mile developer credit from ₹5 crore to ₹200 crore — drawdowns released against construction milestones, receipts escrowed, and repayment structured around when the project actually generates cash.',
-    features: ['Security: 1.5x–2.0x Cover', 'Tenure: 12–36 Months', 'Flexible Moratorium'],
+    features: ['Security: 2.0x-3.0x Cover', 'Tenure: 12–36 Months', 'Flexible Moratorium'],
   },
   {
     num: '04',
@@ -43,7 +43,7 @@ const PRODUCTS = [
     tag: 'BESPOKE · SC',
     badge: '04 / BESPOKE STRUCTURE',
     desc: 'Mezzanine debt, convertible instruments, pre-IPO bridge capital and event-driven financing.',
-    features: ['Turnaround: 7–14 Days', 'Security: 100% Asset-Backed', 'Structure: Tailored Amortization'],
+    features: ['Turnaround: 2-7 Days', 'Security: 100% Asset-Backed', 'Structure: Tailored Amortization'],
   },
 ];
 
@@ -121,10 +121,10 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 2: WHY WE EXIST / VISION (Rich Chocolate-Brown)
+          SECTION 2: WHY WE EXIST / VISION (Gradient Brown)
       ══════════════════════════════════════════════════════════ */}
       <section
-        className="relative py-24 md:py-32 px-6 md:px-8 overflow-hidden text-white"
+        className="relative py-24 md:py-32 px-6 md:px-8 text-white overflow-hidden"
         style={{
           background:
             "radial-gradient(120% 120% at 85% 15%, #4A2211 0%, #2E1308 55%, #180903 100%)",
@@ -132,25 +132,22 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-10">
+          <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-8">
             <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
             <span className="text-[11px] font-bold tracking-widest uppercase text-white/90">
-              Why we exist?
+              Why we exist
             </span>
           </div>
 
           {/* Section Header */}
           <div className="grid lg:grid-cols-[1.6fr_1fr] gap-10 items-start mb-16">
-            <h2 className="text-sm sm:text-2xl md:text-3xl font-extrabold tracking-[-0.03em] leading-[1.15] text-white">
-              {/* To be the most<br />
-              respected name in<br />
-              Indian lending. */}
-              To be India's most trusted name in secured, structured credit —
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white">
+              To be India&apos;s most trusted name in secured, structured credit —
               the lender that emerging companies turn to when the answer needs
               judgement, not a template.
             </h2>
             <div className="lg:pt-2">
-              <div className="w-8 h-0.5 bg-[#D98A5B] mb-4" />
+              <div className="w-8 h-0.5 bg-[#E8621A] mb-4" />
               <p className="text-base sm:text-lg font-medium text-white/80 leading-relaxed">
                 Experience. Integrity.
                 <br />
@@ -159,49 +156,91 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 2 White Cards */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {/* Card 1 */}
+          {/* Vision & Mission Cards */}
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12 items-stretch">
+            {/* Vision Card */}
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-2xl p-8 sm:p-10 text-[#0F1932] shadow-xl flex flex-col justify-between min-h-[220px] relative overflow-hidden"
+              className="group relative rounded-3xl p-8 sm:p-10 flex flex-col justify-between h-full overflow-hidden bg-white text-[#0F1932] shadow-xl border border-gray-100 hover:shadow-2xl transition-all"
             >
-              <div>
-                <p className="text-xs font-extrabold tracking-widest text-[#E8621A] uppercase mb-4">
-                  01 / Vision
-                </p>
-                <h3 className="text-base sm:text-lg font-bold text-[#0F1932] leading-snug max-w-sm">
-                  To become India’s most trusted name in lending — a
-                  full-spectrum credit institution known for specialised
-                  capabilities in MSME and corporate financing.
-                </h3>
+              {/* Watermark Illustration */}
+              <div className="absolute -right-4 -bottom-4 w-36 h-36 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+                <TorusWireframe className="w-full h-full" color="#E8621A" />
               </div>
-              <div className="flex justify-end mt-6">
-                <TorusWireframe className="w-14 h-14" color="#D98A5B" />
+
+              <div className="relative z-10 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-6">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF9F6] border border-gray-200">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E8621A]" />
+                      <span className="text-[11px] font-extrabold tracking-widest text-[#E8621A] uppercase">
+                        01 / Vision
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-bold tracking-wider uppercase text-gray-400">
+                      Target State
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl md:text-[22px] font-bold text-[#0F1932] leading-snug tracking-tight">
+                    To become India&apos;s most trusted name in lending — a{' '}
+                    <span className="text-[#E8621A]">
+                      full-spectrum credit institution
+                    </span>{' '}
+                    known for specialised capabilities in MSME and corporate financing.
+                  </h3>
+                </div>
+
+                {/* Symmetrically aligned bottom divider & subtext */}
+                <div className="mt-8 pt-5 border-t border-gray-100">
+                  <p className="text-xs sm:text-sm text-gray-500 font-normal leading-relaxed">
+                    Backing businesses where ambition is real, but access to timely capital is limited.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
-            {/* Card 2 */}
+            {/* Mission Card */}
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-2xl p-8 sm:p-10 text-[#0F1932] shadow-xl flex flex-col justify-between min-h-[220px] relative overflow-hidden"
+              className="group relative rounded-3xl p-8 sm:p-10 flex flex-col justify-between h-full overflow-hidden bg-white text-[#0F1932] shadow-xl border border-gray-100 hover:shadow-2xl transition-all"
             >
-              <div>
-                <p className="text-xs font-extrabold tracking-widest text-[#E8621A] uppercase mb-4">
-                  02 / Mission
-                </p>
-                <h3 className="text-base sm:text-lg font-bold text-[#0F1932] leading-snug max-w-sm">
-                  To build enduring value through disciplined lending by
-                  providing structured, secured and responsible growth capital
-                  to fundamentally strong businesses — combining market
-                  intelligence and credit discipline to bridge the gap between
-                  today’s scale and tomorrow’s potential.
-                </h3>
+              {/* Watermark Illustration */}
+              <div className="absolute -right-4 -bottom-4 w-36 h-36 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+                <SphereWireframe className="w-full h-full" color="#E8621A" />
               </div>
-              <div className="flex justify-end mt-6">
-                <SphereWireframe className="w-14 h-14" color="#D98A5B" />
+
+              <div className="relative z-10 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-6">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF9F6] border border-gray-200">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E8621A]" />
+                      <span className="text-[11px] font-extrabold tracking-widest text-[#E8621A] uppercase">
+                        02 / Mission
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-bold tracking-wider uppercase text-gray-400">
+                      Execution
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl md:text-[22px] font-bold text-[#0F1932] leading-snug tracking-tight">
+                    To build enduring value through{' '}
+                    <span className="text-[#E8621A]">
+                      disciplined lending
+                    </span>{' '}
+                    by providing structured, secured and responsible growth capital to fundamentally strong businesses — bridging the gap between today&apos;s scale and tomorrow&apos;s potential.
+                  </h3>
+                </div>
+
+                {/* Symmetrically aligned bottom divider & subtext */}
+                <div className="mt-8 pt-5 border-t border-gray-100">
+                  <p className="text-xs sm:text-sm text-gray-500 font-normal leading-relaxed">
+                    Fast. Prudent. Aligned for the long term.
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -233,7 +272,7 @@ export default function Home() {
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.02 }}
-                className="bg-black/25 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center transition-colors hover:border-[#E8621A]/50 flex flex-col justify-center items-center"
+                className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center transition-colors hover:border-[#E8621A]/50 flex flex-col justify-center items-center"
               >
                 <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">
                   {stat.val}
@@ -419,7 +458,10 @@ export default function Home() {
                     <h3 className="text-2xl sm:text-3xl lg:text-[38px] font-extrabold text-white leading-tight tracking-tight mb-8">
                       &ldquo;Discipline is not the opposite of ambition.
                       <br />
-                      It is what makes ambition repeatable.&rdquo;
+                      <span className="text-[#E8621A]">
+                        It is what makes ambition repeatable.
+                      </span>
+                      &rdquo;
                     </h3>
 
                     <div className="border-l-2 border-[#E8621A] pl-5 mb-8">
@@ -606,18 +648,17 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════════
           SECTION 6: FOUR COMMITMENTS (L R S D)
       ══════════════════════════════════════════════════════════ */}
-      <section id="dna" className="py-24 md:py-32 px-6 md:px-8 bg-[#FAF9F6]">
-        <div className="max-w-7xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-            {/* <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
-              05 / DNA
-            </p> */}
-          </div>
-
+      <section
+        id="dna"
+        className="py-24 md:py-32 px-6 md:px-8 text-white relative overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(120% 120% at 50% 10%, #16203D 0%, #0F1932 60%, #080E1E 100%)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Heading */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.08] text-[#0F1932] mb-14">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.08] text-white mb-14">
             Four letters.
             <br />
             <span className="text-[#E8621A]">Four commitments.</span>
@@ -631,75 +672,49 @@ export default function Home() {
                 num: "01",
                 title: "Long Term Thinking",
                 desc: "We back businesses, not transactions.",
-                dark: false,
               },
               {
                 letter: "R",
                 num: "02",
                 title: "Rigor",
                 desc: "We go deeper before we go faster.",
-                dark: false,
               },
               {
                 letter: "S",
                 num: "03",
                 title: "Stewardship",
                 desc: "We are Custodians before we are capital providers.",
-                dark: false,
               },
               {
                 letter: "D",
                 num: "04",
                 title: "Discipline",
-                desc: "Conservative on capital, flexible on structure once we've found a strong borrowe.",
-                dark: true,
+                desc: "Conservative on capital, flexible on structure once we've found a strong borrower.",
               },
             ].map((card, i) => (
               <motion.div
                 key={i}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
-                className={`rounded-2xl p-8 flex flex-col justify-between min-h-[280px] border transition-all ${
-                  card.dark
-                    ? "bg-[#0F1932] border-[#0F1932] text-white shadow-xl"
-                    : "bg-white border-gray-200 text-[#0F1932] hover:border-[#E8621A]/40 shadow-sm"
-                }`}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 flex flex-col justify-between min-h-[280px] hover:border-[#E8621A]/50 hover:bg-white/[0.08] transition-all shadow-xl"
               >
                 <div>
                   <div className="flex justify-between items-center mb-6">
-                    <span
-                      className={`text-[11px] font-extrabold tracking-widest px-2.5 py-1 rounded-full ${
-                        card.dark
-                          ? "bg-white/10 text-white/80"
-                          : "bg-[#FAF9F6] text-gray-400"
-                      }`}
-                    >
+                    <span className="text-[11px] font-extrabold tracking-widest px-2.5 py-1 rounded-full bg-white/10 text-white/90">
                       {card.num}
                     </span>
                   </div>
 
-                  <div
-                    className={`text-6xl font-black mb-6 leading-none ${
-                      card.dark ? "text-white" : "text-[#E8621A]"
-                    }`}
-                  >
+                  <div className="text-6xl font-black mb-6 leading-none text-[#E8621A]">
                     {card.letter}
                   </div>
 
-                  <h3
-                    className={`font-bold text-base md:text-lg mb-2 ${
-                      card.dark ? "text-white" : "text-[#0F1932]"
-                    }`}
-                  >
+                  <h3 className="font-bold text-base md:text-lg mb-2 text-white">
                     {card.title}
                   </h3>
                 </div>
 
-                <p
-                  className={`text-xs leading-relaxed mt-4 ${
-                    card.dark ? "text-gray-300" : "text-gray-500"
-                  }`}
-                >
+                <p className="text-xs leading-relaxed mt-4 text-gray-300 font-normal">
                   {card.desc}
                 </p>
               </motion.div>
@@ -725,223 +740,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 7: INSTITUTIONAL SCALE ROADMAP (Deep Navy)
-      ══════════════════════════════════════════════════════════ */}
-      <section
-        id="roadmap"
-        className="py-24 md:py-32 px-6 md:px-8 text-white relative overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(120% 120% at 50% 10%, #16203D 0%, #0F1932 60%, #080E1E 100%)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-            <span className="text-[11px] font-bold tracking-widest uppercase text-white/90">
-              06 / Roadmap
-            </span>
-          </div>
-
-          {/* Header */}
-          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 items-start mb-16">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.08] text-white">
-              A measured path
-              <br />
-              to{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8621A] to-[#F2BA96]">
-                institutional scale.
-              </span>
-            </h2>
-            <div className="lg:pt-2">
-              <div className="w-8 h-0.5 bg-[#E8621A] mb-3" />
-              <p className="text-sm sm:text-base text-gray-300 font-medium leading-relaxed">
-                A disciplined trajectory toward multi-asset credit management
-                and institutional capital stewardship.
-              </p>
-            </div>
-          </div>
-
-          {/* 4 Connected Milestone Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              {
-                step: "PHASE 01",
-                title: "Core Credit + Brand",
-                desc: "Founding platform & core secured wholesale credit lines.",
-                icon: <Building2 className="w-5 h-5 text-[#E8621A]" />,
-              },
-              {
-                step: "PHASE 02",
-                title: "Two+ More Story",
-                desc: "Expanding into structured factoring and bespoke facilities.",
-                icon: <TrendingUp className="w-5 h-5 text-[#E8621A]" />,
-              },
-              {
-                step: "PHASE 03",
-                title: "Co-Lending / Public",
-                desc: "Institutional bank co-lending framework & rating scale.",
-                icon: <Layers className="w-5 h-5 text-[#E8621A]" />,
-              },
-              {
-                step: "PHASE 04",
-                title: "AIF License",
-                desc: "Cat II Alternative Investment Fund for domestic & global capital.",
-                icon: <Award className="w-5 h-5 text-[#E8621A]" />,
-              },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -4 }}
-                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[220px] hover:border-[#E8621A]/50 transition-colors"
-              >
-                <div>
-                  <div className="flex justify-between items-center mb-5">
-                    <span className="text-[10px] font-extrabold tracking-widest text-[#E8621A] uppercase">
-                      {item.step}
-                    </span>
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 8: PERSPECTIVE BEFORE PRODUCT (Insights)
-      ══════════════════════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 px-6 md:px-8 bg-[#FAF9F6]">
-        <div className="max-w-7xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-            <p className="text-xs font-bold tracking-widest text-gray-400 uppercase">
-              07 / Insights
-            </p>
-          </div>
-
-          {/* Header */}
-          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 items-start mb-14">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.03em] leading-[1.08] text-[#0F1932]">
-              Perspective before
-              <br />
-              product.
-            </h2>
-            <div className="lg:pt-2">
-              <div className="w-8 h-0.5 bg-[#E8621A] mb-3" />
-              <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
-                Institutional market intelligence and thought leadership from
-                the desk of LRSD Capital.
-              </p>
-            </div>
-          </div>
-
-          {/* 3 Insight Cards */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Card 1 — Dark Navy Featured */}
-            <motion.div
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-2xl p-8 bg-[#0F1932] text-white shadow-xl flex flex-col justify-between min-h-[320px] border border-[#0F1932]"
-            >
-              <div>
-                <div className="flex justify-between items-center mb-6">
-                  <span className="text-[10px] font-extrabold tracking-widest text-[#E8621A] uppercase">
-                    RESEARCH · 4 MIN READ
-                  </span>
-                  <TorusWireframe className="w-8 h-8" color="#E8621A" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3 leading-snug">
-                  Understanding the Promoter Before the Balance Sheet.
-                </h3>
-                <p className="text-xs text-gray-300 leading-relaxed">
-                  Why relational integrity and character assessment remain the
-                  true first line of defense in credit underwriting.
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs font-bold text-[#E8621A]">
-                  Read Perspective
-                </span>
-                <ArrowRight className="w-4 h-4 text-[#E8621A]" />
-              </div>
-            </motion.div>
-
-            {/* Card 2 — Crisp White */}
-            <motion.div
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-2xl p-8 bg-white text-[#0F1932] shadow-sm flex flex-col justify-between min-h-[320px] border border-gray-200 hover:border-gray-300"
-            >
-              <div>
-                <div className="flex justify-between items-center mb-6">
-                  <span className="text-[10px] font-extrabold tracking-widest text-[#E8621A] uppercase">
-                    ANALYSIS · 6 MIN READ
-                  </span>
-                  <SphereWireframe className="w-8 h-8" color="#D98A5B" />
-                </div>
-                <h3 className="text-xl font-bold text-[#0F1932] mb-3 leading-snug">
-                  Why Structuring Matters More Than Rate in SME Debt.
-                </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  How cash-flow matched amortizations prevent enterprise
-                  distress and maximize enterprise equity retention.
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
-                <span className="text-xs font-bold text-[#0F1932]">
-                  Read Perspective
-                </span>
-                <ArrowRight className="w-4 h-4 text-[#0F1932]" />
-              </div>
-            </motion.div>
-
-            {/* Card 3 — Crisp White */}
-            <motion.div
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-2xl p-8 bg-white text-[#0F1932] shadow-sm flex flex-col justify-between min-h-[320px] border border-gray-200 hover:border-gray-300"
-            >
-              <div>
-                <div className="flex justify-between items-center mb-6">
-                  <span className="text-[10px] font-extrabold tracking-widest text-[#E8621A] uppercase">
-                    OUTLOOK · 5 MIN READ
-                  </span>
-                  <GyroWireframe className="w-8 h-8" color="#D98A5B" />
-                </div>
-                <h3 className="text-xl font-bold text-[#0F1932] mb-3 leading-snug">
-                  The Liquidity Conundrum in Mid-Market Enterprise.
-                </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Navigating working capital friction points during rapid
-                  operational scaling in Indian manufacturing.
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
-                <span className="text-xs font-bold text-[#0F1932]">
-                  Read Perspective
-                </span>
-                <ArrowRight className="w-4 h-4 text-[#0F1932]" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 9: CTA & FOOTER
+          SECTION 7: CTA & FOOTER
       ══════════════════════════════════════════════════════════ */}
       <section id="contact" className="py-20 md:py-24 px-6 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto bg-[#0F1932] rounded-3xl p-12 md:p-20 text-center text-white shadow-2xl relative overflow-hidden">
@@ -954,8 +753,8 @@ export default function Home() {
               bespoke structured credit solutions.
             </p>
             <ActionButton
-              label="Get in touch with our team"
-              href="mailto:admin@lrsdindia.com"
+              label="Start a conversation"
+              href="/#contact"
               className="bg-[#E8621A] hover:bg-[#F27125]"
             />
           </div>

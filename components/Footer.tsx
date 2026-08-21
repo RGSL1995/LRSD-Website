@@ -3,8 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaLinkedin, FaXTwitter, FaFacebook, FaInstagram } from 'react-icons/fa6';
+import { ArrowRight } from 'lucide-react';
+import { useConversationModal } from './ConversationModal';
 
 export default function Footer() {
+  const { openModal } = useConversationModal();
   return (
     <footer className="bg-[#0F1932] text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
@@ -65,11 +68,6 @@ export default function Footer() {
               <li>
                 <Link href="/testimonials" className="hover:text-white transition-colors">
                   Client Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link href="/#roadmap" className="hover:text-white transition-colors">
-                  Institutional Roadmap
                 </Link>
               </li>
             </ul>
@@ -153,6 +151,16 @@ export default function Footer() {
                 >
                   +91 98102 78244
                 </a>
+              </div>
+              <div className="pt-1">
+                <button
+                  type="button"
+                  onClick={() => openModal()}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#E8621A] hover:bg-[#F27125] text-white text-[11px] font-bold transition-colors cursor-pointer"
+                >
+                  <span>Start Conversation</span>
+                  <ArrowRight className="w-3 h-3" />
+                </button>
               </div>
             </div>
           </div>

@@ -153,7 +153,7 @@ export default function LeadershipPage() {
 
                   <div className="border-l-2 border-[#E8621A] pl-5 mb-8 space-y-4">
                     <p className="text-base sm:text-lg text-white font-bold leading-snug">
-                      &ldquo;Discipline is not the opposite of ambition. It is what makes ambition repeatable.&rdquo;
+                      &ldquo;Discipline is not the opposite of ambition. <span className="text-[#E8621A]">It is what makes ambition repeatable.</span>&rdquo;
                     </p>
                     <p className="text-sm sm:text-base text-gray-200 italic leading-relaxed">
                       &ldquo;We have never written off a loan in twenty-four years. That record is not caution for its own sake — it is what allows us to back a company the market has not noticed yet, and to still be standing there when it has.&rdquo;
