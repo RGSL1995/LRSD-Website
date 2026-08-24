@@ -69,3 +69,122 @@ html {
   animation: pulseSubtle 6s ease-in-out infinite;
 }
 
+/* ══════════════════════════════════════════════════════════
+   BIS STANDARD / WCAG 2.1 ACCESSIBILITY STYLES
+══════════════════════════════════════════════════════════ */
+
+/* 1. Text Resizing */
+html.a11y-text-large {
+  font-size: 115% !important;
+}
+
+html.a11y-text-extralarge {
+  font-size: 130% !important;
+}
+
+/* 2. High Contrast - Dark */
+html.a11y-high-contrast-dark {
+  filter: contrast(120%);
+}
+html.a11y-high-contrast-dark body,
+html.a11y-high-contrast-dark main,
+html.a11y-high-contrast-dark section,
+html.a11y-high-contrast-dark footer {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+html.a11y-high-contrast-dark h1,
+html.a11y-high-contrast-dark h2,
+html.a11y-high-contrast-dark h3,
+html.a11y-high-contrast-dark h4,
+html.a11y-high-contrast-dark p,
+html.a11y-high-contrast-dark span:not([class*="bg-"]),
+html.a11y-high-contrast-dark li {
+  color: #FFFFFF !important;
+}
+html.a11y-high-contrast-dark div[class*="bg-white"],
+html.a11y-high-contrast-dark div[class*="bg-[#FAF9F6]"],
+html.a11y-high-contrast-dark div[class*="bg-[#F8F7F4]"] {
+  background-color: #121212 !important;
+  border-color: #333333 !important;
+}
+html.a11y-high-contrast-dark a {
+  color: #FFB37C !important;
+}
+
+/* 3. High Contrast - Yellow on Black (Standard Indian Banking & BIS High Contrast) */
+html.a11y-yellow-on-black body,
+html.a11y-yellow-on-black main,
+html.a11y-yellow-on-black section,
+html.a11y-yellow-on-black footer,
+html.a11y-yellow-on-black div[class*="bg-"] {
+  background-color: #000000 !important;
+  background-image: none !important;
+  border-color: #FFFF00 !important;
+}
+html.a11y-yellow-on-black h1,
+html.a11y-yellow-on-black h2,
+html.a11y-yellow-on-black h3,
+html.a11y-yellow-on-black h4,
+html.a11y-yellow-on-black h5,
+html.a11y-yellow-on-black h6,
+html.a11y-yellow-on-black p,
+html.a11y-yellow-on-black span,
+html.a11y-yellow-on-black li,
+html.a11y-yellow-on-black label {
+  color: #FFFF00 !important;
+}
+html.a11y-yellow-on-black a {
+  color: #00FFFF !important;
+  text-decoration: underline !important;
+}
+html.a11y-yellow-on-black button {
+  border-color: #FFFF00 !important;
+  color: #FFFF00 !important;
+}
+
+/* 4. Grayscale / Monochrome */
+html.a11y-grayscale {
+  filter: grayscale(100%) !important;
+}
+
+/* 5. Dyslexia-Friendly Typography */
+html.a11y-dyslexic * {
+  font-family: Arial, "Comic Sans MS", "Trebuchet MS", sans-serif !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.15em !important;
+}
+
+/* 6. Highlight Links */
+html.a11y-highlight-links a,
+html.a11y-highlight-links button[role="link"] {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+  outline: 2px dashed #E8621A !important;
+  outline-offset: 3px !important;
+}
+
+/* 7. Big Cursor */
+html.a11y-big-cursor,
+html.a11y-big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 4L15 32L19.5 20.5L31 16L4 4Z' fill='%23E8621A' stroke='white' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E"), auto !important;
+}
+
+/* 8. Reduced Motion (Pause Animations) */
+html.a11y-reduced-motion * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* 9. Letter Spacing */
+html.a11y-letter-spacing * {
+  letter-spacing: 0.1em !important;
+}
+
+/* 10. Line Height */
+html.a11y-line-height * {
+  line-height: 1.9 !important;
+}

@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronsRight, ChevronRight, ChevronDown, ArrowRight, Briefcase } from 'lucide-react';
 import Navbar, { ActionButton } from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { TorusWireframe, SphereWireframe, GyroWireframe, SilkWaves } from '@/components/SharedWireframes';
+import { GyroWireframe, SilkWaves } from '@/components/SharedWireframes';
 
 /* ─────────────────────────────────────────────
    PRODUCTS DATA FOR SECTION 3
@@ -17,7 +17,8 @@ const PRODUCTS = [
     num: '01',
     title: 'Loan Against Securities',
     tag: 'FLAGSHIP · LAS',
-    badge: '01 / LAS LIQUIDITY',
+    badge: '01 / LAS',
+    href: '/products/loan-against-shares',
     desc: 'Most lenders size an SME facility by how fast they could sell the pledge. On a stock that trades thinly, that arithmetic returns nothing — and a profitable company gets declined for a reason that has nothing to do with its ability to repay. We underwrite the business instead: earnings, sector, promoter, trajectory. The volume tells us how to structure the facility. It does not decide whether we do it.',
     features: ['Loan-to-Value: Up to 20%', 'Turnaround: 48 Hours', 'Structure: Bullet / EMI'],
   },
@@ -26,6 +27,7 @@ const PRODUCTS = [
     title: 'Receivables Discounting/Factoring',
     tag: 'PRODUCT · RF',
     badge: '02 / Supply Chain Finance (SCF)', 
+    href: '/products/receivables-discounting',
     desc: 'Unlocking cash trapped in 60–180 day payment cycles — improving ROCE, RONW and cash flow.',
     features: ['Recourse & Non-Recourse', 'Disbursement: Day 2', 'Invoice Coverage: Up to 90%'],
   },
@@ -34,6 +36,7 @@ const PRODUCTS = [
     title: 'Mortgage-Backed Loans ',
     tag: 'PRODUCT · RESD',
     badge: '03 / SECURED REAL ESTATE',
+    href: '/products/mortgage-backed-loans',
     desc: 'We underwrite the cash-flow waterfall, not just the collateral value. Last-mile developer credit from ₹5 crore to ₹200 crore — drawdowns released against construction milestones, receipts escrowed, and repayment structured around when the project actually generates cash.',
     features: ['Security: 2.0x-3.0x Cover', 'Tenure: 12–36 Months', 'Flexible Moratorium'],
   },
@@ -42,6 +45,7 @@ const PRODUCTS = [
     title: 'Structured Credit',
     tag: 'BESPOKE · SC',
     badge: '04 / BESPOKE STRUCTURE',
+    href: '/products/structured-credit',
     desc: 'Mezzanine debt, convertible instruments, pre-IPO bridge capital and event-driven financing.',
     features: ['Turnaround: 2-7 Days', 'Security: 100% Asset-Backed', 'Structure: Tailored Amortization'],
   },
@@ -162,11 +166,6 @@ export default function Home() {
               transition={{ duration: 0.3 }}
               className="group relative rounded-3xl p-8 sm:p-10 flex flex-col justify-between h-full overflow-hidden bg-white text-[#0F1932] shadow-xl border border-gray-100 hover:shadow-2xl transition-all"
             >
-              {/* Watermark Illustration */}
-              <div className="absolute -right-4 -bottom-4 w-36 h-36 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-                <TorusWireframe className="w-full h-full" color="#E8621A" />
-              </div>
-
               <div className="relative z-10 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-6">
@@ -176,9 +175,9 @@ export default function Home() {
                         01 / Vision
                       </span>
                     </div>
-                    <span className="text-[10px] font-bold tracking-wider uppercase text-gray-400">
+                    {/* <span className="text-[10px] font-bold tracking-wider uppercase text-gray-400">
                       Target State
-                    </span>
+                    </span> */}
                   </div>
 
                   <h3 className="text-lg sm:text-xl md:text-[22px] font-bold text-[#0F1932] leading-snug tracking-tight">
@@ -205,11 +204,6 @@ export default function Home() {
               transition={{ duration: 0.3 }}
               className="group relative rounded-3xl p-8 sm:p-10 flex flex-col justify-between h-full overflow-hidden bg-white text-[#0F1932] shadow-xl border border-gray-100 hover:shadow-2xl transition-all"
             >
-              {/* Watermark Illustration */}
-              <div className="absolute -right-4 -bottom-4 w-36 h-36 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-                <SphereWireframe className="w-full h-full" color="#E8621A" />
-              </div>
-
               <div className="relative z-10 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-6">
@@ -219,9 +213,9 @@ export default function Home() {
                         02 / Mission
                       </span>
                     </div>
-                    <span className="text-[10px] font-bold tracking-wider uppercase text-gray-400">
+                    {/* <span className="text-[10px] font-bold tracking-wider uppercase text-gray-400">
                       Execution
-                    </span>
+                    </span> */}
                   </div>
 
                   <h3 className="text-lg sm:text-xl md:text-[22px] font-bold text-[#0F1932] leading-snug tracking-tight">
@@ -404,14 +398,13 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <motion.a
-                    href="#contact"
-                    whileHover={{ x: 3 }}
-                    className="inline-flex items-center gap-2 text-xs font-bold text-[#E8621A] tracking-wider uppercase"
+                  <Link
+                    href={PRODUCTS[activeProduct].href}
+                    className="inline-flex items-center gap-2 text-xs font-bold text-[#E8621A] hover:text-[#C54E0E] transition-colors tracking-wider uppercase group"
                   >
                     <span>Learn more about structure</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </motion.a>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
               </motion.div>
             </AnimatePresence>

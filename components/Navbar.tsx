@@ -19,6 +19,30 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { useConversationModal } from './ConversationModal';
+import { useAccessibility } from './AccessibilityProvider';
+
+export const AccessibilityButton = ({ className = '' }: { className?: string }) => {
+  const { toggleWidget } = useAccessibility();
+  return (
+    <button
+      type="button"
+      onClick={toggleWidget}
+      aria-label="Open Accessibility Menu"
+      title="Accessibility Menu"
+      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#1C1E22] hover:bg-[#0F1932] text-white flex items-center justify-center shadow-md transition-all duration-200 hover:scale-105 active:scale-95 border border-white/10 group cursor-pointer ${className}`}
+    >
+      <div className="w-6 h-6 rounded-lg bg-[#E8621A] group-hover:bg-[#F27125] flex items-center justify-center text-white shadow-xs transition-colors shrink-0">
+        <svg
+          className="w-3.5 h-3.5 fill-current"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
+        </svg>
+      </div>
+    </button>
+  );
+};
 
 export const ActionButton = ({
   label,
@@ -228,12 +252,12 @@ export default function Navbar() {
                     </p>
                   </div>
 
-                  <div className="space-y-1.5">
+                  <div className="grid grid-cols-1 gap-1">
                     {aboutItems.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`flex items-start gap-3.5 p-3 rounded-xl transition-all ${
+                        className={`flex items-center gap-3 p-2.5 rounded-xl transition-all ${
                           pathname === item.href
                             ? 'bg-[#FAF9F6] border border-[#E8621A]/30'
                             : 'hover:bg-[#FAF9F6]'
@@ -245,9 +269,6 @@ export default function Navbar() {
                         <div className="flex-1 min-w-0">
                           <p className="text-xs font-bold text-[#0F1932] truncate">
                             {item.title}
-                          </p>
-                          <p className="text-[11px] text-gray-500 line-clamp-2 mt-0.5 leading-snug">
-                            {item.desc}
                           </p>
                         </div>
                       </Link>
@@ -337,36 +358,25 @@ export default function Navbar() {
           >
             <span>Testimonials</span>
           </Link>
-
-          {/* Direct Anchor Quick Links */}
-          {/* <Link
-            href="/#dna"
-            className="text-xs font-semibold text-gray-700 hover:text-[#0F1932] tracking-wide transition-colors"
-          >
-            Our DNA
-          </Link> */}
-
-          {/* <Link
-            href="/#roadmap"
-            className="text-xs font-semibold text-gray-700 hover:text-[#0F1932] tracking-wide transition-colors"
-          >
-            Roadmap
-          </Link> */}
         </nav>
 
-        {/* Top Right Button */}
-        <div className="hidden lg:flex items-center gap-4">
+        {/* Top Right Action & Accessibility Buttons */}
+        <div className="hidden lg:flex items-center gap-3">
+          <AccessibilityButton />
           <ActionButton label="Start a conversation" href="/#contact" />
         </div>
 
-        {/* Mobile Hamburger Toggle Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-xl text-gray-700 hover:bg-gray-100 transition-colors"
-          aria-label="Toggle Navigation Menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Actions & Hamburger Toggle Button */}
+        <div className="lg:hidden flex items-center gap-2">
+          <AccessibilityButton className="w-8 h-8" />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-xl text-gray-700 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer Menu */}
@@ -404,7 +414,6 @@ export default function Navbar() {
                         className="block py-1.5 text-xs text-gray-600 hover:text-[#E8621A] font-medium"
                       >
                         <div className="font-bold text-[#0F1932]">{item.title}</div>
-                        <div className="text-[10px] text-gray-400">{item.desc}</div>
                       </Link>
                     ))}
                   </div>

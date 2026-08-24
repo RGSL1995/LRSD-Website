@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 import { ModalProvider } from "@/components/ConversationModal";
 import PageTransitionLoader from "@/components/PageTransitionLoader";
+import { AccessibilityProvider } from "@/components/AccessibilityProvider";
 
 export default function RootLayout({
   children,
@@ -28,10 +29,14 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-[#0F1932]">
-        <PageTransitionLoader />
-        <ModalProvider>
-          {children}
-        </ModalProvider>
+        <AccessibilityProvider>
+          <PageTransitionLoader />
+          <ModalProvider>
+            <main id="main-content" tabIndex={-1} className="focus:outline-none flex-1 flex flex-col">
+              {children}
+            </main>
+          </ModalProvider>
+        </AccessibilityProvider>
       </body>
     </html>
   );

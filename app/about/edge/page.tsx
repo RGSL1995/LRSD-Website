@@ -412,12 +412,16 @@ export default function LRSDEdgePage() {
 
               <div className="space-y-3 py-4 border-y border-white/10 text-xs">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Term Sheet & Sanction</span>
+                  <span className="text-gray-300">Mandate & Term Sheet</span>
                   <span className="text-[#E8621A] font-bold">Day 1</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Pledge / Escrow & Disbursement</span>
+                  <span className="text-gray-300">Documentation & Sanction</span>
                   <span className="text-[#E8621A] font-bold">Day 2</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Pledge / Escrow & Disbursement</span>
+                  <span className="text-[#E8621A] font-bold">Day 3</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-300">Traditional Bank Turnaround</span>
@@ -432,7 +436,7 @@ export default function LRSDEdgePage() {
             </motion.div>
           </div>
 
-          {/* Animated 4-Stage Connected Flow Diagram */}
+          {/* Animated 3-Stage Connected Flow Diagram */}
           <div className="mb-20">
             <div className="mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
@@ -443,7 +447,7 @@ export default function LRSDEdgePage() {
                   </span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0F1932] tracking-tight">
-                  How We Move from Inquiry to Capital in 48 Hours
+                  How We Move from Inquiry to Capital in 3 Days
                 </h3>
               </div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF9F6] border border-gray-200 text-xs font-semibold text-gray-600 shadow-2xs">
@@ -455,7 +459,7 @@ export default function LRSDEdgePage() {
             {/* Diagram Container */}
             <div className="relative">
               {/* Desktop Connecting Flow Line Behind Nodes */}
-              <div className="hidden lg:block absolute top-[24px] left-[6%] right-[6%] h-1 bg-gray-200 z-0 rounded-full overflow-hidden">
+              <div className="hidden lg:block absolute top-[24px] left-[8%] right-[8%] h-1 bg-gray-200 z-0 rounded-full overflow-hidden">
                 {/* Animated Flow Beam Traveling Along Pipeline */}
                 <motion.div
                   className="h-full w-32 bg-gradient-to-r from-transparent via-[#E8621A] to-transparent shadow-[0_0_12px_#E8621A]"
@@ -464,37 +468,29 @@ export default function LRSDEdgePage() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 relative z-10">
                 {[
                   {
                     step: "01",
-                    time: "Hour 0 – 4",
-                    title: "Direct Mandate Alignment",
-                    desc: "Direct evaluation with the investment committee. We assess promoter background and capital requirements immediately.",
-                    icon: <Zap className="w-5 h-5 text-white" />,
-                    tag: "Initial Review"
+                    time: "Day 1",
+                    title: "Direct Mandate Alignment & Term Sheet",
+                    desc: "Direct evaluation with the investment committee. We assess promoter background, capital requirements immediately, and issue a structured term sheet.",
+                    icon: <FileCheck2 className="w-5 h-5 text-white" />,
+                    tag: "Mandate & Structuring"
                   },
                   {
                     step: "02",
-                    time: "Day 1 (Morning)",
-                    title: "Term Sheet & Structure",
-                    desc: "Issuance of structured term sheet. 24-year market context eliminates weeks of introductory DRHP research.",
-                    icon: <FileCheck2 className="w-5 h-5 text-white" />,
-                    tag: "Bespoke Structuring"
-                  },
-                  {
-                    step: "03",
-                    time: "Day 1 (Afternoon)",
+                    time: "Day 2",
                     title: "Documentation & Sanction",
-                    desc: "Standardized loan agreement, depository pledge (NSDL/CDSL) & escrow setup executed in parallel.",
+                    desc: "Standardized loan agreement, depository pledge (NSDL/CDSL) & escrow setup executed in parallel with fast-track legal clearances.",
                     icon: <ShieldCheck className="w-5 h-5 text-white" />,
                     tag: "Rapid Legal"
                   },
                   {
-                    step: "04",
-                    time: "Day 2",
+                    step: "03",
+                    time: "Day 3",
                     title: "100% Fund Disbursement",
-                    desc: "Funds disbursed directly to borrower account off our balance sheet with active risk surveillance.",
+                    desc: "Funds disbursed directly to borrower account off our balance sheet with active risk surveillance and portfolio monitoring.",
                     icon: <TrendingUp className="w-5 h-5 text-white" />,
                     tag: "Direct Capital"
                   },
