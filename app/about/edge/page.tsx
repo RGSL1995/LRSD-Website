@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Navbar, { ActionButton } from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -56,18 +57,18 @@ export default function LRSDEdgePage() {
   ];
 
   const anchoredCompanies = [
-    "Poojaa Precision Engg. Ltd",
-    "Millworks Technologies Ltd",
-    "Tipco Engineering India Ltd",
-    "Nanta Tech Ltd.",
-    "Pajson Agro India Ltd",
-    "Central Mine Planning & Design Institute Ltd",
-    "Airfloa Rail Technology Ltd",
-    "Flysbs Aviation Ltd",
-    "Envirotech Systems Ltd",
-    "Oriana Power",
-    "KP Green Engineering Ltd",
-    "VVIP Infratech Limited"
+    { name: "Poojaa Precision Engg. Ltd", logo: "/logos/poojaa.png" },
+    { name: "Millworks Technologies Ltd", logo: "/logos/millworks.png" },
+    { name: "Tipco Engineering India Ltd", logo: "/logos/tipco.png" },
+    { name: "Nanta Tech Ltd.", logo: "/logos/nanta.png" },
+    { name: "Pajson Agro India Ltd", logo: "/logos/pajson.png" },
+    { name: "Central Mine Planning & Design Institute", logo: "/logos/cmpdi.png" },
+    { name: "Airfloa Rail Technology Ltd", logo: "/logos/airfloa.png" },
+    { name: "Flysbs Aviation Ltd", logo: "/logos/flysbs.png" },
+    { name: "Envirotech Systems Ltd", logo: "/logos/envirotech.png" },
+    { name: "Oriana Power", logo: "/logos/oriana.png" },
+    { name: "KP Green Engineering Ltd", logo: "/logos/kp-green.png" },
+    { name: "VVIP Infratech Limited", logo: "/logos/vvip.png" },
   ];
 
   const comparisonData = [
@@ -301,52 +302,37 @@ export default function LRSDEdgePage() {
           </motion.div>
         </div>
 
-        {/* Minimalist Interactive Full-Width Rolling Tape */}
-        <div className="relative w-full overflow-hidden py-4 space-y-4 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] group/ticker">
-          {/* Track 1: Moving Left */}
+        {/* Redesigned Clean Single-Line Company Tape */}
+        <div className="relative w-full overflow-hidden py-4 bg-gradient-to-r from-[#FAF9F6] via-white to-[#FAF9F6] border-y border-gray-200/80 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] group/ticker">
           <motion.div
-            className="flex gap-4 w-max"
+            className="flex gap-4 w-max items-center"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 38 }}
             whileHover={{ transition: { duration: 0 } }}
           >
-            {[...anchoredCompanies, ...anchoredCompanies].map((company, i) => (
+            {[...anchoredCompanies, ...anchoredCompanies, ...anchoredCompanies].map((company, i) => (
               <motion.div
-                key={`min-track1-${i}`}
-                whileHover={{ y: -3, scale: 1.02 }}
+                key={`portfolio-item-${i}`}
+                whileHover={{ y: -2, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
-                className="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-gray-200/90 shadow-2xs hover:border-[#E8621A] hover:shadow-md transition-all shrink-0 cursor-default group"
+                className="flex items-center gap-3.5 px-4 py-2.5 rounded-full bg-white border border-gray-200/90 shadow-2xs hover:border-[#E8621A] hover:shadow-md transition-all shrink-0 cursor-default group"
               >
-                <div className="w-2 h-2 rounded-full bg-[#E8621A] shadow-[0_0_8px_rgba(232,98,26,0.5)] group-hover:scale-125 transition-transform shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-[#0F1932] group-hover:text-[#E8621A] transition-colors whitespace-nowrap">
-                  {company}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
+                {/* Logo Showcase Stage */}
+                <div className="relative h-9 w-20 sm:h-10 sm:w-24 rounded-full bg-white flex items-center justify-center p-1 shrink-0 overflow-hidden">
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-full max-w-full object-contain"
+                    loading="eager"
+                  />
+                </div>
 
-          {/* Track 2: Moving Right */}
-          <motion.div
-            className="flex gap-4 w-max"
-            animate={{ x: ["-50%", "0%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 34 }}
-            whileHover={{ transition: { duration: 0 } }}
-          >
-            {[
-              ...anchoredCompanies.slice(6),
-              ...anchoredCompanies.slice(0, 6),
-              ...anchoredCompanies.slice(6),
-              ...anchoredCompanies.slice(0, 6),
-            ].map((company, i) => (
-              <motion.div
-                key={`min-track2-${i}`}
-                whileHover={{ y: -3, scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-                className="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-gray-200/90 shadow-2xs hover:border-[#E8621A] hover:shadow-md transition-all shrink-0 cursor-default group"
-              >
-                <div className="w-2 h-2 rounded-full bg-[#E8621A] shadow-[0_0_8px_rgba(232,98,26,0.5)] group-hover:scale-125 transition-transform shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-[#0F1932] group-hover:text-[#E8621A] transition-colors whitespace-nowrap">
-                  {company}
+                {/* Subtle Divider */}
+                <div className="w-[1px] h-5 bg-gray-200 group-hover:bg-[#E8621A]/30 transition-colors shrink-0" />
+
+                {/* Company Name Only */}
+                <span className="text-xs sm:text-sm font-semibold text-[#0F1932] group-hover:text-[#E8621A] transition-colors whitespace-nowrap pr-2">
+                  {company.name}
                 </span>
               </motion.div>
             ))}
