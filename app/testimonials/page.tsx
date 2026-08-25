@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Navbar, { ActionButton } from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,44 +10,15 @@ import { TorusWireframe, SphereWireframe, GyroWireframe, SilkWaves } from '@/com
 import { MessageSquareQuote, Star, Building2, TrendingUp, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function TestimonialsPage() {
-  const testimonials = [
-    {
-      quote:
-        "When our SME company got listed on the NSE Emerge platform, our capital requirements doubled to fulfill major industrial orders. Conventional banks wanted a formal credit rating that no fresh SME carries. LRSD Capital understood our order book and delivered a ₹12 Crore LAS facility in 5 days.",
-      author: "Managing Director",
-      company: "NSE SME Listed Precision Engineering Firm",
-      location: "Pune, Maharashtra",
-      facility: "Loan Against Shares · ₹12 Cr",
-      tag: "SME Listing",
-    },
-    {
-      quote:
-        "Our working capital was severely stretched with 120-day receivable cycles from Tier-1 automobile OEMs. LRSD set up a ₹20 Crore factoring line that disburses funds on Day 2 of invoice submission. It transformed our capacity utilization and ROCE.",
-      author: "Founder & CEO",
-      company: "Auto Ancillary & Component Manufacturer",
-      location: "Gurugram, Haryana",
-      facility: "Receivables Factoring · ₹20 Cr",
-      tag: "Supply Chain",
-    },
-    {
-      quote:
-        "We needed last-mile bridge financing to complete our premium residential tower ahead of RERA deadlines. Other NBFCs had rigid monthly amortization rules. LRSD structured our loan with an escrow cash-flow waterfall that released repayment only when buyer installments arrived.",
-      author: "Promoter & Director",
-      company: "Urban Real Estate Development Group",
-      location: "NCR Delhi",
-      facility: "Mortgage-Backed Debt · ₹35 Cr",
-      tag: "Real Estate",
-    },
-    {
-      quote:
-        "During a strategic promoter buyout, we needed rapid mezzanine debt without diluting our equity stake before our mainboard IPO. LRSD Capital evaluated our 10-year track record and provided custom structured debt within 10 days.",
-      author: "Joint Managing Director",
-      company: "Specialty Chemicals & Exporter",
-      location: "Vadodara, Gujarat",
-      facility: "Structured Pre-IPO Debt · ₹25 Cr",
-      tag: "Corporate Finance",
-    },
-  ];
+  const testimonial = {
+    quote:
+      "As an unlisted SME navigating formal institutional borrowing for the first time, we faced real complexity. LRSD Capital's team went beyond the transactional—they took time to explain the documentation, address our concerns, and guide us through each phase. That level of hand-holding, combined with competitive terms, gave us confidence in our partnership. For an SME of our size, that support was invaluable. We would absolutely recommend them.",
+    author: "Kapil Garg",
+    role: "Managing Director",
+    company: "Shellz India",
+    image: "/kapilgarg.png",
+    tag: "Client Success Story",
+  };
 
   return (
     <div className="min-h-screen bg-white text-[#0F1932] overflow-x-hidden selection:bg-[#E8621A] selection:text-white font-sans">
@@ -118,40 +90,50 @@ export default function TestimonialsPage() {
       <section className="py-24 md:py-32 px-6 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((t, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3 }}
-                className="bg-[#FAF9F6] border border-gray-200 p-8 sm:p-10 rounded-3xl flex flex-col justify-between shadow-sm relative overflow-hidden"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-[11px] font-bold text-[#E8621A] bg-white border border-gray-200 px-3 py-1 rounded-full uppercase tracking-wider">
-                      {t.tag}
-                    </span>
-                    <span className="text-xs font-semibold text-gray-400">
-                      {t.facility}
-                    </span>
-                  </div>
-
-                  <p className="text-sm sm:text-base text-[#0F1932] leading-relaxed mb-8 font-medium italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
+            <motion.div
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3 }}
+              className="bg-[#FAF9F6] border border-gray-200 p-8 sm:p-10 rounded-3xl flex flex-col justify-between shadow-sm relative overflow-hidden"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-[11px] font-bold text-[#E8621A] bg-white border border-gray-200 px-3 py-1 rounded-full uppercase tracking-wider">
+                    {testimonial.tag}
+                  </span>
                 </div>
 
-                <div className="pt-6 border-t border-gray-200/80 flex items-center justify-between">
+                <p className="text-sm sm:text-base text-[#0F1932] leading-relaxed mb-8 font-medium italic">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-gray-200/80 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3.5">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#E8621A]/30 shrink-0 bg-white shadow-2xs">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.author}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#0F1932]">{t.author}</h3>
-                    <p className="text-xs text-gray-500">{t.company}</p>
-                    <p className="text-[11px] text-gray-400 mt-0.5">{t.location}</p>
-                  </div>
-                  <div className="w-9 h-9 rounded-full bg-[#0F1932] flex items-center justify-center text-[#E8621A] shrink-0">
-                    <ShieldCheck className="w-5 h-5" />
+                    <h3 className="text-sm font-bold text-[#0F1932]">
+                      {testimonial.author}
+                      {testimonial.role && (
+                        <span className="text-xs font-normal text-gray-500 block sm:inline sm:ml-1.5">
+                          · {testimonial.role}
+                        </span>
+                      )}
+                    </h3>
+                    <p className="text-xs font-semibold text-[#E8621A]">{testimonial.company}</p>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+                <div className="w-9 h-9 rounded-full bg-[#0F1932] flex items-center justify-center text-[#E8621A] shrink-0 shadow-2xs">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
