@@ -119,14 +119,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/grievance-redressal-mechanism.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/grievance-redressal"
                   className="hover:text-white transition-colors"
                 >
                   Grievance Redressal
-                </a>
+                </Link>
               </li>
               <li>
                 <a

@@ -18,6 +18,7 @@ import {
   Phone,
   Mail,
   ArrowUpRight,
+  ArrowRight,
   Filter
 } from 'lucide-react';
 import Navbar, { ActionButton } from '@/components/Navbar';
@@ -102,13 +103,23 @@ const DOCUMENTS: PolicyDocument[] = [
   },
   {
     id: 'grievance-redressal',
-    title: 'Grievance Redressal Mechanism & Matrix',
+    title: 'Grievance Redressal Mechanism',
     category: 'customer',
     categoryLabel: 'Customer Conduct & Codes',
-    description: 'Comprehensive 3-tier customer grievance escalation matrix, officer contact details, and RBI Ombudsman turnaround timelines.',
+    description: 'Comprehensive 5-tier customer grievance escalation matrix, designated officer contacts (GRO & Principal Nodal Officer), and RBI Ombudsman timelines.',
     filename: 'grievance-redressal-mechanism.pdf',
-    fileSize: '2.21 MB',
+    fileSize: '318 KB',
     badge: 'Escalation Matrix'
+  },
+  {
+    id: 'grievance-flowchart',
+    title: 'Grievance Redressal Flowchart',
+    category: 'customer',
+    categoryLabel: 'Customer Conduct & Codes',
+    description: 'Visual step-by-step resolution workflow diagram covering Initial Registration, GRO Escalation, PNO Review, RBI CMS Portal, and Appellate Authority.',
+    filename: 'lrsd-flowchart.pdf',
+    fileSize: '513 KB',
+    badge: 'Flowchart'
   },
   {
     id: 'interest-rate',
@@ -471,23 +482,21 @@ export default function PoliciesPage() {
 
               {/* Action Box */}
               <div className="lg:col-span-4 flex flex-col gap-3">
-                <a
-                  href="/grievance-redressal-mechanism.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/grievance-redressal"
                   className="w-full inline-flex items-center justify-center gap-2 p-3.5 rounded-xl bg-[#E8621A] hover:bg-[#F27125] text-white text-xs sm:text-sm font-bold transition-all shadow-md text-center cursor-pointer"
                 >
-                  <span>Download Redressal Matrix</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </a>
+                  <span>View Grievance &amp; Flowchart Portal</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
 
                 <a
-                  href="/fair-practices-code.pdf"
+                  href="/lrsd-flowchart.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 p-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-bold transition-all border border-white/10 text-center cursor-pointer"
                 >
-                  <span>Fair Practices Code</span>
+                  <span>Download Flowchart PDF</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
