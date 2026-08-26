@@ -136,14 +136,17 @@ export default function TestimonialsPage() {
 
                   {/* Quote Paragraphs */}
                   <div className="space-y-4 mb-8">
-                    {item.quote.split('\n\n').map((para, pIdx) => (
-                      <p
-                        key={pIdx}
-                        className="text-sm sm:text-base text-[#0F1932] leading-relaxed font-normal"
-                      >
-                        &ldquo;{para}&rdquo;
-                      </p>
-                    ))}
+                    {(() => {
+                      const paras = item.quote.split('\n\n');
+                      return paras.map((para, pIdx) => (
+                        <p
+                          key={pIdx}
+                          className="text-sm sm:text-base text-[#0F1932] leading-relaxed font-normal"
+                        >
+                          {pIdx === 0 && '“'}{para}{pIdx === paras.length - 1 && '”'}
+                        </p>
+                      ));
+                    })()}
                   </div>
                 </div>
 
