@@ -105,22 +105,58 @@ export default function Footer() {
           {/* Column 4: Governance & Compliance */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8621A] mb-4">
-              Governance
+              Governance &amp; Policies
             </h4>
             <ul className="space-y-2.5 text-xs text-gray-400">
-              {[
-                "Fair Practices Code",
-                "Grievance Redressal",
-                "CSR Policy",
-                "IT & Cyber Security",
-                "Scale Based Regulation",
-              ].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-white transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  href="/fair-practices-code.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Fair Practices Code
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/grievance-redressal-mechanism.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Grievance Redressal
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/csr-policy.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  CSR Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/corporate-governance-code.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Corporate Governance
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/policies"
+                  className="text-[#E8621A] hover:text-[#F27125] font-semibold transition-colors flex items-center gap-1"
+                >
+                  <span>All Policies &amp; Disclosures</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -169,16 +205,40 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <div className="flex flex-wrap gap-4">
-            <a href="#" className="hover:text-gray-300">
+            <a
+              href="/privacy-policy.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition-colors"
+            >
               Privacy Policy
             </a>
             <span>·</span>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              href="/terms-of-use.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition-colors"
+            >
               Terms of Use
             </a>
             <span>·</span>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              href="/public-disclosure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition-colors"
+            >
               Statutory Disclosures
+            </a>
+            <span>·</span>
+            <a
+              href="/disclaimer.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition-colors"
+            >
+              Disclaimer
             </a>
           </div>
           <p>© 2026 LRSD Securities Private Limited. All rights reserved.</p>

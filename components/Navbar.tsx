@@ -347,6 +347,18 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          {/* Policies & Disclosures Link */}
+          <Link
+            href="/policies"
+            className={`inline-flex items-center gap-1 text-xs font-semibold tracking-wide transition-colors ${
+              pathname === '/policies' || pathname === '/disclosures'
+                ? 'text-[#E8621A]'
+                : 'text-gray-700 hover:text-[#0F1932]'
+            }`}
+          >
+            <span>Policies & Disclosures</span>
+          </Link>
+
           {/* Testimonials Link */}
           <Link
             href="/testimonials"
@@ -450,6 +462,14 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+
+              {/* Policies & Disclosures */}
+              <Link
+                href="/policies"
+                className="block py-2 text-sm font-bold text-[#0F1932] hover:text-[#E8621A]"
+              >
+                Policies & Disclosures
+              </Link>
 
               {/* Testimonials */}
               <Link
