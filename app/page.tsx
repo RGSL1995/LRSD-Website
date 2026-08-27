@@ -28,8 +28,8 @@ const PRODUCTS = [
     tag: 'PRODUCT · RF',
     badge: '02 / Supply Chain Finance (SCF)', 
     href: '/products/receivables-discounting',
-    desc: 'Unlocking cash trapped in 60–180 day payment cycles — improving ROCE, RONW and cash flow.',
-    features: ['Recourse & Non-Recourse', 'Disbursement: Day 2', 'Invoice Coverage: Up to 90%'],
+    desc: 'Facilitated by our group company, Rajasthan Global Securities Pvt. Ltd. (RGSPL) — unlocking cash trapped in 60–180 day payment cycles to boost ROCE, RONW and cash flow.',
+    features: ['Offered by RGSPL', 'Disbursement: Day 2', 'Invoice Coverage: Up to 90%'],
   },
   {
     num: '03',

@@ -10,6 +10,7 @@ import { Layers, Zap, Clock, ShieldCheck, CheckCircle2, ArrowRight, RefreshCw } 
 
 export default function ReceivablesDiscountingPage() {
   const specs = [
+    { label: "Facilitating Entity", value: "Rajasthan Global Securities Pvt. Ltd. (RGSPL) — Group Company" },
     { label: "Invoice Coverage", value: "Up to 90% of accepted invoice value" },
     { label: "Disbursement Velocity", value: "Within 24 to 48 hours of invoice verification" },
     { label: "Facility Limit", value: "₹1 Crore to ₹50 Crore" },
@@ -27,11 +28,18 @@ export default function ReceivablesDiscountingPage() {
         <SilkWaves />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 shadow-sm mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-            <p className="text-xs font-bold tracking-widest text-[#E8621A] uppercase">
-              Working Capital Acceleration
-            </p>
+          <div className="flex flex-wrap items-center gap-2 mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
+              <p className="text-xs font-bold tracking-widest text-[#E8621A] uppercase">
+                Working Capital Acceleration
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 shadow-xs">
+              <span className="text-[11px] font-extrabold text-[#0F1932]">
+                Offered by Group Company: <span className="text-[#E8621A]">Rajasthan Global Securities Pvt. Ltd. (RGSPL)</span>
+              </span>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-12 items-start">
@@ -42,7 +50,7 @@ export default function ReceivablesDiscountingPage() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-normal mb-8 max-w-2xl">
-                Convert 60–180 day locked corporate receivables into immediate working capital — boosting ROCE, RONW, and supply chain liquidity without restrictive bank collateral.
+                Facilitated by our group company, <strong className="text-[#0F1932] font-semibold">Rajasthan Global Securities Pvt. Ltd. (RGSPL)</strong>, our factoring solutions convert 60–180 day locked corporate receivables into immediate working capital — boosting ROCE, RONW, and supply chain liquidity without restrictive bank collateral.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -148,7 +156,7 @@ export default function ReceivablesDiscountingPage() {
               <span className="text-3xl font-black text-[#E8621A] mb-4 block">02</span>
               <h3 className="text-lg font-bold text-[#0F1932] mb-2">Working Capital Released</h3>
               <p className="text-xs text-gray-600 leading-relaxed">
-                LRSD Capital verifies the invoice with the anchor and disburses up to 90% of the funds to your account immediately.
+                Rajasthan Global Securities Pvt. Ltd. (RGSPL) verifies the invoice with the anchor and disburses up to 90% of the funds to your account immediately.
               </p>
             </div>
 
