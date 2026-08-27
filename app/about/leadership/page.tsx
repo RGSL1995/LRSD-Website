@@ -28,16 +28,23 @@ export default function LeadershipPage() {
     {
       name: "Mr. Amit Arora",
       role: "Chief Executive Officer",
-      tagline: "Two decades scaling India’s lending in LAS",
+      tagline: "26+ years in Banking & Wealth Management Lending (Ex-UBS)",
       image: "/amit arora.png",
-      bio: "Two decades of hands-on expertise building, scaling, and managing large-scale structured lending and Loan Against Shares (LAS) franchises across Indian capital markets. Bringing deep domain acumen in institutional credit governance, market risk dynamics, and relationship management to lead LRSD Capital's growth mandate.",
+      bio: "Amit Arora is a seasoned banking and financial services professional with over 26 years of experience across leading global and Indian financial institutions, including UBS, Credit Suisse, The Royal Bank of Scotland, DSP Merrill Lynch, HDFC Bank and IL&FS. Prior to joining LRSD Capital, he spent over 15 years with UBS Finance India Private Limited, where he was Director, Product Head – Lombard and a Board Member. He played a pivotal role in building and scaling the wealth management lending business in India to approximately USD 500 million, contributing significantly to the growth of the franchise while maintaining a zero-NPA track record. He has extensive experience in structured and collateral-backed lending, credit and risk management, product development and building new financial businesses.",
     },
     {
       name: "Mr. Manish Chauhan",
       role: "Chief Financial Officer",
       tagline: "With the group since inception",
-      image: "/manish.png",
+      image: "/manishnew-clean.png",
       bio: "Manish Chauhan joined an idea, in 2002, and has not left it since. Chief Financial Officer from the first year to the present one — through the 2008 crisis, the 2018 liquidity squeeze and the pandemic. Manish Chauhan has spent twenty-four years running the finances of a company that funded itself. He is now building the financial architecture of an institution that is ready to be a lender in its own right.",
+    },
+    {
+      name: "Ms. Raj Nandini Jain",
+      role: "Group Company Secretary & Chief Compliance Officer",
+      tagline: "12+ years in Regulatory Compliance, Governance & Secretarial (CS, MBA)",
+      image: "/Nandini.jpeg",
+      bio: "Ms. Raj Nandini Jain is the Group Company Secretary and Chief Compliance Officer of RGSPL, with over 12 years of experience across regulatory compliance, corporate governance, legal and secretarial functions, risk management and financial services, including prior roles at Aryadhan Financial Solutions, Natural Cemeco, Lord Fincap, Hindustan Zinc and ING Vysya Bank. A qualified Company Secretary and an MBA in Finance, she has developed substantial expertise across the banking, manufacturing and NBFC sectors including both Middle Layer and Base Layer NBFCs covering RBI Master Directions and regulatory frameworks, supervisory expectations, compliance-risk assessment, statutory and regulatory reporting, and policy implementation. She leads a dedicated team of compliance professionals and oversees RGSPL's independent compliance function, adopting a forward-looking, technology-driven approach that uses AI and compliance-management tools to track regulatory obligations, strengthen documentation and support timely escalation, while ensuring all compliance decisions remain subject to professional judgment, human oversight, confidentiality and appropriate information-security safeguards. She advises the Board and senior management on regulatory developments and compliance risks and serves as a principal liaison with regulatory authorities.",
     },
   ];
 
@@ -50,11 +57,26 @@ export default function LeadershipPage() {
         <SilkWaves />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-[#E8621A]/30 shadow-sm mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
-            <span className="text-xs font-extrabold tracking-widest text-[#0F1932] uppercase">
-              Leadership &amp; Governance
-            </span>
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-[#E8621A]/30 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#E8621A]" />
+              <span className="text-xs font-extrabold tracking-widest text-[#0F1932] uppercase">
+                Executive Leadership &amp; Governance
+              </span>
+            </div>
+
+            {/* Navigation Switcher */}
+            <div className="flex items-center gap-1.5 p-1 bg-white rounded-xl border border-gray-200 shadow-xs">
+              <span className="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0F1932] text-white">
+                Executive Leadership
+              </span>
+              <Link
+                href="/about/board-of-directors"
+                className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-gray-600 hover:text-[#0F1932] hover:bg-gray-50 transition-colors"
+              >
+                Board of Directors &rarr;
+              </Link>
+            </div>
           </div>
 
           <div className="max-w-5xl mb-16">
@@ -114,6 +136,30 @@ export default function LeadershipPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Link to Board of Directors */}
+          <div className="mt-12 bg-white rounded-3xl p-8 border border-gray-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center text-[#E8621A] shrink-0">
+                <Landmark className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-extrabold text-[#0F1932]">
+                  Explore the Governing Board of Directors
+                </h3>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  Meet the 5 board directors stewarding statutory governance, risk committees, and fiduciary compliance.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/about/board-of-directors"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0F1932] hover:bg-[#1C1E22] text-white text-xs font-bold transition-all shadow-md shrink-0"
+            >
+              <span>View Board of Directors</span>
+              <ArrowRight className="w-4 h-4 text-[#E8621A]" />
+            </Link>
           </div>
         </div>
       </section>

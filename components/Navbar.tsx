@@ -154,11 +154,18 @@ export default function Navbar() {
       // badge: "Advantage"
     },
     {
-      title: "Leadership & Board",
-      desc: "Institutional stewardship, executive leadership & governance framework.",
+      title: "Executive Leadership",
+      desc: "Executive management, institutional stewardship & growth leadership.",
       href: "/about/leadership",
       icon: <Users className="w-5 h-5 text-[#E8621A]" />,
       // badge: "Governance"
+    },
+    {
+      title: "Board of Directors",
+      desc: "Board governance, fiduciary stewardship & statutory oversight.",
+      href: "/about/board-of-directors",
+      icon: <Award className="w-5 h-5 text-[#E8621A]" />,
+      // badge: "Board"
     }
   ];
 

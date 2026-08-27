@@ -511,14 +511,14 @@ export default function Home() {
                 {
                   name: "Mr. Amit Arora",
                   role: "Chief Executive Officer",
-                  tagline: "Two decades scaling India’s lending in LAS",
+                  tagline: "26+ years across UBS, Credit Suisse & Banking",
                   image: "/amit arora.png",
                 },
                 {
                   name: "Mr. Manish Chauhan",
                   role: "Chief Financial Officer",
                   tagline: "With the group since inception (2002)",
-                  image: "/manish.png",
+                  image: "/manishnew-clean.png",
                 },
               ].map((leader, idx) => (
                 <motion.div

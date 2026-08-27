@@ -62,7 +62,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/about/leadership" className="hover:text-white transition-colors">
-                  Leadership & Board
+                  Executive Leadership
+                </Link>
+              </li>
+              <li>
+                <Link href="/about/board-of-directors" className="hover:text-white transition-colors">
+                  Board of Directors
                 </Link>
               </li>
               <li>
@@ -239,7 +244,7 @@ export default function Footer() {
               Disclaimer
             </a>
           </div>
-          <p>© 2026 LRSD Securities Private Limited. All rights reserved.</p>
+          <p>© 2026 LRSD Capital Private Limited. All rights reserved.</p>
         </div>
       </div>
     </footer>

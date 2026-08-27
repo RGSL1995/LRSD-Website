@@ -45,7 +45,7 @@ const ESCALATION_LEVELS = [
     channels: [
       { type: 'Corporate Office', value: 'Unit No. Silver 27/01 and 27/02 Wave One, Block L, Sector 18, Noida, UP - 201301 (Mon–Fri, 10 AM – 6 PM)' },
       { type: 'Email Desk', value: 'admin@lrsdindia.com' },
-      { type: 'Postal Communication', value: 'LRSD Securities Private Limited, Corporate Office, Noida - 201301' },
+      { type: 'Postal Communication', value: 'LRSD Capital Private Limited, Corporate Office, Noida - 201301' },
     ],
     status: 'Step 1'
   },
@@ -130,7 +130,7 @@ export default function GrievanceRedressalPage() {
               </h1>
 
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal max-w-2xl">
-                LRSD Securities Private Limited is committed to efficient, impartial, and transparent 
+                LRSD Capital Private Limited is committed to efficient, impartial, and transparent 
                 grievance resolution in full alignment with the Reserve Bank of India (RBI) guidelines.
               </p>
             </div>
