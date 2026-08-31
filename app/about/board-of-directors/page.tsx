@@ -28,14 +28,14 @@ export default function BoardOfDirectorsPage() {
     },
     {
       name: "Mr. Pranav Jain",
-      designation: "Director",
+      designation: "Independent Director",
       image: "/Pranav Jain.png",
       badge: "Corporate Governance & Strategy",
       bio: "Director on the Board providing strategic oversight, corporate governance expertise, and enterprise risk review. Brings rigorous institutional thinking and strategic deliberation to ensure sound capital governance and sustainable shareholder value."
     },
     {
       name: "Mr. Nanda Kumar Gomathysukumara",
-      designation: "Director",
+      designation: "Independent Director",
       image: "/Nanda Kumar.png",
       badge: "Strategic Advisory & Compliance",
       bio: "Director on the Board contributing extensive operational acumen, compliance oversight, and institutional guidance. Plays an active role in board deliberations and fiduciary alignment across credit operations."
