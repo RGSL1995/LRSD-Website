@@ -15,7 +15,7 @@ export default function LeadershipPage() {
       name: "Mr. Lalit Dua",
       role: "Founder & Managing Director",
       tagline: "Founder, 30 years of compounding",
-      image: "/lalitdua1-clean.png",
+      image: "/lalitduanew.png",
       bio: "Started with initial equity infusion of ~29.57 lakhs & twenty-four years later that Group is worth approximately ₹3,500 crore — compounded at close to 48% a year, without a single rupee of outside equity, without borrowing, and without ever once advertising for a client. He did not build it by being early to a theme or lucky in a cycle. He built it by refusing, over and over, for twenty-four years, to take a risk he could not fully see — and by staying in the market long after the people who arrived with him had left.",
     },
     {

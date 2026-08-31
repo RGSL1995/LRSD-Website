@@ -433,7 +433,7 @@ export default function Home() {
                 {/* Left Photo */}
                 <div className="relative min-h-[380px] lg:min-h-[460px] bg-gradient-to-r from-[#0F1932] to-[#1A2347]">
                   <Image
-                    src="/lalitdua1-clean.png"
+                    src="/lalitduanew.png"
                     alt="Mr. Lalit Dua, Founder & Managing Director"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
@@ -500,7 +500,7 @@ export default function Home() {
                   name: "Mr. Lalit Dua",
                   role: "Managing Director",
                   tagline: "Founder, 30 years of compounding",
-                  image: "/lalitdua1-clean.png",
+                  image: "/lalitduanew.png",
                 },
                 {
                   name: "Ms. Shreya Dua",

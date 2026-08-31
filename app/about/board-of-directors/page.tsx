@@ -22,7 +22,7 @@ export default function BoardOfDirectorsPage() {
     {
       name: "Mr. Lalit Dua",
       designation: "Managing Director",
-      image: "/lalitdua1-clean.png",
+      image: "/lalitduanew.png",
       badge: "Founder & Executive Steward",
       bio: "Founder and Managing Director guiding LRSD Capital's long-term strategic vision, capital allocation philosophy, and disciplined underwriting culture. With 30 years of capital markets mastery and compounding acumen, he leads the institution with an unbroken heritage of risk aversion and zero write-offs."
     },
@@ -49,10 +49,10 @@ export default function BoardOfDirectorsPage() {
     },
     {
       name: "Ms. Shreya Dua",
-      designation: "Additional Director",
+      designation: "Director",
       image: "/Shreya.png",
       badge: "Institutional Architecture (Ex-BCG)",
-      bio: "Additional Director driving institutional scaling, strategic expansion, and next-generation capital architecture. Wharton MBA (youngest in Wharton's history), double master's from NYU Stern, and former strategy consultant at BCG (New York & Mumbai)."
+      bio: "Director driving institutional scaling, strategic expansion, and next-generation capital architecture. Wharton MBA (youngest in Wharton's history), double master's from NYU Stern, and former strategy consultant at BCG (New York & Mumbai)."
     },
   ];
 
