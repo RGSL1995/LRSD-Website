@@ -36,7 +36,7 @@ export default function LeadershipPage() {
       name: "Mr. Manish Chauhan",
       role: "Chief Financial Officer",
       tagline: "With the group since inception",
-      image: "/manishnew-clean.png",
+      image: "/manishnew1.jpeg",
       bio: "Manish Chauhan joined an idea, in 1995, and has not left it since. Chief Financial Officer from the first year to the present one — through the 2008 crisis, the 2018 liquidity squeeze and the pandemic. Manish Chauhan has spent thirty-one years running the finances of a company that funded itself. He is now building the financial architecture of an institution that is ready to be a lender in its own right.",
     },
     {

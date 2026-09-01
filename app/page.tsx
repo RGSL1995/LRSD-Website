@@ -518,7 +518,7 @@ export default function Home() {
                   name: "Mr. Manish Chauhan",
                   role: "Chief Financial Officer",
                   tagline: "With the group since inception (1995)",
-                  image: "/manishnew-clean.png",
+                  image: "/manishnew1.jpeg",
                 },
               ].map((leader, idx) => (
                 <motion.div
