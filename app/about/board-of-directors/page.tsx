@@ -22,7 +22,7 @@ export default function BoardOfDirectorsPage() {
     {
       name: "Mr. Lalit Dua",
       designation: "Managing Director",
-      image: "/lalitduanew.png",
+      image: "/lalitdua1-clean.png",
       badge: "Founder & Executive Steward",
       bio: "Founder and Managing Director guiding LRSD Capital's long-term strategic vision, capital allocation philosophy, and disciplined underwriting culture. With 30 years of capital markets mastery and compounding acumen, he leads the institution with an unbroken heritage of risk aversion and zero write-offs."
     },
