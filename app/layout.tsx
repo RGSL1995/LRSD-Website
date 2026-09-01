@@ -12,6 +12,15 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "LRSD Capital | Capital, with conviction",
   description: "A specialist credit institution for Indian enterprise — structured capital with deep domain expertise and enduring conviction.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" }
+    ],
+    apple: [
+      { url: "/apple-icon.png", type: "image/png" }
+    ]
+  }
 };
 
 import { ModalProvider } from "@/components/ConversationModal";
