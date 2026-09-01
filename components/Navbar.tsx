@@ -148,7 +148,7 @@ export default function Navbar() {
     },
     {
       title: "LRSD Edge",
-      desc: "Day 1-2 turnaround velocity, 24-year equity intelligence & cash cycle structuring.",
+      desc: "Day 1-2 turnaround velocity, 31-year equity intelligence & cash cycle structuring.",
       href: "/about/edge",
       icon: <Zap className="w-5 h-5 text-[#E8621A]" />,
       // badge: "Advantage"
@@ -179,7 +179,7 @@ export default function Navbar() {
     },
     {
       title: "Receivables Discounting / Factoring",
-      desc: "Facilitated by group company RGSPL — unlock cash trapped in 60–180 day invoice payment cycles.",
+      desc: "Unlock cash trapped in 60–180 day corporate invoice payment cycles.",
       href: "/products/receivables-discounting",
       icon: <Layers className="w-5 h-5 text-[#E8621A]" />,
       // badge: "Day 2 Liquidity"

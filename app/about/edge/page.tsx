@@ -75,7 +75,7 @@ export default function LRSDEdgePage() {
     {
       feature: "Underwriting Basis",
       traditional: "Standardized rating tables & rigid debt formulas ignoring sector nuances & promoter track record",
-      lrsd: "Earnings quality, promoter conduct, order books, and 24 years of anchor equity intelligence",
+      lrsd: "Earnings quality, promoter conduct, order books, and 31 years of anchor equity intelligence",
     },
     {
       feature: "Turnaround Velocity",
@@ -95,7 +95,7 @@ export default function LRSDEdgePage() {
     {
       feature: "Cycle Consistency",
       traditional: "Credit lines freeze or pull back during broader market turbulence",
-      lrsd: "Zero write-offs in 24 years; liquidity and lines held open through market stress",
+      lrsd: "Zero write-offs in 31 years; liquidity and lines held open through market stress",
     },
   ];
 
@@ -123,7 +123,7 @@ export default function LRSDEdgePage() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-normal mb-8 max-w-2xl">
-                We combine twenty-four years of proprietary anchor investing, direct balance sheet lending, and bespoke cash cycle structuring to deliver speed without compromise.
+                We combine thirty-one years of proprietary anchor investing, direct balance sheet lending, and bespoke cash cycle structuring to deliver speed without compromise.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -257,7 +257,7 @@ export default function LRSDEdgePage() {
 
             <div className="space-y-4 text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
               <p>
-                Since 2002 the Group has been one of India&apos;s most active anchor investors in public issues and a leading provider of direct growth capital to SME and mid-cap issuers. We have read their DRHPs, met their promoters, priced their equity and held it through cycles.
+                Since 1995 the Group has been one of India&apos;s most active anchor investors in public issues and a leading provider of direct growth capital to SME and mid-cap issuers. We have read their DRHPs, met their promoters, priced their equity and held it through cycles.
               </p>
               <p>
                 A lender starting from a rating table sees a thin float and a short history. We see a company we have been tracking for years. That is not a softer credit standard — it is a better-informed one.
@@ -296,7 +296,7 @@ export default function LRSDEdgePage() {
                 <span className="text-gray-400 font-normal">Deployed</span>
               </div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8621A]/10 border border-[#E8621A]/30 text-xs font-bold text-[#E8621A]">
-                <span>24-Year Legacy</span>
+                <span>31-Year Legacy</span>
               </div>
             </div>
           </motion.div>
@@ -366,7 +366,7 @@ export default function LRSDEdgePage() {
               </h2>
 
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-normal">
-                Most of a credit decision is spent learning the company. <strong className="text-[#0F1932] font-extrabold">We already know it.</strong> Since 2002 the Group has anchored these companies&apos; public issues, read their offer documents, met their promoters and held their stock through cycles — so we start where other lenders reach in week two.
+                Most of a credit decision is spent learning the company. <strong className="text-[#0F1932] font-extrabold">We already know it.</strong> Since 1995 the Group has anchored these companies&apos; public issues, read their offer documents, met their promoters and held their stock through cycles — so we start where other lenders reach in week two.
               </p>
 
               <div className="border-l-4 border-[#E8621A] pl-5 py-2 bg-[#FAF9F6] rounded-r-xl">
@@ -556,7 +556,7 @@ export default function LRSDEdgePage() {
                   1. Pre-Underwritten Knowledge
                 </h4>
                 <p className="text-xs text-gray-600 leading-relaxed">
-                  24 years of anchor investing means we have already researched the management, company history, and market sector before you even call.
+                  31 years of anchor investing means we have already researched the management, company history, and market sector before you even call.
                 </p>
               </div>
 

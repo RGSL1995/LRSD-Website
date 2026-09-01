@@ -25,6 +25,7 @@ export default function Footer() {
               Specialist credit institution for Indian enterprises. Three
               decades of capital conviction and market intelligence.
             </p>
+            {/* Social media icons temporarily commented out
             <div className="flex gap-2.5">
               {[
                 { icon: <FaLinkedin className="w-3.5 h-3.5" />, label: "LinkedIn" },
@@ -42,6 +43,7 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+            */}
           </div>
 
           {/* Column 2: About Us */}

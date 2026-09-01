@@ -11,7 +11,7 @@ import { ShieldCheck, Building2, Landmark, CheckCircle2, ArrowRight, Layers, Fil
 export default function MortgageBackedLoansPage() {
   const specs = [
     { label: "Facility Quantum", value: "₹5 Crore to ₹200 Crore" },
-    { label: "Security Cover", value: "2.0x to 3.0x Prime Commercial / Residential / Industrial Assets" },
+    { label: "Security Cover", value: "2.0x to 3.0x Residential / Prime Commercial / Industrial Assets" },
     { label: "Tenure Range", value: "12 Months to 36 Months" },
     { label: "Disbursement Mechanism", value: "Tranche-based against construction/sales milestones" },
     { label: "Escrow Structure", value: "Exclusive project sales/receivable cash-flow escrow waterfall" },

@@ -16,14 +16,14 @@ export default function LeadershipPage() {
       role: "Founder & Managing Director",
       tagline: "Founder, 30 years of compounding",
       image: "/lalitduanew.png",
-      bio: "Started with initial equity infusion of ~29.57 lakhs & twenty-four years later that Group is worth approximately ₹3,500 crore — compounded at close to 48% a year, without a single rupee of outside equity, without borrowing, and without ever once advertising for a client. He did not build it by being early to a theme or lucky in a cycle. He built it by refusing, over and over, for twenty-four years, to take a risk he could not fully see — and by staying in the market long after the people who arrived with him had left.",
+      bio: "Started with initial equity infusion of ~29.57 lakhs & thirty-one years later that Group is worth approximately ₹3,500 crore — compounded at close to 48% a year, without a single rupee of outside equity, without borrowing, and without ever once advertising for a client. He did not build it by being early to a theme or lucky in a cycle. He built it by refusing, over and over, for thirty-one years, to take a risk he could not fully see — and by staying in the market long after the people who arrived with him had left.",
     },
     {
       name: "Ms. Shreya Dua",
       role: "Director",
       tagline: "Wharton MBA, NYU Stern BS/MS, Ex-BCG",
       image: "/Shreya.png",
-      bio: "The youngest MBA in Wharton's history, a double master's in finance and strategic management, a bachelor's and master's from NYU Stern before that, and a career that had already taken her through investment banking at Anand Rathi and strategy work at BCG in New York and Mumbai. She came back to India, to a business her father built from ₹29.57 lakh and twenty-four years of refusing to take a risk he could not see. To build an institution with the same judgement, the same discipline and the same word — but with the governance, the capital structure and the professional depth to carry it into a market a hundred times the size. One generation proved the conviction. The next is building the institution around it.",
+      bio: "She holds the distinction of being the youngest MBA graduate in Wharton's history, alongside a double master's degree in Finance and Strategic Management. Her academic foundation began at NYU Stern, where she completed both her bachelor's and master's degrees. Her career spans investment banking at Anand Rathi and strategy consulting at BCG across New York and Mumbai. She returned to India to build on a foundation her father established over twenty-four years — growing the business from an initial capital of ₹29.57 lakh through disciplined, conviction-led decision-making. Her focus today is on institutionalising that same judgement and discipline within a modern governance framework and capital structure, positioning the business for a market opportunity many times larger than where it began. One generation established the conviction. The next is building the institution to carry it forward.",
     },
     {
       name: "Mr. Amit Arora",
@@ -37,7 +37,7 @@ export default function LeadershipPage() {
       role: "Chief Financial Officer",
       tagline: "With the group since inception",
       image: "/manishnew-clean.png",
-      bio: "Manish Chauhan joined an idea, in 2002, and has not left it since. Chief Financial Officer from the first year to the present one — through the 2008 crisis, the 2018 liquidity squeeze and the pandemic. Manish Chauhan has spent twenty-four years running the finances of a company that funded itself. He is now building the financial architecture of an institution that is ready to be a lender in its own right.",
+      bio: "Manish Chauhan joined an idea, in 1995, and has not left it since. Chief Financial Officer from the first year to the present one — through the 2008 crisis, the 2018 liquidity squeeze and the pandemic. Manish Chauhan has spent thirty-one years running the finances of a company that funded itself. He is now building the financial architecture of an institution that is ready to be a lender in its own right.",
     },
     {
       name: "Ms. Raj Nandini Jain",
@@ -87,7 +87,7 @@ export default function LeadershipPage() {
 
             <div className="border-l-2 border-[#E8621A] pl-6 py-1">
               <p className="text-xl sm:text-2xl md:text-[26px] text-gray-800 leading-relaxed md:leading-[1.45] font-medium max-w-4xl">
-                Our leadership brings together three decades of capital markets mastery, corporate finance acumen, and institutional credit governance with a twenty-four-year record of zero write-offs.
+                Our leadership brings together three decades of capital markets mastery, corporate finance acumen, and institutional credit governance with a thirty-one-year record of zero write-offs.
               </p>
             </div>
           </div>
@@ -128,11 +128,6 @@ export default function LeadershipPage() {
                   <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal border-t border-gray-100 pt-6">
                     {leader.bio}
                   </p>
-                </div>
-
-                <div className="px-8 sm:px-10 py-4 bg-[#FAF9F6] border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
-                  <span>LRSD Capital & Rajasthan Global Group</span>
-                  <span className="text-[#E8621A] font-bold">Executive Board</span>
                 </div>
               </motion.div>
             ))}

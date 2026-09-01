@@ -20,7 +20,7 @@ const PRODUCTS = [
     badge: '01 / LAS',
     href: '/products/loan-against-shares',
     desc: 'Most lenders size an SME facility by how fast they could sell the pledge. On a stock that trades thinly, that arithmetic returns nothing — and a profitable company gets declined for a reason that has nothing to do with its ability to repay. We underwrite the business instead: earnings, sector, promoter, trajectory. The volume tells us how to structure the facility. It does not decide whether we do it.',
-    features: ['Loan-to-Value: Up to 20%', 'Turnaround: 48 Hours', 'Structure: Bullet / EMI'],
+    features: ['LTV: Up to 50% (Securities) / 90% (Debt)', 'Turnaround: 48 Hours', 'Structure: Bullet / EMI'],
   },
   {
     num: '02',
@@ -28,8 +28,8 @@ const PRODUCTS = [
     tag: 'PRODUCT · RF',
     badge: '02 / Supply Chain Finance (SCF)', 
     href: '/products/receivables-discounting',
-    desc: 'Facilitated by our group company, Rajasthan Global Securities Pvt. Ltd. (RGSPL) — unlocking cash trapped in 60–180 day payment cycles to boost ROCE, RONW and cash flow.',
-    features: ['Offered by RGSPL', 'Disbursement: Day 2', 'Invoice Coverage: Up to 90%'],
+    desc: 'Unlocking cash trapped in 60–180 day payment cycles — improving ROCE, RONW and cash flow.',
+    features: ['Offered by RGSPL', 'Turnaround: 2-7 Days', 'Invoice Coverage: Up to 90%'],
   },
   {
     num: '03',
@@ -457,7 +457,7 @@ export default function Home() {
 
                     <div className="border-l-2 border-[#E8621A] pl-5 mb-8">
                       <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-lg">
-                        &ldquo;We have never written off a loan in twenty-four
+                        &ldquo;We have never written off a loan in thirty-one
                          years. That record is not caution for its own sake — it is what allows us to back a
                          company the market has not noticed yet, and to still be standing there when it has.&rdquo;
                       </p>
@@ -517,7 +517,7 @@ export default function Home() {
                 {
                   name: "Mr. Manish Chauhan",
                   role: "Chief Financial Officer",
-                  tagline: "With the group since inception (2002)",
+                  tagline: "With the group since inception (1995)",
                   image: "/manishnew-clean.png",
                 },
               ].map((leader, idx) => (

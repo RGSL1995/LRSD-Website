@@ -69,7 +69,7 @@ export default function AboutLRSDCapitalPage() {
                   <p className="text-[11px] text-gray-400 mt-0.5">Group Net Worth</p>
                 </div>
                 <div>
-                  <p className="text-2xl sm:text-3xl font-extrabold text-[#E8621A]">24 Years</p>
+                  <p className="text-2xl sm:text-3xl font-extrabold text-[#E8621A]">31 Years</p>
                   <p className="text-[11px] text-gray-400 mt-0.5">Group Legacy</p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function AboutLRSDCapitalPage() {
                 </p>
                 <div className="pt-4 border-t border-gray-200/80">
                   <p className="text-base sm:text-lg md:text-xl text-[#0F1932] leading-relaxed font-semibold">
-                    LRSD Capital was built for that gap. We are a secured lender to India&apos;s emerging listed and pre-IPO companies, their promoters and their supply chains, underwritten with what the Rajasthan Global Securities Group has learned about these companies since 2002.
+                    LRSD Capital was built for that gap. We are a secured lender to India&apos;s emerging listed and pre-IPO companies, their promoters and their supply chains, underwritten with what the Rajasthan Global Securities Group has learned about these companies since 1995.
                   </p>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default function AboutLRSDCapitalPage() {
                     Zero NPA Track Record
                   </h3>
                   <p className="text-xs text-gray-600 leading-relaxed">
-                    Proven discipline across 24 years through every market and macroeconomic credit cycle.
+                    Proven discipline across 31 years through every market and macroeconomic credit cycle.
                   </p>
                 </div>
               </div>
@@ -189,18 +189,18 @@ export default function AboutLRSDCapitalPage() {
               <div className="w-12 h-1 bg-[#E8621A] rounded-full" />
               
               <p className="text-xl sm:text-2xl font-bold text-[#E8621A] leading-snug">
-                Twenty-four years of capital that was never borrowed.
+                Thirty-one years of capital that was never borrowed.
               </p>
 
               <div className="space-y-4 text-sm sm:text-base text-white/80 leading-relaxed font-normal">
                 <p>
-                  Rajasthan Global Securities Private Limited was founded in 2002 by <strong className="text-white font-semibold">Mr. Lalit Dua</strong> with equity capital of ₹29.57 lakh. It is today an RBI-registered Middle Layer NBFC and Investment & Credit Company.
+                  Rajasthan Global Securities Private Limited was founded in 1995 by <strong className="text-white font-semibold">Mr. Lalit Dua</strong> with equity capital of ₹29.57 lakh. It is today an RBI-registered Middle Layer NBFC and Investment & Credit Company.
                 </p>
                 <p>
                   That net worth was built entirely from retained earnings. <strong className="text-white font-semibold">No external equity. No borrowings. No public deposits. No marketing.</strong>
                 </p>
                 <p>
-                  Across the 24 years the Group became one of India's most active investors deploying direct growth capital into hundreds of indian companies.
+                  Across the 31 years the Group became one of India's most active investors deploying direct growth capital into hundreds of indian companies.
                 </p>
                 <p className="text-white font-medium pt-2 border-t border-white/10">
                   LRSD Capital is the Group&apos;s lending arm. It carries forward that balance sheet, that credit discipline, and — more valuable than ever — that knowledge of the companies it lends to.
@@ -217,7 +217,7 @@ export default function AboutLRSDCapitalPage() {
               </div>
 
               <div className="bg-black/30 backdrop-blur-md border border-white/10 p-6 sm:p-7 rounded-2xl text-center flex flex-col justify-center">
-                <p className="text-3xl sm:text-4xl font-extrabold text-white mb-1">2002</p>
+                <p className="text-3xl sm:text-4xl font-extrabold text-white mb-1">1995</p>
                 <p className="text-xs font-bold text-white uppercase tracking-wider">Founded by Mr. Lalit Dua</p>
                 <p className="text-[11px] text-white/60 mt-1">Started with ₹29.57 lakh equity capital</p>
               </div>

@@ -10,10 +10,10 @@ import { TrendingUp, ShieldCheck, Clock, CheckCircle2, FileText, ArrowRight, Lay
 
 export default function LoanAgainstSharesPage() {
   const specs = [
-    { label: "Facility Ticket Size", value: "₹2 Crore to ₹100 Crore" },
-    { label: "Loan-To-Value (LTV)", value: "Up to 20% based on security quality" },
+    { label: "Facility Ticket Size", value: "₹2 Crore to ₹70 Crore" },
+    { label: "Loan-To-Value (LTV)", value: "Securities: Up to 50% | Debt: Up to 90%" },
     { label: "Turnaround Time", value: "48 – 72 Hours to sanction & pledge" },
-    { label: "Eligible Collateral", value: "BSE / NSE Mainboard & SME Listed Shares" },
+    { label: "Eligible Collateral", value: "BSE / NSE Mainboard & SME Listed / Unlisted Stocks" },
     { label: "Tenure", value: "6 Months to 36 Months" },
     { label: "Repayment Structure", value: "Bullet Principal / Tailored EMI / Moratorium" },
   ];
@@ -55,8 +55,8 @@ export default function LoanAgainstSharesPage() {
           <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-12 items-start">
             <div>
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] leading-[1.05] text-[#0F1932] mb-8">
-                Loan Against Shares{" "}
-                <span className="text-[#E8621A]">& Securities.</span>
+                Loan Against{" "}
+                <span className="text-[#E8621A]">Securities.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-normal mb-8 max-w-2xl">
@@ -85,8 +85,17 @@ export default function LoanAgainstSharesPage() {
               </div>
               <div className="space-y-4">
                 <div className="border-b border-white/10 pb-3">
-                  <p className="text-[11px] text-gray-400 uppercase">LTV</p>
-                  <p className="text-2xl font-extrabold text-white">Up to 20%</p>
+                  <p className="text-[11px] text-gray-400 uppercase mb-1">LTV</p>
+                  <div className="space-y-1">
+                    <p className="text-base sm:text-lg font-bold text-white flex items-center justify-between">
+                      <span className="text-gray-300 text-sm font-normal">For Securities</span>
+                      <span className="text-xl font-extrabold text-white">Up to 50%</span>
+                    </p>
+                    <p className="text-base sm:text-lg font-bold text-white flex items-center justify-between">
+                      <span className="text-gray-300 text-sm font-normal">For Debt</span>
+                      <span className="text-xl font-extrabold text-white">Up to 90%</span>
+                    </p>
+                  </div>
                 </div>
                 <div className="border-b border-white/10 pb-3">
                   <p className="text-[11px] text-gray-400 uppercase">Turnaround</p>
@@ -94,7 +103,7 @@ export default function LoanAgainstSharesPage() {
                 </div>
                 <div>
                   <p className="text-[11px] text-gray-400 uppercase">Coverage</p>
-                  <p className="text-base font-bold text-white">Mainboard & SME Listed Stocks</p>
+                  <p className="text-base font-bold text-white">Mainboard & SME Listed/Unlisted Stocks</p>
                 </div>
               </div>
             </div>

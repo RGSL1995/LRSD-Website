@@ -281,8 +281,8 @@ export function ConversationModal({
                     onChange={(e) => setFormData({ ...formData, product: e.target.value })}
                     className="w-full bg-[#FAF9F6] border border-gray-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-[#0F1932] focus:outline-none focus:border-[#E8621A] focus:bg-white transition-colors cursor-pointer"
                   >
-                    <option value="Loan Against Shares (LAS)">Loan Against Shares (LAS) — Up to 20% LTV</option>
-                    <option value="Supply Chain Financing (SCF)">Supply Chain Financing (SCF) — 90–120 Days</option>
+                    <option value="Loan Against Shares (LAS)">Loan Against Securities (LAS) — Up to 50% (Securities) / 90% (Debt) LTV</option>
+                    <option value="Supply Chain Financing (SCF)">Supply Chain Financing (SCF) — 60–180 Days</option>
                     <option value="Real Estate & Developer Credit (RESD)">Real Estate & Developer Credit (RESD) — 2.0x–3.0x Cover</option>
                     <option value="Structured Credit & Special Situations">Structured Credit & Special Situations</option>
                     <option value="General Inquiry">General Inquiry</option>
