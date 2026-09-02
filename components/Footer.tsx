@@ -246,7 +246,13 @@ export default function Footer() {
               Disclaimer
             </a>
           </div>
-          <p>© 2026 LRSD Capital Private Limited. All rights reserved.</p>
+          <p className="text-center sm:text-right text-gray-400">
+            © 2026 LRSD Capital Private Limited{' '}
+            <span className="text-gray-300 font-medium">
+              (formerly known as <span className="text-[#E8621A]">LRSD Securities Private Limited</span>)
+            </span>
+            . All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

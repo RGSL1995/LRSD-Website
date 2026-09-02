@@ -34,10 +34,10 @@ const TESTIMONIALS = [
     id: 'oriana-power',
     quote:
       "LRSD Capital demonstrated a clear understanding from the very beginning of our capital requirements for inorganic growth. They moved swiftly through the approval process, delivering a decision in a remarkably short timeframe without compromising on diligence. Their team remained consistently responsive and professional throughout, and we particularly appreciated that the process was handled efficiently, without subjecting us to unnecessary rounds of back-and-forth. In a fast-moving business environment, speed and reliability are critical, and LRSD Capital delivered on both counts with confidence.",
-    author: "Shubham Karn",
-    role: "Sr. Accounts Manager",
-    company: "Oriana Power Limited",
-    image: "/shubham-karn.jpg",
+    author: "Anirudh Saraswat",
+    role: "Founder and Chief Business Officer",
+    company: "Oriana Power Ltd",
+    image: "/anirudh-saraswat.jpg",
     tag: "Client Success Story",
   },
 ];
