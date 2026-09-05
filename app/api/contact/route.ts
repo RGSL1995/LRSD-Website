@@ -22,8 +22,8 @@ export async function POST(req: Request) {
       console.error('WEB3FORMS_ACCESS_KEY is missing in environment variables.');
       return NextResponse.json(
         {
-          error: 'Email service access key is missing.',
-          details: 'Please add WEB3FORMS_ACCESS_KEY in .env.local (Get your key free at https://web3forms.com).',
+          error: 'Web3Forms Access Key is missing in container environment.',
+          details: 'Please generate a key at https://web3forms.com and add WEB3FORMS_ACCESS_KEY to your container environment variables.',
         },
         { status: 500 }
       );
@@ -48,12 +48,13 @@ ${safeMessage}
 ==================================
 `;
 
-    // Dispatch via Web3Forms HTTPS API (Port 443 - Never blocked by cloud containers)
+    // Dispatch via Web3Forms HTTPS API (Port 443)
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        'User-Agent': 'Mozilla/5.0 (compatible; LRSD-Credit-Desk/1.0)',
       },
       body: JSON.stringify({
         access_key: accessKey,
@@ -71,12 +72,25 @@ ${safeMessage}
       }),
     });
 
-    const result = await response.json();
+    const rawResponseText = await response.text();
+    let result: any = null;
+    try {
+      result = JSON.parse(rawResponseText);
+    } catch {
+      console.error('Received non-JSON response from Web3Forms:', rawResponseText);
+      return NextResponse.json(
+        {
+          error: 'Invalid response from email service provider.',
+          details: 'Please check that your WEB3FORMS_ACCESS_KEY is valid and activated.',
+        },
+        { status: 502 }
+      );
+    }
 
     if (!response.ok || !result.success) {
-      console.error('Web3Forms API returned error:', result);
+      console.error('Web3Forms API error response:', result);
       return NextResponse.json(
-        { error: result.message || 'Failed to dispatch inquiry.' },
+        { error: result.message || 'Failed to dispatch inquiry via Web3Forms.' },
         { status: 500 }
       );
     }
