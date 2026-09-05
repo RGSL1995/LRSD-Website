@@ -70,6 +70,7 @@ export function ConversationModal({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (initialProduct) {
@@ -92,19 +93,38 @@ export function ConversationModal({
     };
   }, [isOpen, onClose]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    // Rapid dispatch simulation
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send inquiry. Please try again.');
+      }
+
       setIsSubmitted(true);
-    }, 700);
+    } catch (err: any) {
+      console.error('Contact form submission error:', err);
+      setErrorMessage(err.message || 'Something went wrong. Please try again or email admin@lrsdindia.com directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleResetAndClose = () => {
     setIsSubmitted(false);
+    setErrorMessage(null);
     setFormData({
       name: '',
       email: '',
@@ -330,6 +350,13 @@ export function ConversationModal({
                     className="w-full bg-[#FAF9F6] border border-gray-200 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-[#0F1932] placeholder-gray-400 focus:outline-none focus:border-[#E8621A] focus:bg-white transition-colors resize-none"
                   />
                 </div>
+
+                {/* Error Banner */}
+                {errorMessage && (
+                  <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-600 font-medium leading-relaxed">
+                    {errorMessage}
+                  </div>
+                )}
 
                 {/* Submit */}
                 <div className="pt-2">
