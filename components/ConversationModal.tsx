@@ -98,6 +98,9 @@ export function ConversationModal({
     setIsSubmitting(true);
     setErrorMessage(null);
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000);
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -105,8 +108,10 @@ export function ConversationModal({
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       });
 
+      clearTimeout(timeoutId);
       const data = await response.json();
 
       if (!response.ok) {
@@ -115,8 +120,13 @@ export function ConversationModal({
 
       setIsSubmitted(true);
     } catch (err: any) {
+      clearTimeout(timeoutId);
       console.error('Contact form submission error:', err);
-      setErrorMessage(err.message || 'Something went wrong. Please try again or email admin@lrsdindia.com directly.');
+      if (err.name === 'AbortError') {
+        setErrorMessage('Request timed out while connecting to the email server. Please try again or email admin@lrsdindia.com.');
+      } else {
+        setErrorMessage(err.message || 'Something went wrong. Please try again or email admin@lrsdindia.com directly.');
+      }
     } finally {
       setIsSubmitting(false);
     }

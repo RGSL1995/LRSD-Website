@@ -14,20 +14,20 @@ export async function POST(req: Request) {
       );
     }
 
-    const host = process.env.SMTP_HOST;
-    const port = Number(process.env.SMTP_PORT) || 465;
+    const host = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const port = Number(process.env.SMTP_PORT) || 587;
     const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_PASS;
-    const secure = process.env.SMTP_SECURE ? process.env.SMTP_SECURE === 'true' : port === 465;
+    const secure = process.env.SMTP_SECURE === 'true' || port === 465;
     const toEmail = process.env.CONTACT_TO_EMAIL || 'admin@lrsdindia.com';
     const fromEmail = process.env.SMTP_FROM || `LRSD Inquiries <${user || 'admin@lrsdindia.com'}>`;
 
-    if (!host || !user || !pass) {
-      console.error('SMTP configuration missing: SMTP_HOST, SMTP_USER, or SMTP_PASS not set in .env.local');
+    if (!user || !pass) {
+      console.error('SMTP configuration missing: SMTP_USER or SMTP_PASS not set in .env.local');
       return NextResponse.json(
         {
           error: 'SMTP email server is not fully configured.',
-          details: 'Please ensure SMTP_HOST, SMTP_USER, and SMTP_PASS are set in .env.local.',
+          details: 'Please ensure SMTP_USER and SMTP_PASS are set in .env.local.',
         },
         { status: 500 }
       );
@@ -166,16 +166,36 @@ export async function POST(req: Request) {
       </html>
     `;
 
-    // Create Nodemailer Transporter
-    const transporter = nodemailer.createTransport({
-      host,
-      port,
-      secure,
-      auth: {
-        user,
-        pass,
-      },
-    });
+    const isGmail = host.includes('gmail') || host.includes('google');
+
+    // Create Transporter with fallback
+    let transporter;
+    if (isGmail) {
+      // Use Nodemailer built-in Gmail service to prevent port/SSL blocks
+      transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user,
+          pass,
+        },
+        connectionTimeout: 15000,
+        greetingTimeout: 10000,
+        socketTimeout: 20000,
+      });
+    } else {
+      transporter = nodemailer.createTransport({
+        host,
+        port,
+        secure,
+        auth: {
+          user,
+          pass,
+        },
+        connectionTimeout: 15000,
+        greetingTimeout: 10000,
+        socketTimeout: 20000,
+      });
+    }
 
     const info = await transporter.sendMail({
       from: fromEmail,
