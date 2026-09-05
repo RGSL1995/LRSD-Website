@@ -101,21 +101,54 @@ export function ConversationModal({
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 15000);
 
+    const web3Key =
+      process.env.NEXT_PUBLIC_WEB3FORMS_KEY ||
+      '27a57312-4358-40f9-a8ad-1904d7071ab8';
+
+    const formattedMessage = `
+========================================
+NEW CONFIDENTIAL CREDIT INQUIRY
+========================================
+• Applicant Name: ${formData.name}
+• Company / Entity: ${formData.company}
+• Facility Requested: ${formData.product}
+• Estimated Requirement: ${formData.ticketSize}
+• Work Email: ${formData.email}
+• Phone Number: ${formData.phone}
+
+• Collateral / Note:
+${formData.message || 'None provided'}
+========================================
+`;
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: web3Key,
+          subject: `[New Inquiry] ${formData.company} - ${formData.product} (${formData.ticketSize})`,
+          from_name: 'LRSD Direct Credit Desk',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          facility: formData.product,
+          ticket_size: formData.ticketSize,
+          message: formattedMessage,
+          replyto: formData.email,
+        }),
         signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send inquiry. Please try again.');
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Failed to dispatch inquiry. Please try again.');
       }
 
       setIsSubmitted(true);
@@ -123,7 +156,7 @@ export function ConversationModal({
       clearTimeout(timeoutId);
       console.error('Contact form submission error:', err);
       if (err.name === 'AbortError') {
-        setErrorMessage('Request timed out while connecting to the email server. Please try again or email admin@lrsdindia.com.');
+        setErrorMessage('Request timed out. Please try again or email admin@lrsdindia.com directly.');
       } else {
         setErrorMessage(err.message || 'Something went wrong. Please try again or email admin@lrsdindia.com directly.');
       }
