@@ -1,5 +1,15 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import dns from 'dns';
+
+// Force Node.js DNS to prefer IPv4 (fixes Docker/Cloud container ENETUNREACH IPv6 errors)
+try {
+  if (dns.setDefaultResultOrder) {
+    dns.setDefaultResultOrder('ipv4first');
+  }
+} catch (e) {
+  // fallback if not supported
+}
 
 export async function POST(req: Request) {
   try {
@@ -18,16 +28,15 @@ export async function POST(req: Request) {
     const port = Number(process.env.SMTP_PORT) || 587;
     const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_PASS;
-    const secure = process.env.SMTP_SECURE === 'true' || port === 465;
     const toEmail = process.env.CONTACT_TO_EMAIL || 'admin@lrsdindia.com';
     const fromEmail = process.env.SMTP_FROM || `LRSD Inquiries <${user || 'admin@lrsdindia.com'}>`;
 
     if (!user || !pass) {
-      console.error('SMTP configuration missing: SMTP_USER or SMTP_PASS not set in .env.local');
+      console.error('SMTP configuration missing: SMTP_USER or SMTP_PASS not set in environment.');
       return NextResponse.json(
         {
-          error: 'SMTP email server is not fully configured.',
-          details: 'Please ensure SMTP_USER and SMTP_PASS are set in .env.local.',
+          error: 'SMTP email server is not configured.',
+          details: 'Please ensure SMTP_USER and SMTP_PASS are set in .env.local or environment variables.',
         },
         { status: 500 }
       );
@@ -166,48 +175,52 @@ export async function POST(req: Request) {
       </html>
     `;
 
-    const isGmail = host.includes('gmail') || host.includes('google');
+    // Attempt delivery via IPv4 STARTTLS (port 587) or SSL (port 465)
+    const createGmailTransporter = (targetPort: number, isSecure: boolean) =>
+      nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: targetPort,
+        secure: isSecure,
+        auth: {
+          user,
+          pass,
+        },
+        // Force IPv4 socket resolution (eliminates ENETUNREACH in containers without IPv6)
+        tls: {
+          rejectUnauthorized: false,
+        },
+        connectionTimeout: 10000,
+        greetingTimeout: 8000,
+        socketTimeout: 15000,
+      } as any);
 
-    // Create Transporter with fallback
-    let transporter;
-    if (isGmail) {
-      // Use Nodemailer built-in Gmail service to prevent port/SSL blocks
-      transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user,
-          pass,
-        },
-        connectionTimeout: 15000,
-        greetingTimeout: 10000,
-        socketTimeout: 20000,
+    let sendInfo;
+    try {
+      // Primary: Port 587 STARTTLS (standard for cloud containers)
+      const primaryTransporter = createGmailTransporter(587, false);
+      sendInfo = await primaryTransporter.sendMail({
+        from: fromEmail,
+        to: toEmail,
+        replyTo: email,
+        subject: `[New Inquiry] ${safeCompany} - ${safeProduct} (${safeTicketSize})`,
+        html: emailHtml,
       });
-    } else {
-      transporter = nodemailer.createTransport({
-        host,
-        port,
-        secure,
-        auth: {
-          user,
-          pass,
-        },
-        connectionTimeout: 15000,
-        greetingTimeout: 10000,
-        socketTimeout: 20000,
+    } catch (primaryError: any) {
+      console.warn('Port 587 attempt failed:', primaryError.message, 'Trying port 465 SSL fallback...');
+      // Fallback: Port 465 SSL
+      const fallbackTransporter = createGmailTransporter(465, true);
+      sendInfo = await fallbackTransporter.sendMail({
+        from: fromEmail,
+        to: toEmail,
+        replyTo: email,
+        subject: `[New Inquiry] ${safeCompany} - ${safeProduct} (${safeTicketSize})`,
+        html: emailHtml,
       });
     }
 
-    const info = await transporter.sendMail({
-      from: fromEmail,
-      to: toEmail,
-      replyTo: email,
-      subject: `[New Inquiry] ${safeCompany} - ${safeProduct} (${safeTicketSize})`,
-      html: emailHtml,
-    });
-
     return NextResponse.json({
       success: true,
-      messageId: info.messageId,
+      messageId: sendInfo.messageId,
     });
   } catch (error: any) {
     console.error('SMTP email dispatch error:', error);
