@@ -142,14 +142,23 @@ const DOCUMENTS: PolicyDocument[] = [
 
   // Statutory Disclosures
   {
+    id: 'public-disclosure-sep',
+    title: 'Public Liquidity & Regulatory Disclosure (September 2026)',
+    category: 'disclosure',
+    categoryLabel: 'Statutory Disclosures',
+    description: 'Quarterly regulatory disclosure of Liquidity Risk Management Framework, asset-liability profile, funding concentration, and prudential ratios.',
+    filename: 'public-disclosure-sep26.pdf',
+    fileSize: '68 KB',
+    badge: 'Latest Filing'
+  },
+  {
     id: 'public-disclosure-jun',
     title: 'Public Liquidity & Regulatory Disclosure (June 2026)',
     category: 'disclosure',
     categoryLabel: 'Statutory Disclosures',
     description: 'Quarterly regulatory disclosure of Liquidity Risk Management Framework, asset-liability profile, funding concentration, and prudential ratios.',
-    filename: 'public-disclosure.pdf',
+    filename: 'public-disclosure-jun26.pdf',
     fileSize: '82 KB',
-    badge: 'Latest Filing'
   },
   {
     id: 'disclosure-policy',
