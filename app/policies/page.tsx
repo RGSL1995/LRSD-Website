@@ -438,6 +438,71 @@ export default function PoliciesPage() {
         </div>
       </section>
 
+      {/* Investor Relations */}
+      <section className="py-16 md:py-20 px-6 md:px-8 bg-[#FAF9F6] border-y border-gray-100" aria-labelledby="investor-relations-heading">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-2xl mb-8">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#E8621A] mb-2">Company Filings</p>
+            <h2 id="investor-relations-heading" className="text-3xl sm:text-4xl font-extrabold text-[#0F1932] tracking-tight mb-3">
+              Investor Relations
+            </h2>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Company information and statutory filings for investors and other stakeholders.
+            </p>
+          </div>
+
+          <div className="max-w-xl">
+            <article className="flex flex-col justify-between p-6 rounded-2xl bg-white border border-gray-200/80 hover:border-[#E8621A]/40 hover:shadow-lg transition-all duration-300 group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#E8621A] bg-orange-50 px-2.5 py-1 rounded-md border border-orange-100">
+                    Investor Relations
+                  </span>
+                  <span className="text-[10px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded">
+                    Signed
+                  </span>
+                </div>
+                <h3 className="text-base font-bold text-[#0F1932] group-hover:text-[#E8621A] transition-colors mb-2">
+                  Annual Return (Form MGT-7)
+                </h3>
+                <p className="text-xs text-gray-600 leading-relaxed mb-6">
+                  Signed annual return filed by LRSD Capital Private Limited.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-gray-100">
+                <div className="flex items-center justify-between text-[11px] text-gray-400 mb-3.5">
+                  <span className="inline-flex items-center gap-1 font-medium">
+                    <FileText className="w-3.5 h-3.5 text-red-500" />
+                    PDF Document
+                  </span>
+                  <span className="font-semibold text-gray-500">6.0 MB</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="/investor-relations-mgt-7.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#0F1932] hover:bg-[#1C1E22] text-white text-xs font-bold transition-all shadow-xs"
+                  >
+                    <span>View PDF</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href="/investor-relations-mgt-7.pdf"
+                    download="investor-relations-mgt-7.pdf"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-white hover:bg-gray-100 text-gray-700 text-xs font-bold border border-gray-200 transition-colors"
+                  >
+                    <Download className="w-3.5 h-3.5 text-gray-500" />
+                    <span>Download</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* Grievance Redressal & Officer Escalation Notice */}
       <section className="py-16 px-6 md:px-8 bg-[#FAF9F6] border-t border-gray-200/80">
         <div className="max-w-7xl mx-auto">
