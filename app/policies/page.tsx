@@ -77,6 +77,16 @@ const DOCUMENTS: PolicyDocument[] = [
     filename: 'csr-policy.pdf',
     fileSize: '386 KB',
   },
+  {
+    id: 'whistle-blower-policy',
+    title: 'Whistle Blower Policy',
+    category: 'governance',
+    categoryLabel: 'Corporate Governance',
+    description: 'Policy outlining the channels and process for raising concerns about suspected misconduct or unethical practices.',
+    filename: 'whistle-blower-policy-lrsd.pdf',
+    fileSize: '601 KB',
+    badge: 'Governance',
+  },
 
   // Customer Protection & Codes
   {
